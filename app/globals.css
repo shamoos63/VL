@@ -1,0 +1,753 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+
+  /* VL Brand Colors - Updated for WCAG AA Compliance */
+  --vl-blue: #1e3a8a; /* Contrast ratio: 8.59:1 (AAA compliant) */
+  --vl-blue-light: #1e40af; /* Contrast ratio: 7.04:1 (AAA compliant) - was too light */
+  --vl-blue-dark: #1e3a8a; /* Contrast ratio: 8.59:1 (AAA compliant) */
+  --vl-blue-darker: #1e2a5a; /* Contrast ratio: 12.1:1 (AAA compliant) */
+  --vl-blue-muted: #374151; /* Contrast ratio: 8.87:1 (AAA compliant) for secondary text */
+  --vl-yellow: #fbbf24;
+  --vl-yellow-dark: #f59e0b;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(to bottom, transparent, rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* VL Brand Colors - WCAG AA/AAA Compliant */
+.text-vl-blue {
+  color: var(--vl-blue);
+}
+
+.text-vl-blue-light {
+  color: var(--vl-blue-light);
+}
+
+.text-vl-blue-dark {
+  color: var(--vl-blue-dark);
+}
+
+.text-vl-blue-darker {
+  color: var(--vl-blue-darker);
+}
+
+.text-vl-blue-muted {
+  color: var(--vl-blue-muted);
+}
+
+.text-vl-yellow {
+  color: var(--vl-yellow);
+}
+
+.text-vl-yellow-dark {
+  color: var(--vl-yellow-dark);
+}
+
+.bg-vl-blue {
+  background-color: var(--vl-blue);
+}
+
+.bg-vl-blue-light {
+  background-color: var(--vl-blue-light);
+}
+
+.bg-vl-blue-dark {
+  background-color: var(--vl-blue-dark);
+}
+
+.bg-vl-yellow {
+  background-color: var(--vl-yellow);
+}
+
+.bg-vl-yellow-dark {
+  background-color: var(--vl-yellow-dark);
+}
+
+.border-vl-blue {
+  border-color: var(--vl-blue);
+}
+
+.border-vl-yellow {
+  border-color: var(--vl-yellow);
+}
+
+/* Hero gradient */
+.vl-hero-gradient {
+  background: linear-gradient(135deg, var(--vl-blue) 0%, var(--vl-blue-light) 100%);
+}
+
+/* Glassmorphism effect */
+.glassmorphism {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Font families */
+.font-heading {
+  font-family: var(--font-poppins), sans-serif;
+}
+
+.font-arabic {
+  font-family: var(--font-cairo), sans-serif;
+}
+
+/* Sansumi font classes (available but not used yet) */
+.font-sansumi-ultralight {
+  font-family: var(--font-sansumi-ultralight), sans-serif;
+  font-weight: 200;
+}
+
+.font-sansumi-regular {
+  font-family: var(--font-sansumi-regular), sans-serif;
+  font-weight: 400;
+}
+
+.font-sansumi-demibold {
+  font-family: var(--font-sansumi-demibold), sans-serif;
+  font-weight: 600;
+}
+
+.font-sansumi-bold {
+  font-family: var(--font-sansumi-bold), sans-serif;
+  font-weight: 700;
+}
+
+.font-sansumi {
+  font-family: var(--font-sansumi-regular), var(--font-sansumi-demibold), var(--font-sansumi-bold),
+    var(--font-sansumi-ultralight), sans-serif;
+}
+
+/* RTL Support */
+[dir="rtl"] {
+  font-family: var(--font-cairo), sans-serif;
+}
+
+[dir="ltr"] {
+  font-family: var(--font-inter), sans-serif;
+}
+
+/* Parallax effect */
+.parallax-slow {
+  transform: translateY(calc(var(--scroll-y) * 0.5px));
+}
+
+/* Text stroke utility - Updated for better visibility */
+.text-stroke {
+  -webkit-text-stroke: 2px var(--vl-blue);
+  text-stroke: 2px var(--vl-blue);
+  paint-order: stroke fill;
+}
+
+.text-stroke-blue {
+  -webkit-text-stroke: 2px var(--vl-blue);
+  text-stroke: 2px var(--vl-blue);
+  paint-order: stroke fill;
+  text-shadow: 0 0 4px rgba(21, 66, 112, 0.3);
+}
+
+/* Enhanced text stroke for price display */
+.text-stroke-price {
+  -webkit-text-stroke: 1.5px var(--vl-blue);
+  text-stroke: 1.5px var(--vl-blue);
+  paint-order: stroke fill;
+  text-shadow: 0 2px 4px rgba(21, 66, 112, 0.2);
+  font-weight: 700;
+}
+
+/* Navigation Active State - Modern Yellow Glow Effect */
+.nav-active {
+  color: var(--vl-yellow) !important;
+  text-shadow: 0 0 8px rgba(251, 191, 36, 0.6), 0 0 16px rgba(251, 191, 36, 0.4), 0 0 24px rgba(251, 191, 36, 0.2);
+  font-weight: 600;
+  position: relative;
+  transition: all 0.3s ease-in-out;
+}
+
+.nav-active::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--vl-yellow), transparent);
+  border-radius: 1px;
+  opacity: 0.8;
+  animation: glow-pulse 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow-pulse {
+  0% {
+    box-shadow: 0 0 4px rgba(251, 191, 36, 0.4);
+  }
+  100% {
+    box-shadow: 0 0 8px rgba(251, 191, 36, 0.6);
+  }
+}
+
+/* Enhanced hover effect for non-active nav items */
+.nav-item {
+  position: relative;
+  transition: all 0.3s ease-in-out;
+}
+
+.nav-item:hover:not(.nav-active) {
+  color: var(--vl-yellow);
+  text-shadow: 0 0 4px rgba(251, 191, 36, 0.3);
+}
+
+.nav-item:hover:not(.nav-active)::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0%;
+  height: 1px;
+  background: var(--vl-yellow);
+  transition: width 0.3s ease-in-out;
+  animation: expand-line 0.3s ease-in-out forwards;
+}
+
+@keyframes expand-line {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+/* Mobile navigation active state */
+.nav-mobile-active {
+  color: var(--vl-yellow) !important;
+  text-shadow: 0 0 6px rgba(251, 191, 36, 0.5), 0 0 12px rgba(251, 191, 36, 0.3);
+  font-weight: 600;
+  background: rgba(251, 191, 36, 0.1);
+  border-radius: 8px;
+  padding: 8px 12px;
+  margin: 0 -12px;
+}
+
+/* Animations */
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-float-delayed {
+  animation: float 6s ease-in-out infinite;
+  animation-delay: 2s;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--vl-blue);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--vl-blue-dark);
+}
+
+/* Dashboard specific styles - TARGETED BLACK TEXT FOR DASHBOARD ONLY */
+.dashboard-container {
+  min-height: 100vh;
+  background-color: #f8fafc;
+}
+
+.dashboard-sidebar {
+  background-color: #ffffff;
+  border-right: 1px solid #e2e8f0;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+}
+
+.dashboard-main {
+  background-color: #f8fafc;
+  min-height: calc(100vh - 4rem);
+}
+
+.dashboard-card {
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  transition: box-shadow 0.15s ease-in-out;
+}
+
+.dashboard-card:hover {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+/* DASHBOARD-ONLY TEXT COLOR FIXES - TARGETED SELECTORS */
+/* Only target elements specifically within dashboard containers */
+.dashboard-main h1,
+.dashboard-main h2,
+.dashboard-main h3,
+.dashboard-main h4,
+.dashboard-main h5,
+.dashboard-main h6,
+.dashboard-card h1,
+.dashboard-card h2,
+.dashboard-card h3,
+.dashboard-card h4,
+.dashboard-card h5,
+.dashboard-card h6,
+.dashboard-container h1,
+.dashboard-container h2,
+.dashboard-container h3,
+.dashboard-container h4,
+.dashboard-container h5,
+.dashboard-container h6 {
+  color: #000000 !important;
+  font-weight: 600 !important;
+  -webkit-font-smoothing: antialiased !important;
+  -moz-osx-font-smoothing: grayscale !important;
+}
+
+.dashboard-main p,
+.dashboard-main span:not(.text-vl-blue):not(.text-vl-yellow):not(.text-white),
+.dashboard-main div:not(.text-vl-blue):not(.text-vl-yellow):not(.text-white),
+.dashboard-main td,
+.dashboard-main th,
+.dashboard-main label,
+.dashboard-card p,
+.dashboard-card span:not(.text-vl-blue):not(.text-vl-yellow):not(.text-white),
+.dashboard-card div:not(.text-vl-blue):not(.text-vl-yellow):not(.text-white),
+.dashboard-card td,
+.dashboard-card th,
+.dashboard-card label,
+.dashboard-container p,
+.dashboard-container span:not(.text-vl-blue):not(.text-vl-yellow):not(.text-white),
+.dashboard-container div:not(.text-vl-blue):not(.text-vl-yellow):not(.text-white),
+.dashboard-container td,
+.dashboard-container th,
+.dashboard-container label {
+  color: #000000 !important;
+  -webkit-font-smoothing: antialiased !important;
+  -moz-osx-font-smoothing: grayscale !important;
+}
+
+/* Dashboard-specific table fixes */
+.dashboard-main table,
+.dashboard-main table *,
+.dashboard-card table,
+.dashboard-card table *,
+.dashboard-container table,
+.dashboard-container table * {
+  color: #000000 !important;
+  background-color: transparent !important;
+}
+
+/* Dashboard-specific form elements */
+.dashboard-main input,
+.dashboard-main textarea,
+.dashboard-main select,
+.dashboard-card input,
+.dashboard-card textarea,
+.dashboard-card select,
+.dashboard-container input,
+.dashboard-container textarea,
+.dashboard-container select {
+  color: #000000 !important;
+  background-color: #ffffff !important;
+  border: 1px solid #d1d5db !important;
+}
+
+/* Dashboard-specific button text (excluding colored buttons) */
+.dashboard-main button:not(.bg-vl-blue):not(.bg-vl-yellow):not(.text-white),
+.dashboard-card button:not(.bg-vl-blue):not(.bg-vl-yellow):not(.text-white),
+.dashboard-container button:not(.bg-vl-blue):not(.bg-vl-yellow):not(.text-white) {
+  color: #000000 !important;
+}
+
+/* COMPREHENSIVE DROPDOWN FIXES FOR DEPLOYMENT - MAXIMUM SPECIFICITY */
+/* Radix UI Select Components - Force white backgrounds */
+[data-radix-select-content],
+[data-radix-select-content] *,
+.radix-select-content,
+.radix-select-content *,
+[role="listbox"],
+[role="listbox"] *,
+[data-radix-popper-content-wrapper],
+[data-radix-popper-content-wrapper] * {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+  border: 1px solid #d1d5db !important;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05) !important;
+  z-index: 99999 !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+[data-radix-select-item],
+[data-radix-select-item] *,
+.radix-select-item,
+.radix-select-item *,
+[role="option"],
+[role="option"] * {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+  padding: 8px 12px !important;
+  cursor: pointer !important;
+  border: none !important;
+}
+
+[data-radix-select-item]:hover,
+[data-radix-select-item][data-highlighted],
+.radix-select-item:hover,
+[role="option"]:hover,
+[role="option"][data-highlighted] {
+  background-color: #f3f4f6 !important;
+  color: #000000 !important;
+}
+
+[data-radix-select-item][data-state="checked"],
+.radix-select-item[data-state="checked"],
+[role="option"][aria-selected="true"] {
+  background-color: var(--vl-blue) !important;
+  color: #ffffff !important;
+}
+
+/* Search Bar Dropdown Fixes - Maximum Specificity */
+.search-dropdown,
+.search-dropdown *,
+.location-dropdown,
+.location-dropdown *,
+.hero-search-dropdown,
+.hero-search-dropdown *,
+div[class*="dropdown"],
+div[class*="dropdown"] * {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+  border: 1px solid #d1d5db !important;
+  border-radius: 12px !important;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04) !important;
+  z-index: 99999 !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+.search-dropdown-item,
+.search-dropdown-item *,
+.location-dropdown-item,
+.location-dropdown-item *,
+div[class*="dropdown-item"],
+div[class*="dropdown-item"] * {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+  padding: 12px 16px !important;
+  border-bottom: 1px solid #f3f4f6 !important;
+  transition: all 0.2s ease-in-out !important;
+}
+
+.search-dropdown-item:hover,
+.location-dropdown-item:hover,
+div[class*="dropdown-item"]:hover {
+  background-color: #f8fafc !important;
+  color: #000000 !important;
+}
+
+/* Hero Section Search Bar Specific Fixes - Ultra High Specificity */
+.hero-search-select [data-radix-select-content],
+.hero-search-select [data-radix-select-content] *,
+section .hero-search-select [data-radix-select-content],
+section .hero-search-select [data-radix-select-content] * {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+  border: 1px solid #e5e7eb !important;
+  border-radius: 8px !important;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1) !important;
+  z-index: 99999 !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+.hero-search-select [data-radix-select-item],
+.hero-search-select [data-radix-select-item] *,
+section .hero-search-select [data-radix-select-item],
+section .hero-search-select [data-radix-select-item] * {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+  padding: 10px 14px !important;
+}
+
+.hero-search-select [data-radix-select-item]:hover,
+section .hero-search-select [data-radix-select-item]:hover {
+  background-color: #f9fafb !important;
+  color: #000000 !important;
+}
+
+.hero-search-select [data-radix-select-item][data-highlighted],
+section .hero-search-select [data-radix-select-item][data-highlighted] {
+  background-color: var(--vl-yellow) !important;
+  color: var(--vl-blue) !important;
+}
+
+/* Property Filters Dropdown Fixes - Ultra High Specificity */
+.property-filters [data-radix-select-content],
+.property-filters [data-radix-select-content] *,
+div.property-filters [data-radix-select-content],
+div.property-filters [data-radix-select-content] * {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+  border: 1px solid #d1d5db !important;
+  border-radius: 8px !important;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1) !important;
+  z-index: 99999 !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+.property-filters [data-radix-select-item],
+.property-filters [data-radix-select-item] *,
+div.property-filters [data-radix-select-item],
+div.property-filters [data-radix-select-item] * {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+  padding: 8px 12px !important;
+}
+
+.property-filters [data-radix-select-item]:hover,
+div.property-filters [data-radix-select-item]:hover {
+  background-color: #f3f4f6 !important;
+  color: #000000 !important;
+}
+
+/* Dialog and Modal Styling - FIXED DROPDOWN BACKGROUNDS */
+[data-radix-dialog-overlay] {
+  background-color: rgba(0, 0, 0, 0.8) !important;
+  backdrop-filter: blur(4px);
+}
+
+[data-radix-dialog-content] {
+  background-color: #ffffff !important;
+  border: none !important;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25) !important;
+}
+
+.dialog-content {
+  background-color: #ffffff !important;
+  border: none !important;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25) !important;
+}
+
+/* Form Elements in Dialogs */
+.dialog-content input,
+.dialog-content textarea,
+.dialog-content select {
+  background-color: #ffffff !important;
+  border: 1px solid #d1d5db !important;
+  color: #000000 !important;
+}
+
+.dialog-content input:focus,
+.dialog-content textarea:focus,
+.dialog-content select:focus {
+  border-color: var(--vl-blue) !important;
+  box-shadow: 0 0 0 3px rgba(30, 58, 138, 0.1) !important;
+}
+
+/* Responsive dashboard styles */
+@media (max-width: 1024px) {
+  .dashboard-sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    z-index: 50;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .dashboard-sidebar.open {
+    transform: translateX(0);
+  }
+
+  .dashboard-main {
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .dashboard-stats-grid {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    gap: 1rem;
+  }
+
+  .dashboard-content-grid {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    gap: 1.5rem;
+  }
+
+  /* Mobile Dialog Adjustments */
+  [data-radix-dialog-content] {
+    width: 95vw !important;
+    max-width: 95vw !important;
+    max-height: 90vh !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .dashboard-header {
+    padding: 1rem;
+  }
+
+  .dashboard-main {
+    padding: 1rem;
+  }
+}
+
+/* Fix for potential z-index conflicts */
+.dashboard-dropdown {
+  z-index: 60;
+}
+
+.dashboard-modal {
+  z-index: 70;
+}
+
+/* Loading states */
+.dashboard-loading {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* Button Styling */
+.btn-primary {
+  background-color: var(--vl-blue) !important;
+  border-color: var(--vl-blue) !important;
+  color: white !important;
+}
+
+.btn-primary:hover {
+  background-color: var(--vl-blue-dark) !important;
+  border-color: var(--vl-blue-dark) !important;
+}
+
+.btn-secondary {
+  background-color: #ffffff !important;
+  border-color: #d1d5db !important;
+  color: var(--vl-blue) !important;
+}
+
+.btn-secondary:hover {
+  background-color: #f9fafb !important;
+  border-color: var(--vl-blue) !important;
+}
+
+/* Ensure all popups are opaque */
+.popup-container,
+.modal-container,
+.dialog-container {
+  background-color: #ffffff !important;
+  opacity: 1 !important;
+}
+
+/* Accessibility-focused text classes */
+.text-accessible-primary {
+  color: var(--vl-blue);
+  font-weight: 500;
+}
+
+.text-accessible-secondary {
+  color: var(--vl-blue-muted);
+  font-weight: 400;
+}
+
+.text-accessible-muted {
+  color: #6b7280; /* Gray-500 - 4.6:1 contrast ratio */
+  font-weight: 400;
+}
+
+/* Focus indicators for accessibility */
+.focus-visible:focus {
+  outline: 2px solid var(--vl-blue);
+  outline-offset: 2px;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  :root {
+    --vl-blue: #000080;
+    --vl-blue-light: #000080;
+    --vl-blue-dark: #000080;
+    --vl-blue-muted: #000000;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .animate-float,
+  .animate-float-delayed {
+    animation: none;
+  }
+
+  .transition-all,
+  .transition-colors,
+  .transition-transform {
+    transition: none;
+  }
+
+  .nav-active::after {
+    animation: none;
+  }
+
+  @keyframes glow-pulse {
+    0%,
+    100% {
+      box-shadow: 0 0 6px rgba(251, 191, 36, 0.5);
+    }
+  }
+}
