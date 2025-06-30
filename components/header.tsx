@@ -209,46 +209,46 @@ export default function Header() {
           </div>
 
           {/* Mobile Menu */}
-          {isMenuOpen && (
-            <div className="lg:hidden absolute top-full left-0 right-0 bg-blue shadow-lg border-t rounded-b-2xl z-[110]">
-              <nav className="flex flex-col p-4 space-y-4">
-                {navItems.map((item) => (
-                  <Link
-                    key={item.key}
-                    href={item.path}
-                    className={`font-medium py-2 transition-colors ${
-                      isActiveNavItem(item.path) ? "nav-mobile-active" : "text-vl-blue hover:text-vl-yellow"
-                    }`}
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    {t(`nav.${item.key}`)}
-                  </Link>
-                ))}
+         {isMenuOpen && (
+  <div className="lg:hidden absolute top-full left-0 right-0 mobile-menu-container shadow-lg border-t rounded-b-2xl z-[110]"> {/* Added mobile-menu-container */}
+    <nav className="flex flex-col p-4 space-y-4">
+      {navItems.map((item) => (
+        <Link
+          key={item.key}
+          href={item.path}
+          className={`font-medium py-2 transition-colors ${
+            isActiveNavItem(item.path) ? "nav-mobile-active" : "text-vl-blue hover:text-vl-yellow"
+          }`}
+          onClick={() => setIsMenuOpen(false)}
+        >
+          {t(`nav.${item.key}`)}
+        </Link>
+      ))}
 
-                <div className="flex items-center justify-center pt-4 border-t">
-                  <DropdownMenu>
-                    <DropdownMenuTrigger asChild>
-                      <Button variant="ghost" size="sm" className="text-vl-blue">
-                        <Globe className="h-4 w-4 mr-1" />
-                        {currentLanguage?.flag} {currentLanguage?.code.toUpperCase()}
-                      </Button>
-                    </DropdownMenuTrigger>
-                    <DropdownMenuContent className="z-[150]">
-                      {languages.map((lang) => (
-                        <DropdownMenuItem
-                          key={lang.code}
-                          onClick={() => setLanguage(lang.code)}
-                          className={language === lang.code ? "bg-vl-yellow/20" : ""}
-                        >
-                          {lang.flag} {lang.name}
-                        </DropdownMenuItem>
-                      ))}
-                    </DropdownMenuContent>
-                  </DropdownMenu>
-                </div>
-              </nav>
-            </div>
-          )}
+      <div className="flex items-center justify-center pt-4 border-t">
+        <DropdownMenu>
+          <DropdownMenuTrigger asChild>
+            <Button variant="ghost" size="sm" className="text-vl-blue">
+              <Globe className="h-4 w-4 mr-1" />
+              {currentLanguage?.flag} {currentLanguage?.code.toUpperCase()}
+            </Button>
+          </DropdownMenuTrigger>
+          <DropdownMenuContent className="mobile-dropdown-content z-[150]"> {/* Added mobile-dropdown-content */}
+            {languages.map((lang) => (
+              <DropdownMenuItem
+                key={lang.code}
+                onClick={() => setLanguage(lang.code)}
+                className={language === lang.code ? "bg-vl-yellow/20" : ""}
+              >
+                {lang.flag} {lang.name}
+              </DropdownMenuItem>
+            ))}
+          </DropdownMenuContent>
+        </DropdownMenu>
+      </div>
+    </nav>
+  </div>
+)}
         </div>
       </header>
     </>

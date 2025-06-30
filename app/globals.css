@@ -27,8 +27,7 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: url("/background-pattern.png") center center / cover no-repeat
-    fixed;
+  background: url("/background-pattern.png") center center / cover no-repeat fixed;
   min-height: 100vh;
   position: relative;
 }
@@ -631,7 +630,6 @@ div[class*="dropdown"] /* General dropdowns */ {
   z-index: 99999 !important;
   padding: 8px !important;
   animation: dropdown-appear 0.2s ease-out !important;
-  /* Ensure children inherit transparent background if not explicitly set */
 }
 
 /* Ensure direct children of dropdown content are transparent to prevent layering */
@@ -764,12 +762,44 @@ div[class*="dropdown-item"]:hover {
     brightness(115%);
 }
 
-/* Property Filters Dropdown Fixes - Dark Theme (consolidated with general dropdowns) */
-.property-filters [data-radix-select-content],
-.property-filters [data-radix-select-content] * {
-  /* These will now inherit from the unified dropdown styles above, 
-     preventing redundant declarations and potential conflicts. */
+/* Mobile Menu Container Specific Styling */
+.mobile-menu-container {
+  background-color: var(--vl-blue) !important; /* Ensure it uses your brand blue */
+  backdrop-filter: blur(10px) !important; /* Add some blur to its background */
 }
+
+/* Override dropdown content specifically for mobile menu */
+.mobile-dropdown-content {
+  /* This ensures the mobile dropdown content has a solid background 
+     and less transparency than the general glassmorphic dropdowns */
+  background: var(--vl-blue-dark) !important; /* Use a darker blue for contrast */
+  backdrop-filter: blur(10px) saturate(150%) !important;
+  border: 1px solid rgba(255, 211, 150, 0.6) !important; /* Slightly stronger border */
+  box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.6),
+    inset 0 1px 0 rgba(255, 211, 150, 0.3) !important; /* More prominent shadow */
+  padding: 4px !important; /* Slightly less padding to make it feel denser */
+  border-radius: 8px !important; /* Match mobile styling for smaller elements */
+}
+
+/* Ensure items within the mobile dropdown content are transparent, 
+   allowing the new solid background of .mobile-dropdown-content to show */
+.mobile-dropdown-content > [data-radix-select-item],
+.mobile-dropdown-content > .radix-select-item,
+.mobile-dropdown-content > [role="option"] {
+  background: transparent !important; /* Items themselves remain transparent */
+  padding: 8px 12px !important; /* Slightly less padding for mobile */
+}
+
+.mobile-dropdown-content > [data-radix-select-item]:hover,
+.mobile-dropdown-content > [data-radix-select-item][data-highlighted],
+.mobile-dropdown-content > .radix-select-item:hover,
+.mobile-dropdown-content > .radix-select-item[data-highlighted],
+.mobile-dropdown-content > [role="option"]:hover,
+.mobile-dropdown-content > [role="option"][data-highlighted] {
+  background: rgba(255, 211, 150, 0.1) !important; /* Slightly less opaque hover for better contrast */
+  transform: none !important; /* Prevent horizontal shift on mobile dropdown items if not desired */
+}
+
 
 /* Dialog and Modal Styling - Enhanced Glass Morphism */
 [data-radix-dialog-overlay] {
@@ -857,7 +887,7 @@ div[class*="dropdown-item"]:hover {
     border-radius: 20px !important;
   }
 
-  /* Mobile Dropdown Adjustments */
+  /* Mobile Dropdown Adjustments (General, but .mobile-dropdown-content overrides this if applied) */
   [data-radix-select-content],
   .search-dropdown,
   .location-dropdown {
