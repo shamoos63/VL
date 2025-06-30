@@ -67,12 +67,12 @@ export default function AboutPage() {
   }, [])
 
   return (
-    <main className="min-h-screen bg-vl-blue">
+    <main className="min-h-screen bg-transparent">
       <Header />
 
       {/* Hero Section */}
       <section className="relative pt-24 pb-20 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-vl-blue via-vl-blue-dark to-vl-blue opacity-95"></div>
+        <div className="absolute inset-0 bg-transparent opacity-95"></div>
         <div className="absolute inset-0">
           <Image src="/hero-images/about-hero.png" alt="Victoria Lancaster" fill className="object-cover" priority />
         </div>
@@ -87,7 +87,7 @@ export default function AboutPage() {
       </section>
 
       {/* Quote Section */}
-      <section className="py-16 bg-vl-blue">
+      <section className="py-16 bg-transparent">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <div className="mb-6">
@@ -107,7 +107,7 @@ export default function AboutPage() {
       </section>
 
       {/* About Content Section with Alternating Photos and Scroll Animations */}
-      <section className="py-20 bg-vl-blue">
+      <section className="py-20 bg-transparent">
         <div className="container mx-auto px-4">
           {/* First Section - Photo Left, Text Right */}
           <div
@@ -232,14 +232,14 @@ export default function AboutPage() {
       </section>
 
       {/* Academic & Professional Section */}
-      <section className="py-20 bg-vl-blue">
+      <section className="py-20 bg-transparent">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-4xl font-bold text-vl-yellow mb-8 font-sansumi text-center">
               Academic & Professional Credibility
             </h2>
 
-            <div className="bg-vl-blue border border-vl-yellow p-8 rounded-2xl mb-8 shadow-lg">
+            <div className="bg-transparent border border-vl-yellow p-8 rounded-2xl mb-8 shadow-lg">
               <div className="flex items-start mb-6">
                 <GraduationCap className="h-8 w-8 text-vl-yellow mr-4 mt-1" />
                 <div>
@@ -273,7 +273,7 @@ export default function AboutPage() {
       </section>
 
       {/* Clients & Values Section */}
-      <section className="py-20 bg-gradient-to-br from-vl-blue to-vl-blue-dark text-white">
+      <section className="py-20 text-white bg-transparent">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-4xl font-bold mb-8 font-sansumi text-vl-yellow">Professional Excellence</h2>
@@ -282,21 +282,21 @@ export default function AboutPage() {
               meticulous attention to detail and unwavering commitment to every client relationship.
             </p>
 
-            <div className="mt-12 p-6 bg-white/10 backdrop-blur-sm rounded-2xl border border-vl-yellow">
+            <div className="mt-12 p-6 bg-transparent backdrop-blur-sm rounded-2xl border border-vl-yellow">
               <div className="mb-4">
                 <Image src="/quotation_marks.svg" alt="Quote" width={40} height={40} className="mx-auto" />
               </div>
               <p className="text-xl italic mb-4 text-white">
                 Great investments aren't rushed, they're chosen with purpose, timing, and clarity.
               </p>
-              <p className="font-semibold text-vl-yellow">— Victoria Lancaster</p>
+              <p className="font-semibold text-vl-yellow">Victoria Lancaster</p>
             </div>
           </div>
         </div>
       </section>
 
       {/* Areas of Expertise */}
-      <section className="py-20 bg-vl-blue">
+      <section className="py-20 bg-transparent">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-4xl font-bold text-vl-yellow mb-4 font-sansumi text-center">Areas of Expertise</h2>
@@ -333,7 +333,7 @@ export default function AboutPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-vl-blue">
+      <section className="py-20 bg-transparnet">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-4xl font-bold text-vl-yellow mb-6 font-sansumi">Ready to take the next step?</h2>
@@ -341,15 +341,12 @@ export default function AboutPage() {
               Let's start a conversation built on trust, guided by insight, and tailored to your goals. Share your
               details below — Victoria will personally review how she can support your next move.
             </p>
-            <div className="flex flex-wrap justify-center gap-4">
-              <Button size="lg" className="bg-vl-yellow text-vl-blue hover:bg-vl-yellow-dark font-semibold px-8 py-4">
-                <Calendar className="mr-2 h-5 w-5" />
-                Book Free Consultation
-              </Button>
+            <div className="flex flex-wrap justify-center gap-2">
+            
               <Button
                 size="lg"
                 variant="outline"
-                className="border-vl-yellow text-vl-yellow hover:bg-vl-yellow hover:text-vl-blue px-8 py-4"
+                className="bg-transparent border-2 border-vl-yellow text-white  px-8 py-4 hover::border-black text-black"
               >
                 <Mail className="mr-2 h-5 w-5" />
                 Send Message

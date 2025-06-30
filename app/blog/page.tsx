@@ -53,49 +53,49 @@ export default function BlogPage() {
       />
 
       {/* Description Section */}
-      <section className="py-12 bg-white">
+      <section className="py-12 ">
         <div className="container mx-auto px-4 max-w-4xl">
-          <p className="text-lg text-gray-700 mb-6">
+          <p className="text-lg text-white mb-6 text-center">
             Victoria shares expert commentary, investor trends, and strategic perspectives on the Dubai and UK real
             estate markets.
           </p>
-          <p className="text-lg text-gray-700 mb-6">
+          <p className="text-lg text-white mb-6 text-center">
             Whether you're exploring your first investment or managing a growing portfolio, these articles are designed
             to help you think clearly, act decisively, and stay ahead of the curve.
           </p>
-          <p className="text-lg text-gray-700 mb-6">You'll find:</p>
+          <p className="text-lg text-white mb-6 text-center">You'll find:</p>
           <ul class="flex flex-col gap-6 md:flex-row md:gap-8">
 
-    <li class="flex flex-1 items-center justify-center rounded-xl bg-white p-6 text-center shadow-md transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+    <li class="flex flex-1 items-center justify-center rounded-xl glass p-6 text-center shadow-md transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
       <h3 class="text-lg font-medium text-gray-800">
         Market updates & forecasts
       </h3>
     </li>
 
-    <li class="flex flex-1 items-center justify-center rounded-xl bg-white p-6 text-center shadow-md transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+    <li class="flex flex-1 items-center justify-center rounded-xl glass p-6 text-center shadow-md transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
       <h3 class="text-lg font-medium text-gray-800">
         Investor tips & property strategies
       </h3>
     </li>
 
-    <li class="flex flex-1 items-center justify-center rounded-xl bg-white p-6 text-center shadow-md transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+    <li class="flex flex-1 items-center justify-center rounded-xl glass p-6 text-center shadow-md transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
       <h3 class="text-lg font-medium text-gray-800">
         Area deep-dives & opportunity spotlights
       </h3>
     </li>
 
   </ul>
-          <p className="text-lg text-gray-700 font-medium">Read the latest posts, and move forward with confidence.</p>
+          <p className="text-lg text-white text-center font-medium pt-5">Read the latest posts, and move forward with confidence.</p>
         </div>
       </section>
 
-      <div className="pt-8 bg-white">
+      <div className="pt-8">
         <div className="container mx-auto px-4 py-16">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {blogPosts.map((post, index) => (
               <Card
                 key={index}
-                className="overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-2"
+                className="overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-2 glass"
               >
                 <div className="relative h-48">
                   <Image src={post.image || "/placeholder.svg"} alt={post.title} fill className="object-cover" />
@@ -121,7 +121,7 @@ export default function BlogPage() {
                     </div>
                   </div>
 
-                  <Button className="w-full bg-vl-blue hover:bg-vl-blue-dark text-white">
+                  <Button className="w-full bg-transparent border-2 border-vl-yellow hover:border-black text-white">
                     Read More
                     <ArrowRight className="h-4 w-4 ml-2" />
                   </Button>

@@ -166,7 +166,7 @@ export default function EnhancedPropertyCard({
     <TooltipProvider>
       <Card
         className={cn(
-          "group overflow-hidden hover:shadow-2xl transition-all duration-500 hover:-translate-y-1 border-0 shadow-lg bg-white",
+          "group overflow-hidden hover:shadow-2xl transition-all duration-500 hover:-translate-y-1 border-0 shadow-lg glass",
           className,
         )}
       >
