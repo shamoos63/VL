@@ -16,9 +16,9 @@ export default function PropertyListings() {
   }
 
   return (
-    <div className="space-y-6 bg-white" dir={isRTL ? "rtl" : "ltr"}>
+    <div className="space-y-6 bg-transparent" dir={isRTL ? "rtl" : "ltr"}>
       {/* Results Header */}
-      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 bg-white rounded-lg shadow-sm border border-gray-200 p-4">
+      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 bg-transparent rounded-lg shadow-sm border border-gray-200 p-4">
         <div className="flex items-center gap-3">
           <h3 className="text-lg font-semibold text-vl-blue">{t("properties.results.title") || "Search Results"}</h3>
           <Badge variant="secondary" className="bg-vl-blue/10 text-vl-blue border-vl-blue/20">
@@ -26,7 +26,7 @@ export default function PropertyListings() {
           </Badge>
         </div>
 
-        <div className="text-sm text-gray-500 bg-white">
+        <div className="text-sm text-gray-500 bg-transparent">
           {t("properties.showing") || "Showing"} {filteredProperties?.length || 0} {t("properties.of") || "of"}{" "}
           {filteredProperties?.length || 0} {t("properties.results") || "results"}
         </div>
@@ -34,7 +34,7 @@ export default function PropertyListings() {
 
       {/* Properties Grid or Empty State */}
       {!filteredProperties?.length ? (
-        <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-12">
+        <div className="bg-transpaent rounded-lg shadow-sm border border-gray-200 p-12">
           <div className="text-center max-w-md mx-auto">
             <div className="w-24 h-24 mx-auto mb-6 bg-gray-100 rounded-full flex items-center justify-center">
               <svg className="w-12 h-12 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -59,7 +59,7 @@ export default function PropertyListings() {
           </div>
         </div>
       ) : (
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 bg-white p-6 rounded-lg shadow-sm">
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 bg-transparent p-6 rounded-lg shadow-sm">
           {filteredProperties.map((property) => (
             <div key={property.id} className="transform transition-all duration-200 hover:scale-[1.02]">
               <EnhancedPropertyCard
@@ -74,8 +74,8 @@ export default function PropertyListings() {
 
       {/* Load More Button (if needed for pagination) */}
       {filteredProperties?.length > 0 && (
-        <div className="text-center pt-8 bg-white">
-          <div className="text-sm text-gray-500 bg-white">
+        <div className="text-center pt-8 bg-transparent">
+          <div className="text-sm text-gray-500 bg-transparent">
             {t("properties.end.of.results") || "You've seen all available properties matching your criteria."}
           </div>
         </div>
