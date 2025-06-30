@@ -12,7 +12,7 @@ export default function HomePropertyListings() {
     <FilterProvider initialProperties={favoriteProperties}>
       <div className="mb-8 bg-white">
         <div className="text-center mb-6 bg-white">
-          <h2 className="text-3xl font-bold text-vl-blue mb-2">Featured Properties</h2>
+          <h2 className="text-3xl font-bold text-vl-blue mb-2"><br/>Featured Properties</h2>
           <p className="text-gray-600">Discover our handpicked selection of premium properties</p>
         </div>
         <PropertyListings showFilters={false} />

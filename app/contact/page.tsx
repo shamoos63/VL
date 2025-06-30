@@ -18,7 +18,7 @@ export default function ContactPage() {
         className="font-sansumi"
       />
 
-      <div className="pt-8 bg-white">
+      <div className="pt-8 glass">
         <div className="container mx-auto px-4 py-16">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Contact Form */}
@@ -68,7 +68,7 @@ export default function ContactPage() {
             </Card>
 
             {/* Contact Information */}
-            <div className="space-y-8">
+            <div className="space-y-8 glass">
               <Card className="p-6">
                 <h3 className="text-xl font-bold text-vl-blue dark:text-white mb-4">Contact Information</h3>
 

@@ -237,7 +237,7 @@ const translations = {
   "contact.hours.label": "Рабочие часы",
   "contact.hours.value": "Вс - Чт: 9:00 - 18:00",
   "contact.location": "Наше местоположение",
-  "contact.why.choose.title": "Почему выбрать В��кторию Ланкастер?",
+  "contact.why.choose.title": "Почем�� выбрать В��кторию Ланкастер?",
   "contact.why.choose.experience": "15+ лет опыта в сфере недвижимости Дубая",
   "contact.why.choose.transactions": "585+ успешных сделок с недвижимостью",
   "contact.why.choose.value": "1,7+ миллиарда дирхамов ОАЭ общей стоимости сделок",

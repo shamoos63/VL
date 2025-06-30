@@ -26,19 +26,19 @@ export default function EvaluationPage() {
          <div class="w-full">
   <ul class="flex flex-col gap-6 md:flex-row md:gap-8">
 
-    <li class="flex flex-1 items-center justify-center rounded-xl bg-white p-6 text-center shadow-md transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+    <li class="flex flex-1 items-center justify-center rounded-xl glass p-6 text-center shadow-md transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
       <h3 class="text-lg font-medium text-gray-800">
         Accurate market value
       </h3>
     </li>
 
-    <li class="flex flex-1 items-center justify-center rounded-xl bg-white p-6 text-center shadow-md transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+    <li class="flex flex-1 items-center justify-center rounded-xl glass p-6 text-center shadow-md transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
       <h3 class="text-lg font-medium text-gray-800">
         Investment and income potential
       </h3>
     </li>
 
-    <li class="flex flex-1 items-center justify-center rounded-xl bg-white p-6 text-center shadow-md transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+    <li class="flex flex-1 items-center justify-center rounded-xl glass p-6 text-center shadow-md transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
       <h3 class="text-lg font-medium text-gray-800">
         Selling strategy (if applicable)
       </h3>
@@ -52,20 +52,20 @@ export default function EvaluationPage() {
           </p>
         </div>
       </section>
-
+   <EvaluationClient />
       {/* Stats Section */}
-      <section className="py-12 bg-gray-50">
+      <section className="py-12">
         <div className="container mx-auto px-4">
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <div className="bg-white rounded-lg p-6 text-center shadow-md">
+            <div className="glass rounded-lg p-6 text-center shadow-md">
               <div className="text-3xl font-bold text-vl-blue">585+</div>
               <div className="text-sm text-gray-600">Properties Evaluated</div>
             </div>
-            <div className="bg-white rounded-lg p-6 text-center shadow-md">
+            <div className="glass rounded-lg p-6 text-center shadow-md">
               <div className="text-3xl font-bold text-vl-blue">AED 1.7B+</div>
               <div className="text-sm text-gray-600">Total Value Assessed</div>
             </div>
-            <div className="bg-white rounded-lg p-6 text-center shadow-md">
+            <div className="glass rounded-lg p-6 text-center shadow-md">
               <div className="text-3xl font-bold text-vl-blue">15+</div>
               <div className="text-sm text-gray-600">Years Experience</div>
             </div>
@@ -73,7 +73,7 @@ export default function EvaluationPage() {
         </div>
       </section>
 
-      <EvaluationClient />
+   
         <Footer />
     </main>
   )

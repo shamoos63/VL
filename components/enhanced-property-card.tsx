@@ -190,7 +190,7 @@ export default function EnhancedPropertyCard({
                   <Button
                     variant="secondary"
                     size="sm"
-                    className="absolute bottom-4 left-4 bg-white/90 text-vl-blue hover:bg-white backdrop-blur-sm border border-white/20 transition-all duration-200"
+                    className="absolute bottom-4 left-4 bg-transparent text-black hover:bg-white backdrop-blur-sm border border-white/20 transition-all duration-200"
                   >
                     <Camera className="h-4 w-4 mr-1" />
                     {propertyImages.length}
@@ -218,7 +218,7 @@ export default function EnhancedPropertyCard({
                                 target.src = `/placeholder.svg?height=600&width=800&text=${encodeURIComponent(property.title)}`
                               }}
                             />
-                            <div className="absolute bottom-4 right-4 bg-white/90 text-vl-blue text-sm px-3 py-1 rounded backdrop-blur-sm border border-white/20">
+                            <div className="absolute bottom-4 right-4 bg-transparent text-black text-sm px-3 py-1 rounded backdrop-blur-sm border border-white/20">
                               {index + 1} / {propertyImages.length}
                             </div>
                           </div>
@@ -237,7 +237,7 @@ export default function EnhancedPropertyCard({
               <Button
                 variant="secondary"
                 size="sm"
-                className="absolute bottom-4 right-16 bg-white/90 text-vl-blue hover:bg-white backdrop-blur-sm border border-white/20 transition-all duration-200"
+                className="absolute bottom-4 right-16 bg-transparent text-black hover:bg-white backdrop-blur-sm border border-transparent transition-all duration-200"
                 onClick={handleVideoTour}
               >
                 <Play className="h-4 w-4 mr-1" />
@@ -261,13 +261,13 @@ export default function EnhancedPropertyCard({
               {property.status || "Available"}
             </Badge>
             {property.featured && (
-              <Badge className="bg-vl-yellow text-vl-blue font-medium shadow-lg">
+              <Badge className="bg-vl-yellow text-black font-medium shadow-lg">
                 <Star className="h-3 w-3 mr-1" />
                 {t("property.featured") || "Featured"}
               </Badge>
             )}
             {property.yearBuilt && property.yearBuilt > new Date().getFullYear() - 2 && (
-              <Badge className="bg-emerald-500 text-white shadow-lg">{t("property.new") || "New"}</Badge>
+              <Badge className="bg-emerald-500 text-black shadow-lg">{t("property.new") || "New"}</Badge>
             )}
           </div>
 
@@ -278,14 +278,14 @@ export default function EnhancedPropertyCard({
                 <Button
                   variant="ghost"
                   size="sm"
-                  className="bg-white/90 hover:bg-white backdrop-blur-sm transition-all duration-200 border border-white/20"
+                  className="bg-transparent text-white hover:bg-white backdrop-blur-sm transition-all duration-200 border border-white/20"
                   onClick={handleShare}
                   disabled={isSharing}
                 >
                   {isSharing ? (
                     <div className="h-4 w-4 animate-spin rounded-full border-2 border-gray-300 border-t-vl-blue" />
                   ) : (
-                    <Share2 className="h-4 w-4 text-vl-blue" />
+                    <Share2 className="h-4 w-4 text-black" />
                   )}
                 </Button>
               </TooltipTrigger>
@@ -297,7 +297,7 @@ export default function EnhancedPropertyCard({
                 <Button
                   variant="ghost"
                   size="sm"
-                  className="bg-white/90 hover:bg-white backdrop-blur-sm transition-all duration-200 border border-white/20"
+                  className="bg-transparent text-black !important hover:bg-white backdrop-blur-sm transition-all duration-200 border border-white/20"
                   onClick={handleFavoriteToggle}
                   disabled={favoriteLoading}
                 >
@@ -323,7 +323,7 @@ export default function EnhancedPropertyCard({
 
           {/* View Count - Updated styling */}
           {property.viewCount && (
-            <div className="absolute bottom-4 right-4 bg-white/90 text-vl-blue text-xs px-2 py-1 rounded backdrop-blur-sm border border-white/20">
+            <div className="absolute bottom-4 right-4 bg-transparent text-black text-xs px-2 py-1 rounded backdrop-blur-sm border border-white/20">
               <Eye className="h-3 w-3 inline mr-1" />
               {property.viewCount.toLocaleString()}
             </div>
@@ -339,23 +339,22 @@ export default function EnhancedPropertyCard({
                 <MapPin className="h-4 w-4 mr-1 flex-shrink-0" />
                 <span className="text-sm">{property.location}</span>
               </div>
-              <div className="flex items-center gap-2 text-xs text-gray-500">
+              <div className="flex items-center gap-2 text-xs text-vl-black">
                 {property.type && (
-                  <Badge variant="outline" className="text-xs">
+                  <Badge className="text-xs">
                     {property.type}
                   </Badge>
                 )}
                 {property.yearBuilt && (
-                  <span className="flex items-center">
-                    <Calendar className="h-3 w-3 mr-1" />
+                  <span className="flex items-center text-white">
+                    <Calendar className="h-3 w-3 mr-1 text-white" />
                     {property.yearBuilt}
                   </span>
                 )}
               </div>
             </div>
             <div className="text-right">
-              <div className="text-2xl font-heading text-vl-blue mb-1 font-bold"
-  style={{ WebkitTextStroke: "1px yellow" }}>
+              <div className="text-2xl font-heading text-vl-blue mb-1 font-bold">
                 {formatPrice(property.price)}
               </div>
               {pricePerSqFt && <div className="text-xs text-gray-500">${pricePerSqFt}/sq ft</div>}
@@ -363,7 +362,7 @@ export default function EnhancedPropertyCard({
           </div>
 
           {/* Property Details */}
-          <div className="grid grid-cols-3 gap-4 mb-4 p-3 bg-gray-50 rounded-lg">
+          <div className="grid grid-cols-3 gap-4 mb-4 p-3 bg-transparent rounded-lg">
             <div className="text-center">
               <div className="flex items-center justify-center mb-1">
                 <Bed className="h-4 w-4 text-vl-blue" />
@@ -448,17 +447,16 @@ export default function EnhancedPropertyCard({
           )}
 
           {/* Action Buttons */}
-          <div className="flex gap-2">
+          <div className="flex gap-1">
             <Link href={`/properties/${property.id}`} className="flex-1">
-              <Button className="w-full bg-vl-blue hover:bg-vl-blue-light text-vl-yellow 
-                transition-colors group border-2 border-vl-yellow">
+              <Button className="w-auto  text-white bg-transparent hover:text-vl-yellow font-semibold px-12 py-4 text-lg  transition-all duration-300 hover:scale-105 border-2 border-vl-yellow hover:border-black">
                 <Eye className="h-4 w-4 mr-2 group-hover:scale-110 transition-transform" />
                 {t("property.view.details") || "View Details"}
                 <ExternalLink className="h-3 w-3 ml-2 opacity-0 group-hover:opacity-100 transition-opacity" />
               </Button>
             </Link>
             <Button
-              className="w-full bg-vl-blue hover:bg-vl-blue-light text-white transition-colors"
+              className="w-auto bg-vl-white border-2 border-black hover:border-white text-white"
               onClick={handleContactForm}
             >
               <MessageCircle className="h-4 w-4 mr-1" />

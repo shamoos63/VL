@@ -59,49 +59,77 @@ export default function AreasPage() {
           <p className="text-lg text-gray-700 mb-6">
             In this section, Victoria highlights key districts she works in, sharing her honest perspective on:
           </p>
-          <ul className="list-disc pl-6 mb-8 space-y-2 text-lg text-gray-700">
-            <li>Strengths & potential</li>
-            <li>Risks to consider</li>
-            <li>Who the area fits best</li>
-          </ul>
+       <ul class="flex flex-col gap-6 md:flex-row md:gap-8">
+
+    <li class="flex flex-1 items-center justify-center rounded-xl bg-white p-6 text-center shadow-md transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+      <h3 class="text-lg font-medium text-gray-800">
+        Strengths & potential
+      </h3>
+    </li>
+
+    <li class="flex flex-1 items-center justify-center rounded-xl bg-white p-6 text-center shadow-md transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+      <h3 class="text-lg font-medium text-gray-800">
+        Risks to consider
+      </h3>
+    </li>
+
+    <li class="flex flex-1 items-center justify-center rounded-xl bg-white p-6 text-center shadow-md transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+      <h3 class="text-lg font-medium text-gray-800">
+        Who the area fits best
+      </h3>
+    </li>
+
+  </ul>
           <p className="text-lg text-gray-700 font-medium">
             Whether you're focused on yield, growth, or lifestyle, this will help you make the right move.
           </p>
         </div>
       </section>
 
-      <div className="pt-8 bg-white">
-        <div className="container mx-auto px-4 py-16">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {areas.map((area, index) => (
-              <Card key={index} className="overflow-hidden hover:shadow-xl transition-all duration-300">
-                <div className="relative h-64">
-                  <Image src={area.image || "/placeholder.svg"} alt={area.name} fill className="object-cover" />
-                </div>
-                <CardContent className="p-6">
-                  <h3 className="text-2xl font-bold text-vl-blue dark:text-white mb-3">{area.name}</h3>
-                  <p className="text-gray-600 dark:text-gray-300 mb-4">{area.description}</p>
-
-                  <div className="grid grid-cols-2 gap-4 text-sm">
-                    <div className="flex items-center">
-                      <Home className="h-4 w-4 mr-2 text-vl-yellow" />
-                      <span>{area.properties}</span>
-                    </div>
-                    <div className="flex items-center">
-                      <TrendingUp className="h-4 w-4 mr-2 text-green-500" />
-                      <span>{area.growth}</span>
-                    </div>
-                    <div className="flex items-center col-span-2">
-                      <MapPin className="h-4 w-4 mr-2 text-vl-blue" />
-                      <span className="font-semibold">{area.avgPrice}</span>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
+     <div className="p-6 bg-transparent">
+  <div className="container mx-auto px-4 py-16">
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+      {areas.map((area, index) => (
+        <Card
+          key={index}
+          className="glass bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300"
+        >
+          <div className="relative h-64">
+            <Image
+              src={area.image || "/placeholder.svg"}
+              alt={area.name}
+              fill
+              className="object-cover"
+            />
           </div>
-        </div>
-      </div>
+          <CardContent className="p-6">
+            <h3 className="text-2xl font-bold text-vl-blue dark:text-white mb-3">
+              {area.name}
+            </h3>
+            <p className="text-gray-600 dark:text-gray-300 mb-4">
+              {area.description}
+            </p>
+
+            <div className="grid grid-cols-2 gap-4 text-sm text-gray-100">
+              <div className="flex items-center">
+                <Home className="h-4 w-4 mr-2 text-vl-yellow" />
+                <span>{area.properties}</span>
+              </div>
+              <div className="flex items-center">
+                <TrendingUp className="h-4 w-4 mr-2 text-green-400" />
+                <span>{area.growth}</span>
+              </div>
+              <div className="flex items-center col-span-2">
+                <MapPin className="h-4 w-4 mr-2 text-vl-blue" />
+                <span className="font-semibold">{area.avgPrice}</span>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+      ))}
+    </div>
+  </div>
+</div>
       <Footer />
     </main>
   )

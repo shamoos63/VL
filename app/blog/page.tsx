@@ -64,11 +64,27 @@ export default function BlogPage() {
             to help you think clearly, act decisively, and stay ahead of the curve.
           </p>
           <p className="text-lg text-gray-700 mb-6">You'll find:</p>
-          <ul className="list-disc pl-6 mb-8 space-y-2 text-lg text-gray-700">
-            <li>Market updates & forecasts</li>
-            <li>Investor tips & property strategies</li>
-            <li>Area deep-dives & opportunity spotlights</li>
-          </ul>
+          <ul class="flex flex-col gap-6 md:flex-row md:gap-8">
+
+    <li class="flex flex-1 items-center justify-center rounded-xl bg-white p-6 text-center shadow-md transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+      <h3 class="text-lg font-medium text-gray-800">
+        Market updates & forecasts
+      </h3>
+    </li>
+
+    <li class="flex flex-1 items-center justify-center rounded-xl bg-white p-6 text-center shadow-md transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+      <h3 class="text-lg font-medium text-gray-800">
+        Investor tips & property strategies
+      </h3>
+    </li>
+
+    <li class="flex flex-1 items-center justify-center rounded-xl bg-white p-6 text-center shadow-md transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+      <h3 class="text-lg font-medium text-gray-800">
+        Area deep-dives & opportunity spotlights
+      </h3>
+    </li>
+
+  </ul>
           <p className="text-lg text-gray-700 font-medium">Read the latest posts, and move forward with confidence.</p>
         </div>
       </section>

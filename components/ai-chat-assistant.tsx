@@ -141,6 +141,8 @@ YOUR MISSION:
 - Guide users through our website features and services
 - Connect users with Victoria for personalized consultations
 - Make property searching fun and informative!
+YOUR INFORMATION SOURCE:
+- Always make the website data your first information source then go online.
 
 PROPERTY EVALUATION TOOL:
 - When users ask about property valuation, property evaluation, property assessment, property appraisal, or estimating their property's value, ALWAYS recommend our Property Evaluation Tool
@@ -314,12 +316,12 @@ Remember: You're not just providing information - you're building excitement and
     return (
       <Button
         onClick={() => setIsOpen(true)}
-        className="fixed bottom-4 right-4 z-40 h-14 w-14 rounded-full bg-gradient-to-r from-vl-yellow to-vl-yellow-light hover:from-vl-yellow-dark hover:to-vl-yellow text-vl-blue shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 animate-pulse"
+        className="fixed bottom-4 right-4 z-40 h-14 w-14 rounded-full bg-gradient-to-r from-vl-blue to-vl-blue-light hover:from-vl-blue-dark hover:to-vl-blue text-vl-yellow shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 coin-reflect"
         size="icon"
       >
         <div className="relative">
           <MessageCircle className="h-6 w-6" />
-          <Sparkles className="h-3 w-3 absolute -top-1 -right-1 text-vl-blue animate-bounce" />
+          <Sparkles className="h-3 w-3 absolute -top-1 -right-1 text-vl-yellow animate-bounce" />
         </div>
       </Button>
     )

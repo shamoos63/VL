@@ -106,7 +106,7 @@ export default function Footer() {
                 placeholder={t("footer.email.placeholder")}
                 className="bg-white/10 border-white/20 text-white placeholder:text-gray-400"
               />
-              <Button className="bg-vl-blue hover:bg-vl-blue-light text-vl-yellow font-semibold border-2 border-vl-yellow">
+              <Button className="w-full md:w-auto text-white bg-transparent hover:text-vl-yellow font-semibold px-12 py-4 text-lg  transition-all duration-300 hover:scale-105 border-2 border-vl-yellow hover:border-black">
                 {t("footer.subscribe")}
               </Button>
             </div>

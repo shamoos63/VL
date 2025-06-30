@@ -44,9 +44,9 @@ export default function PropertyEvaluationTool() {
 
   if (isSubmitted) {
     return (
-      <div className="container mx-auto px-4 pb-20 bg-white min-h-screen" dir={isRTL ? "rtl" : "ltr"}>
+      <div className="container mx-auto px-4 pb-20 glass min-h-screen" dir={isRTL ? "rtl" : "ltr"}>
         <div className="max-w-2xl mx-auto text-center pt-8">
-          <Card className="p-8 bg-white border-0 shadow-2xl">
+          <Card className="p-8 glass border-0 shadow-2xl">
             <CardContent className="p-0">
               <CheckCircle className="h-16 w-16 text-green-500 mx-auto mb-6" />
               <h2 className="text-2xl font-bold text-vl-blue mb-4">
@@ -338,7 +338,7 @@ export default function PropertyEvaluationTool() {
 
             <Button
               onClick={handleSubmit}
-              className="w-full bg-vl-yellow hover:bg-vl-yellow-dark text-vl-blue font-semibold py-3 border-0 shadow-lg transition-all duration-200"
+              className="w-full bg-transparent hover:border-black text-white font-semibold py-3 border-2 border-vl-yellow shadow-lg transition-all duration-200"
               disabled={
                 !formData.propertyType || !formData.location || !formData.area || !formData.name || !formData.email
               }

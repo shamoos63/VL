@@ -1,20 +1,9 @@
 "use client"
+import { useEffect, useRef } from "react"
 import Footer from "@/components/footer"
 import Header from "@/components/header"
 import { Button } from "@/components/ui/button"
-import {
-  Award,
-  Users,
-  TrendingUp,
-  Globe,
-  MapPin,
-  Phone,
-  Mail,
-  Calendar,
-  Briefcase,
-  GraduationCap,
-  Check,
-} from "lucide-react"
+import { Award, Users, TrendingUp, Globe, MapPin, Mail, Calendar, Briefcase, GraduationCap, Check } from "lucide-react"
 import Image from "next/image"
 
 const achievements = [
@@ -54,8 +43,31 @@ const expertise = [
 ]
 
 export default function AboutPage() {
+  const sectionRefs = useRef<(HTMLDivElement | null)[]>([])
+
+  useEffect(() => {
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: "0px 0px -50px 0px",
+    }
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("fade-in-visible")
+        }
+      })
+    }, observerOptions)
+
+    sectionRefs.current.forEach((ref) => {
+      if (ref) observer.observe(ref)
+    })
+
+    return () => observer.disconnect()
+  }, [])
+
   return (
-    <main className="min-h-screen bg-white">
+    <main className="min-h-screen bg-vl-blue">
       <Header />
 
       {/* Hero Section */}
@@ -66,10 +78,8 @@ export default function AboutPage() {
         </div>
         <div className="relative container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center text-white">
-            <h1 className="text-5xl md:text-7xl font-bold mb-6 font-sansumi">
-              About Victoria
-            </h1>
-            <p className="text-l md:text-2xl font-light leading-relaxed">
+            <h1 className="text-5xl md:text-7xl font-bold mb-6 font-sansumi text-vl-yellow">About Victoria</h1>
+            <p className="text-xl md:text-2xl font-light leading-relaxed text-white">
               Where trust, insight, and performance come together.
             </p>
           </div>
@@ -77,30 +87,35 @@ export default function AboutPage() {
       </section>
 
       {/* Quote Section */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-vl-blue">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <div className="mb-6">
               <Image src="/quotation_marks.svg" alt="Quote" width={60} height={60} className="mx-auto" />
             </div>
-            <p className="text-2xl md:text-3xl text-vl-blue font-light italic mb-6 leading-relaxed">
+            <p className="text-2xl md:text-3xl text-vl-yellow font-light italic mb-6 leading-relaxed">
               To me, real estate is about building futures, not just deals. I treat every home or investment with the
               same care I'd give my own.
             </p>
             <div className="mb-6">
               <Image src="/quotation_marks.svg" alt="Quote" width={60} height={60} className="mx-auto" />
             </div>
-            <p className="text-xl font-semibold text-vl-blue">Victoria Lancaster</p>
-            <p className="text-gray-600 mt-2">Director of Investment | Real Estate Strategist | Licensed Advisor</p>
+            <p className="text-xl font-semibold text-vl-yellow">Victoria Lancaster</p>
+            <p className="text-white mt-2">Director of Investment | Real Estate Strategist | Licensed Advisor</p>
           </div>
         </div>
       </section>
 
-      {/* About Content Section with Alternating Photos */}
-      <section>
+      {/* About Content Section with Alternating Photos and Scroll Animations */}
+      <section className="py-20 bg-vl-blue">
         <div className="container mx-auto px-4">
           {/* First Section - Photo Left, Text Right */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-20">
+          <div
+            ref={(el) => {
+              sectionRefs.current[0] = el
+            }}
+            className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-20 fade-in-left"
+          >
             {/* Photo Left */}
             <div className="relative">
               <div className="relative h-96 md:h-[500px] rounded-3xl overflow-hidden shadow-2xl">
@@ -116,41 +131,44 @@ export default function AboutPage() {
             {/* Content Right */}
             <div className="space-y-8">
               <div>
-                <h2 className="text-4xl font-bold text-vl-blue mb-6 font-sansumi leading-tight">
+                <h2 className="text-4xl font-bold text-vl-yellow mb-6 font-sansumi leading-tight">
                   15+ Years of Market Excellence
                 </h2>
-                <p className="text-lg text-gray-600 leading-relaxed mb-6">
+                <p className="text-lg text-white leading-relaxed mb-6">
                   With over 15 years of experience across the UAE and UK markets, Victoria Lancaster is a name
                   synonymous with trust, results, and long-term vision.
                 </p>
-                <p className="text-lg text-gray-600 leading-relaxed mb-6">
+                <p className="text-lg text-white leading-relaxed mb-6">
                   As Investment Director at Select Property, she has successfully closed over 585 real estate
                   transactions, exceeding AED 1.7 billion in value.
                 </p>
-                <p className="text-sm text-gray-500 italic">Last updated: June 2025</p>
+                <p className="text-sm text-white opacity-70 italic">Last updated: June 2025</p>
               </div>
-
-       
             </div>
           </div>
 
           {/* Second Section - Text Left, Photo Right */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-20">
+          <div
+            ref={(el) => {
+              sectionRefs.current[1] = el
+            }}
+            className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-20 fade-in-right"
+          >
             {/* Content Left */}
             <div className="space-y-8">
               <div>
-                <h2 className="text-4xl font-bold text-vl-blue mb-6 font-sansumi leading-tight">
+                <h2 className="text-4xl font-bold text-vl-yellow mb-6 font-sansumi leading-tight">
                   A Portfolio Built on Insight
                 </h2>
-                <p className="text-lg text-gray-600 leading-relaxed mb-6">
+                <p className="text-lg text-white leading-relaxed mb-6">
                   Victoria's portfolio spans luxury residential, off-plan, and buy-to-let investments, all carefully
                   curated to build secure, high-yielding portfolios for global clients.
                 </p>
-                <p className="text-lg text-gray-600 leading-relaxed mb-6">
+                <p className="text-lg text-white leading-relaxed mb-6">
                   She is known for her sharp market insight and ability to spot opportunities before they hit the
                   mainstream.
                 </p>
-                <p className="text-lg text-gray-600 leading-relaxed">
+                <p className="text-lg text-white leading-relaxed">
                   Clients choose her for her clarity, precision, and data-driven mindset, knowing that real estate, in
                   her world, is not just a transaction, but a foundation for wealth, lifestyle, and legacy.
                 </p>
@@ -171,7 +189,12 @@ export default function AboutPage() {
           </div>
 
           {/* Third Section - Photo Left, Text Right */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <div
+            ref={(el) => {
+              sectionRefs.current[2] = el
+            }}
+            className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center fade-in-left"
+          >
             {/* Photo Left */}
             <div className="relative">
               <div className="relative h-96 md:h-[600px] rounded-3xl overflow-hidden shadow-2xl">
@@ -187,18 +210,18 @@ export default function AboutPage() {
             {/* Content Right */}
             <div className="space-y-8">
               <div>
-                <h2 className="text-4xl font-bold text-vl-blue mb-6 font-sansumi leading-tight">
+                <h2 className="text-4xl font-bold text-vl-yellow mb-6 font-sansumi leading-tight">
                   Her Clients, Her Values
                 </h2>
-                <p className="text-lg text-gray-600 leading-relaxed mb-6">
+                <p className="text-lg text-white leading-relaxed mb-6">
                   Victoria works exclusively with selected developers and serious clients. Every portfolio she builds is
                   backed by due diligence, long-term strategy, and a clear investment framework.
                 </p>
-                <p className="text-lg text-gray-600 leading-relaxed mb-6">
+                <p className="text-lg text-white leading-relaxed mb-6">
                   Whether you're investing or searching for a home, she brings the same meticulous care, honesty, and
                   commitment to results.
                 </p>
-                <p className="text-lg text-gray-600 leading-relaxed">
+                <p className="text-lg text-white leading-relaxed">
                   Outside of work, Victoria is a proud wife, mother, and animal lover. Her grounded home life brings
                   balance and clarity, the same values she brings to every client relationship.
                 </p>
@@ -209,19 +232,19 @@ export default function AboutPage() {
       </section>
 
       {/* Academic & Professional Section */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-vl-blue">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-4xl font-bold text-vl-blue mb-8 font-sansumi text-center">
+            <h2 className="text-4xl font-bold text-vl-yellow mb-8 font-sansumi text-center">
               Academic & Professional Credibility
             </h2>
 
-            <div className="bg-white p-8 rounded-2xl mb-8 shadow-lg">
+            <div className="bg-vl-blue border border-vl-yellow p-8 rounded-2xl mb-8 shadow-lg">
               <div className="flex items-start mb-6">
                 <GraduationCap className="h-8 w-8 text-vl-yellow mr-4 mt-1" />
                 <div>
-                  <h3 className="text-xl font-semibold text-vl-blue mb-2">Dual Bachelor of Science degrees from:</h3>
-                  <ul className="list-disc pl-5 space-y-2 text-gray-600">
+                  <h3 className="text-xl font-semibold text-vl-yellow mb-2">Dual Bachelor of Science degrees from:</h3>
+                  <ul className="list-disc pl-5 space-y-2 text-white">
                     <li>Herzen State Pedagogical University</li>
                     <li>Baltic University of Foreign Languages</li>
                   </ul>
@@ -231,17 +254,17 @@ export default function AboutPage() {
               <div className="flex items-start">
                 <Briefcase className="h-8 w-8 text-vl-yellow mr-4 mt-1" />
                 <div>
-                  <h3 className="text-xl font-semibold text-vl-blue mb-2">Professional Credentials:</h3>
-                  <p className="text-gray-600 mb-2">Licensed by the Dubai Land Department (BRN 27147)</p>
+                  <h3 className="text-xl font-semibold text-vl-yellow mb-2">Professional Credentials:</h3>
+                  <p className="text-white mb-2">Licensed by the Dubai Land Department (BRN 27147)</p>
                 </div>
               </div>
             </div>
 
-            <p className="text-lg text-gray-600 leading-relaxed">
+            <p className="text-lg text-white leading-relaxed">
               She combines a global academic foundation with an analytical, results-driven approach, treating each
               investment with the same care and discernment as if it were her own.
             </p>
-            <p className="text-lg text-gray-600 leading-relaxed mt-4">
+            <p className="text-lg text-white leading-relaxed mt-4">
               She is known for her direct, no-fluff communication style, a quality her clients value for its
               transparency and efficiency.
             </p>
@@ -253,56 +276,56 @@ export default function AboutPage() {
       <section className="py-20 bg-gradient-to-br from-vl-blue to-vl-blue-dark text-white">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-4xl font-bold mb-8 font-sansumi">Professional Excellence</h2>
-            <p className="text-xl leading-relaxed mb-8">
+            <h2 className="text-4xl font-bold mb-8 font-sansumi text-vl-yellow">Professional Excellence</h2>
+            <p className="text-xl leading-relaxed mb-8 text-white">
               Great investments aren't rushed, they're chosen with purpose, timing, and clarity. Victoria brings
               meticulous attention to detail and unwavering commitment to every client relationship.
             </p>
 
-            <div className="mt-12 p-6 bg-white/10 backdrop-blur-sm rounded-2xl">
+            <div className="mt-12 p-6 bg-white/10 backdrop-blur-sm rounded-2xl border border-vl-yellow">
               <div className="mb-4">
                 <Image src="/quotation_marks.svg" alt="Quote" width={40} height={40} className="mx-auto" />
               </div>
-              <p className="text-xl italic mb-4">
+              <p className="text-xl italic mb-4 text-white">
                 Great investments aren't rushed, they're chosen with purpose, timing, and clarity.
               </p>
-              <p className="font-semibold">— Victoria Lancaster</p>
+              <p className="font-semibold text-vl-yellow">— Victoria Lancaster</p>
             </div>
           </div>
         </div>
       </section>
 
       {/* Areas of Expertise */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-vl-blue">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-4xl font-bold text-vl-blue mb-4 font-sansumi text-center">Areas of Expertise</h2>
-            <p className="text-xl text-center text-vl-blue italic mb-8">
+            <h2 className="text-4xl font-bold text-vl-yellow mb-4 font-sansumi text-center">Areas of Expertise</h2>
+            <p className="text-xl text-center text-vl-yellow italic mb-8">
               "I don't just sell property. I strategize wealth."
             </p>
-            <p className="text-lg text-gray-600 mb-8 text-center">
+            <p className="text-lg text-white mb-8 text-center">
               Here's how I support investors in building real estate portfolios with purpose and clarity:
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
               {expertise.map((item, index) => (
-                <div key={index} className="flex items-center bg-gray-50 p-4 rounded-lg">
+                <div key={index} className="flex items-center bg-vl-blue border border-vl-yellow p-4 rounded-lg">
                   <Check className="h-5 w-5 text-vl-yellow mr-3 flex-shrink-0" />
-                  <span className="text-gray-700">{item}</span>
+                  <span className="text-white">{item}</span>
                 </div>
               ))}
             </div>
 
             {/* Offices */}
-            <h3 className="text-2xl font-bold text-vl-blue mb-6 font-sansumi text-center">Offices</h3>
+            <h3 className="text-2xl font-bold text-vl-yellow mb-6 font-sansumi text-center">Offices</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-              <div className="flex items-center justify-center bg-gray-50 p-6 rounded-lg">
+              <div className="flex items-center justify-center bg-vl-blue border border-vl-yellow p-6 rounded-lg">
                 <MapPin className="h-6 w-6 text-vl-yellow mr-3" />
-                <span className="text-gray-700">Dubai, United Arab Emirates</span>
+                <span className="text-white">Dubai, United Arab Emirates</span>
               </div>
-              <div className="flex items-center justify-center bg-gray-50 p-6 rounded-lg">
+              <div className="flex items-center justify-center bg-vl-blue border border-vl-yellow p-6 rounded-lg">
                 <MapPin className="h-6 w-6 text-vl-yellow mr-3" />
-                <span className="text-gray-700">Manchester, United Kingdom</span>
+                <span className="text-white">Manchester, United Kingdom</span>
               </div>
             </div>
           </div>
@@ -310,23 +333,23 @@ export default function AboutPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-vl-blue">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-4xl font-bold text-vl-blue mb-6 font-sansumi">Ready to take the next step?</h2>
-            <p className="text-xl text-gray-600 mb-8 leading-relaxed">
+            <h2 className="text-4xl font-bold text-vl-yellow mb-6 font-sansumi">Ready to take the next step?</h2>
+            <p className="text-xl text-white mb-8 leading-relaxed">
               Let's start a conversation built on trust, guided by insight, and tailored to your goals. Share your
               details below — Victoria will personally review how she can support your next move.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
-              <Button size="lg" className="bg-vl-blue text-white hover:bg-vl-blue-dark font-semibold px-8 py-4">
+              <Button size="lg" className="bg-vl-yellow text-vl-blue hover:bg-vl-yellow-dark font-semibold px-8 py-4">
                 <Calendar className="mr-2 h-5 w-5" />
                 Book Free Consultation
               </Button>
               <Button
                 size="lg"
                 variant="outline"
-                className="border-vl-blue text-vl-blue hover:bg-vl-blue hover:text-white px-8 py-4"
+                className="border-vl-yellow text-vl-yellow hover:bg-vl-yellow hover:text-vl-blue px-8 py-4"
               >
                 <Mail className="mr-2 h-5 w-5" />
                 Send Message

@@ -273,7 +273,7 @@ export default function HeroSection() {
       dir={isRTL ? "rtl" : "ltr"}
     >
       {/* Background with gradient overlay */}
-      <div className="absolute inset-0 vl-hero-gradient opacity-90"></div>
+      <div className="flex items-center text-black"></div>
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
@@ -292,7 +292,7 @@ export default function HeroSection() {
             {t("hero.title")} <span className="text-vl-yellow">{t("hero.title.highlight")}</span>
           </h1>
 
-          <p className="text-xl md:text-2xl text-white/90 mb-12 max-w-2xl mx-auto leading-relaxed font-sansumi">
+          <p className="text-xl md:text-2xl text-white/90 mb-12 max-w-2xl mx-auto leading-relaxed font-sansumi font-semibold">
             {t("hero.subtitle")}
           </p>
 
@@ -301,9 +301,9 @@ export default function HeroSection() {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
               <Select onValueChange={(value) => setSearchData({ ...searchData, propertyType: value })}>
                 <SelectTrigger className="h-12 bg-white/90 border-0 hover:bg-white transition-colors text-vl-blue hero-search-select">
-                  <div className="flex items-center">
+                  <div className="flex items-center text-slate-500">
                     <Home className="h-4 w-4 mr-2 text-vl-blue" />
-                    <SelectValue placeholder={t("search.property.type")} />
+                    <SelectValue className="text-vl-blue" placeholder={t("search.property.type")} />
                   </div>
                 </SelectTrigger>
                 <SelectContent>
@@ -466,7 +466,7 @@ export default function HeroSection() {
                 <SelectTrigger className="h-12 bg-white/90 border-0 hover:bg-white transition-colors text-vl-blue hero-search-select">
                   <div className="flex items-center">
                     <DollarSign className="h-4 w-4 mr-2 text-vl-blue" />
-                    <SelectValue placeholder={t("search.price.range")} />
+                    <SelectValue className="text-vl-blue" placeholder={t("search.price.range")} />
                   </div>
                 </SelectTrigger>
                 <SelectContent>
@@ -481,7 +481,7 @@ export default function HeroSection() {
                 <SelectTrigger className="h-12 bg-white/90 border-0 hover:bg-white transition-colors text-vl-blue hero-search-select">
                   <div className="flex items-center">
                     <Home className="h-4 w-4 mr-2 text-vl-blue" />
-                    <SelectValue placeholder={t("search.bedrooms")} />
+                    <SelectValue className="text-vl-blue" placeholder={t("search.bedrooms")} />
                   </div>
                 </SelectTrigger>
                 <SelectContent>
@@ -495,7 +495,7 @@ export default function HeroSection() {
 
             <Button
               size="lg"
-              className="w-full md:w-auto bg-vl-blue hover:bg-vl-blue-light text-vl-yellow font-semibold px-12 py-4 text-lg rounded-xl transition-all duration-300 hover:scale-105 border-2 border-vl-yellow"
+              className="w-full md:w-auto text-white bg-transparent hover:text-vl-yellow font-semibold px-12 py-4 text-lg  transition-all duration-300 hover:scale-105 border-2 border-vl-yellow hover:border-black"
             >
               <Search className="h-5 w-5 mr-2" />
               {t("hero.search.button")}
@@ -503,7 +503,7 @@ export default function HeroSection() {
           </div>
 
           {/* Stats with Animation */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-16">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-8 mt-16">
             <div className="text-center">
               <div className="text-3xl md:text-4xl font-bold text-vl-yellow mb-2">
                 <AnimatedCounter end={585} suffix="+" />
@@ -522,18 +522,12 @@ export default function HeroSection() {
               </div>
               <div className="text-white/80 font-sansumi">{t("hero.stats.experience")}</div>
             </div>
-            <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold text-vl-yellow mb-2">
-                <AnimatedCounter end={82} suffix="%" />
-              </div>
-              <div className="text-white/80 font-sansumi">{t("hero.stats.satisfaction")}</div>
-            </div>
           </div>
         </div>
       </div>
 
       {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+      <div className="absolute bottom-24 left-1/2 transform -translate-x-1/2 animate-bounce">
         <div className="w-6 h-10 border-2 border-white/50 rounded-full flex justify-center">
           <div className="w-1 h-3 bg-white/50 rounded-full mt-2"></div>
         </div>

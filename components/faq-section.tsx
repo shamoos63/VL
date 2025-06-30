@@ -94,7 +94,7 @@ const faqData = {
     },
     {
       question: "هل يمكن للمشترين الدوليين الحصول على رهن عقاري في دبي؟",
-      answer: "نعم. تقدم البنوك المختارة خيارات التمويل لغير المقيمين، اعتمادًا على ملفك المالي ونوع العقار.",
+      answer: "نعم. تقدم البنوك المختارة خيارات التمويل لغير الم��يمين، اعتمادًا على ملفك المالي ونوع العقار.",
     },
     {
       question: "هل هناك ضرائب متضمنة في شراء العقار؟",
@@ -216,8 +216,8 @@ export default function FaqSection() {
   const currentFaqs = faqData[language] || faqData.en
 
   return (
-    <section className="py-20 bg-white" dir={isRTL ? "rtl" : "ltr"}>
-      <div className="container mx-auto px-4">
+    <section className="py-20 bg-transaparent" dir={isRTL ? "rtl" : "ltr"}>
+      <div className="px-6 pb-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-vl-blue mb-6 font-heading">
             {language === "en"
@@ -236,29 +236,29 @@ export default function FaqSection() {
           <div className="w-40 h-1 bg-vl-yellow mx-auto"></div>
         </div>
 
-        <div className="max-w-4xl mx-auto space-y-4">
+        <div className="max-w-4xl mx-auto space-y-4 bg-transparent">
           {currentFaqs.map((faq, index) => (
-            <Card key={index} className="overflow-hidden">
-              <CardContent className="p-0">
-                <button
-                  onClick={() => toggleFaq(index)}
-                  className="w-full p-6 text-left flex items-center justify-between hover:bg-gray-50 transition-colors"
-                >
-                  <h3 className="text-lg font-semibold text-vl-blue pr-4">{faq.question}</h3>
-                  {openIndex === index ? (
-                    <ChevronUp className="h-5 w-5 text-vl-yellow flex-shrink-0" />
-                  ) : (
-                    <ChevronDown className="h-5 w-5 text-vl-yellow flex-shrink-0" />
-                  )}
-                </button>
+            <Card key={index} className="glass overflow-hidden rounded-xl shadow-md">
+  <div>
+    <button
+      onClick={() => toggleFaq(index)}
+      className="w-full p-5 sm:p-6 text-left flex items-center justify-between bg-transparent hover:bg-white/5 transition-colors duration-300"
+    >
+      <h3 className="text-lg sm:text-xl font-semibold text-vl-blue tracking-wide pr-4">{faq.question}</h3>
+      {openIndex === index ? (
+        <ChevronUp className="h-5 w-5 text-vl-yellow flex-shrink-0 transition-transform duration-200" />
+      ) : (
+        <ChevronDown className="h-5 w-5 text-vl-yellow flex-shrink-0 transition-transform duration-200" />
+      )}
+    </button>
+  </div>
 
-                {openIndex === index && (
-                  <div className="px-6 pb-6">
-                    <p className="text-gray-600 leading-relaxed">{faq.answer}</p>
-                  </div>
-                )}
-              </CardContent>
-            </Card>
+  {openIndex === index && (
+    <div className="px-5 sm:px-6 pb-6 pt-4 bg-white/5 text-gray-200 rounded-b-xl border-t border-slate-500/40 transition-all duration-300 ease-in-out">
+      <p className="leading-relaxed text-sm sm:text-base">{faq.answer}</p>
+    </div>
+  )}
+</Card>
           ))}
         </div>
 
