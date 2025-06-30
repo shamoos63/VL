@@ -210,7 +210,7 @@ export default function Header() {
 
           {/* Mobile Menu */}
           {isMenuOpen && (
-            <div className="lg:hidden absolute top-full left-0 right-0 bg-white shadow-lg border-t rounded-b-2xl z-[110]">
+            <div className="lg:hidden absolute top-full left-0 right-0 bg-blue shadow-lg border-t rounded-b-2xl z-[110]">
               <nav className="flex flex-col p-4 space-y-4">
                 {navItems.map((item) => (
                   <Link
