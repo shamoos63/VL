@@ -333,8 +333,7 @@ export default function EnhancedPropertyCard({
         <CardContent className="p-6">
           {/* Header Section */}
           <div className="flex items-start justify-between mb-4">
-            <div className="flex-1">
-              <h3 className="text-xl font-bold text-vl-blue mb-1 line-clamp-2">{property.title}</h3>
+    <div className="flex-1"> <h3 className="text-xl font-bold text-vl-blue mb-1 line-clamp-2 text-left">{property.title}</h3>
               <div className="flex items-center text-gray-600 mb-2">
                 <MapPin className="h-4 w-4 mr-1 flex-shrink-0" />
                 <span className="text-sm">{property.location}</span>
@@ -447,22 +446,28 @@ export default function EnhancedPropertyCard({
           )}
 
           {/* Action Buttons */}
-          <div className="flex gap-1">
-            <Link href={`/properties/${property.id}`} className="flex-1">
-              <Button className="w-full md:w-auto text-white bg-transparent hover:text-vl-yellow font-semibold px-12 py-4 text-lg  transition-all duration-300 hover:scale-90 border-2 border-vl-yellow hover:border-black">
-                <Eye className="h-4 w-4 mr-2 group-hover:scale-90 transition-transform" />
-                {t("property.view.details") || "View Details"}
-                <ExternalLink className="h-3 w-3 ml-2 opacity-0 group-hover:opacity-100 transition-opacity" />
-              </Button>
-            </Link>
-            <Button
-              className="w-full bg-white text-blue transition-colors hover:scale-90"
-              onClick={handleContactForm}
-            >
-              <MessageCircle className="h-4 w-4 mr-1" />
-              {t("property.contact") || "Contact"}
-            </Button>
-          </div>
+    <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 w-full">
+  <Link href={`/properties/${property.id}`} className="flex-1">
+    <Button
+      className="w-full text-white bg-transparent hover:text-vl-yellow font-semibold
+        px-4 py-3 text-base /* <-- Adjusted padding and text size */
+        transition-all duration-300 hover:scale-95 border-2 border-vl-yellow hover:border-black"
+    >
+      <Eye className="h-4 w-4 mr-1 group-hover:scale-90 transition-transform" /> {/* reduced margin to mr-1 */}
+      {t("property.view.details") || "View Details"}
+      <ExternalLink className="h-3 w-3 ml-1 opacity-0 group-hover:opacity-100 transition-opacity" /> {/* reduced margin to ml-1 */}
+    </Button>
+  </Link>
+  <Button
+    className="flex-1 text-blue bg-white font-semibold
+      px-4 py-3 text-base /* <-- Adjusted padding and text size */
+      transition-all duration-300 hover:scale-95 border border-blue-300"
+    onClick={handleContactForm}
+  >
+    <MessageCircle className="h-4 w-4 mr-1" /> {/* reduced margin to mr-1 */}
+    {t("property.contact") || "Contact"}
+  </Button>
+</div>
         </CardContent>
       </Card>
     </TooltipProvider>

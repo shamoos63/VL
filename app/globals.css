@@ -620,14 +620,13 @@ a:hover {
 .location-dropdown,
 .hero-search-dropdown,
 div[class*="dropdown"] /* General dropdowns */ {
-  background: rgba(30, 58, 138, 0.9) !important; /* Slightly more opaque for clarity */
+  background: rgba(30, 58, 138, 0.95) !important; /* Slightly more opaque for clarity */
   backdrop-filter: blur(15px) saturate(180%) !important;
   color: white !important;
-  border: 1px solid rgba(255, 211, 150, 0.5) !important; /* Slightly more visible border */
-  border-radius: 16px !important;
+ 
   box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.5),
     inset 0 1px 0 rgba(255, 211, 150, 0.2) !important; /* Stronger, single shadow */
-  z-index: 99999 !important;
+  z-index: 90 !important;
   padding: 8px !important;
   animation: dropdown-appear 0.2s ease-out !important;
 }
@@ -772,7 +771,7 @@ div[class*="dropdown-item"]:hover {
 .mobile-dropdown-content {
   /* This ensures the mobile dropdown content has a solid background 
      and less transparency than the general glassmorphic dropdowns */
-  background: var(--vl-blue-dark) !important; /* Use a darker blue for contrast */
+  background: var(--vl-blue) !important; /* Use a darker blue for contrast */
   backdrop-filter: blur(10px) saturate(150%) !important;
   border: 1px solid rgba(255, 211, 150, 0.6) !important; /* Slightly stronger border */
   box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.6),

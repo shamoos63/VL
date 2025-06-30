@@ -303,7 +303,7 @@ export default function HeroSection() {
                 <SelectTrigger className="h-12 bg-white/90 border-0 hover:bg-white transition-colors text-vl-blue hero-search-select">
                   <div className="flex items-center text-slate-500">
                     <Home className="h-4 w-4 mr-2 text-vl-blue" />
-                    <SelectValue className="text-vl-blue" placeholder={t("search.property.type")} />
+                    <SelectValue className="text-black" placeholder={t("search.property.type")} />
                   </div>
                 </SelectTrigger>
                 <SelectContent>
@@ -331,7 +331,7 @@ export default function HeroSection() {
                       }
                     }}
                     placeholder={t("search.location")}
-                    className="border-0 bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0 p-0 h-full placeholder:text-vl-blue/70 text-vl-blue"
+                    className="border-0 bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0 p-0 h-full placeholder:text-black"
                   />
                   <div className="flex items-center space-x-1">
                     {locationInput && (
@@ -410,7 +410,7 @@ export default function HeroSection() {
                       {/* Search Results Section */}
                       {filteredLocations.length > 0 && (
                         <>
-                          <div className="px-4 py-2 text-xs font-medium text-gray-500 uppercase tracking-wide border-b border-gray-100">
+                          <div className="px-4 py-2 text-xs font-medium text-black uppercase tracking-wide border-b border-gray-100">
                             {filteredLocations.length} location{filteredLocations.length !== 1 ? "s" : ""} found
                           </div>
                           <div className="max-h-64 overflow-y-auto">
@@ -465,8 +465,8 @@ export default function HeroSection() {
               <Select onValueChange={(value) => setSearchData({ ...searchData, priceRange: value })}>
                 <SelectTrigger className="h-12 bg-white/90 border-0 hover:bg-white transition-colors text-vl-blue hero-search-select">
                   <div className="flex items-center">
-                    <DollarSign className="h-4 w-4 mr-2 text-vl-blue" />
-                    <SelectValue className="text-vl-blue" placeholder={t("search.price.range")} />
+                    <DollarSign className="h-4 w-4 mr-2 text-black" />
+                    <SelectValue className="text-black" placeholder={t("search.price.range")} />
                   </div>
                 </SelectTrigger>
                 <SelectContent>
@@ -480,8 +480,8 @@ export default function HeroSection() {
               <Select onValueChange={(value) => setSearchData({ ...searchData, bedrooms: value })}>
                 <SelectTrigger className="h-12 bg-white/90 border-0 hover:bg-white transition-colors text-vl-blue hero-search-select">
                   <div className="flex items-center">
-                    <Home className="h-4 w-4 mr-2 text-vl-blue" />
-                    <SelectValue className="text-vl-blue" placeholder={t("search.bedrooms")} />
+                    <Home className="h-4 w-4 mr-2 text-black" />
+                    <SelectValue className="text-black" placeholder={t("search.bedrooms")} />
                   </div>
                 </SelectTrigger>
                 <SelectContent>

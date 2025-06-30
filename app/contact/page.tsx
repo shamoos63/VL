@@ -61,7 +61,7 @@ export default function ContactPage() {
                   <Textarea placeholder="Tell us about your property requirements..." rows={4} />
                 </div>
 
-                <Button className="w-full text-white border-2 border-vl-yellow hover:border-black font-semibold py-3">
+                <Button className="w-full bg-transparent text-white border-2 border-vl-yellow hover:border-black font-semibold py-3">
                   Send Message
                 </Button>
               </form>
