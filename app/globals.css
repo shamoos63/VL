@@ -27,7 +27,8 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: url("/background-pattern.png") center center / cover no-repeat fixed;
+  background: url("/background-pattern.png") center center / cover no-repeat
+    fixed;
   min-height: 100vh;
   position: relative;
 }
@@ -157,7 +158,11 @@ button {
 
 /* Hero gradient - More transparent to show background */
 .vl-hero-gradient {
-  background: linear-gradient(135deg, rgba(30, 58, 138, 0.4) 0%, rgba(30, 64, 175, 0.4) 100%);
+  background: linear-gradient(
+    135deg,
+    rgba(30, 58, 138, 0.4) 0%,
+    rgba(30, 64, 175, 0.4) 100%
+  );
   backdrop-filter: blur(5px);
 }
 
@@ -199,8 +204,8 @@ button {
 }
 
 .font-sansumi {
-  font-family: var(--font-sansumi-regular), var(--font-sansumi-demibold), var(--font-sansumi-bold),
-    var(--font-sansumi-ultralight), sans-serif;
+  font-family: var(--font-sansumi-regular), var(--font-sansumi-demibold),
+    var(--font-sansumi-bold), var(--font-sansumi-ultralight), sans-serif;
 }
 
 /* RTL Support */
@@ -243,7 +248,8 @@ button {
 /* Navigation Active State - Modern Yellow Glow Effect */
 .nav-active {
   color: var(--vl-yellow) !important;
-  text-shadow: 0 0 8px rgba(255, 211, 150, 0.6), 0 0 16px rgba(255, 211, 150, 0.4), 0 0 24px rgba(255, 211, 150, 0.2);
+  text-shadow: 0 0 8px rgba(255, 211, 150, 0.6),
+    0 0 16px rgba(255, 211, 150, 0.4), 0 0 24px rgba(255, 211, 150, 0.2);
   font-weight: 600;
   position: relative;
   transition: all 0.3s ease-in-out;
@@ -324,7 +330,8 @@ header svg {
 /* Mobile navigation active state */
 .nav-mobile-active {
   color: var(--vl-yellow) !important;
-  text-shadow: 0 0 6px rgba(255, 211, 150, 0.5), 0 0 12px rgba(255, 211, 150, 0.3);
+  text-shadow: 0 0 6px rgba(255, 211, 150, 0.5),
+    0 0 12px rgba(255, 211, 150, 0.3);
   font-weight: 600;
   background: rgba(255, 211, 150, 0.1);
   border-radius: 8px;
@@ -480,7 +487,8 @@ a:hover {
 }
 
 .dashboard-card:hover {
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
 }
 
 /* DASHBOARD-ONLY TEXT COLOR FIXES - TARGETED SELECTORS */
@@ -511,20 +519,26 @@ a:hover {
 }
 
 .dashboard-main p,
-.dashboard-main span:not(.text-vl-blue):not(.text-vl-yellow):not(.text-white),
-.dashboard-main div:not(.text-vl-blue):not(.text-vl-yellow):not(.text-white),
+.dashboard-main
+  span:not(.text-vl-blue):not(.text-vl-yellow):not(.text-white),
+.dashboard-main
+  div:not(.text-vl-blue):not(.text-vl-yellow):not(.text-white),
 .dashboard-main td,
 .dashboard-main th,
 .dashboard-main label,
 .dashboard-card p,
-.dashboard-card span:not(.text-vl-blue):not(.text-vl-yellow):not(.text-white),
-.dashboard-card div:not(.text-vl-blue):not(.text-vl-yellow):not(.text-white),
+.dashboard-card
+  span:not(.text-vl-blue):not(.text-vl-yellow):not(.text-white),
+.dashboard-card
+  div:not(.text-vl-blue):not(.text-vl-yellow):not(.text-white),
 .dashboard-card td,
 .dashboard-card th,
 .dashboard-card label,
 .dashboard-container p,
-.dashboard-container span:not(.text-vl-blue):not(.text-vl-yellow):not(.text-white),
-.dashboard-container div:not(.text-vl-blue):not(.text-vl-yellow):not(.text-white),
+.dashboard-container
+  span:not(.text-vl-blue):not(.text-vl-yellow):not(.text-white),
+.dashboard-container
+  div:not(.text-vl-blue):not(.text-vl-yellow):not(.text-white),
 .dashboard-container td,
 .dashboard-container th,
 .dashboard-container label {
@@ -592,30 +606,44 @@ a:hover {
 /* Dashboard-specific button text (excluding colored buttons) */
 .dashboard-main button:not(.bg-vl-blue):not(.bg-vl-yellow):not(.text-white),
 .dashboard-card button:not(.bg-vl-blue):not(.bg-vl-yellow):not(.text-white),
-.dashboard-container button:not(.bg-vl-blue):not(.bg-vl-yellow):not(.text-white) {
+.dashboard-container
+  button:not(.bg-vl-blue):not(.bg-vl-yellow):not(.text-white) {
   color: white !important;
 }
 
 /* MODERN DROPDOWN STYLING - CLEAN DESIGN WITHOUT WHITE OVERLAYS */
 /* Radix UI Select Components - Dark Glass Design */
 [data-radix-select-content],
-[data-radix-select-content] *,
 .radix-select-content,
-.radix-select-content *,
 [role="listbox"],
-[role="listbox"] *,
 [data-radix-popper-content-wrapper],
-[data-radix-popper-content-wrapper] * {
-  background: rgba(30, 58, 138, 0.85) !important;
+.search-dropdown, /* Unified search dropdowns */
+.location-dropdown,
+.hero-search-dropdown,
+div[class*="dropdown"] /* General dropdowns */ {
+  background: rgba(30, 58, 138, 0.9) !important; /* Slightly more opaque for clarity */
   backdrop-filter: blur(15px) saturate(180%) !important;
   color: white !important;
-  border: 1px solid rgba(255, 211, 150, 0.4) !important;
+  border: 1px solid rgba(255, 211, 150, 0.5) !important; /* Slightly more visible border */
   border-radius: 16px !important;
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 10px 10px -5px rgba(0, 0, 0, 0.1), inset 0 1px 0
-    rgba(255, 211, 150, 0.1) !important;
+  box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.5),
+    inset 0 1px 0 rgba(255, 211, 150, 0.2) !important; /* Stronger, single shadow */
   z-index: 99999 !important;
   padding: 8px !important;
   animation: dropdown-appear 0.2s ease-out !important;
+  /* Ensure children inherit transparent background if not explicitly set */
+}
+
+/* Ensure direct children of dropdown content are transparent to prevent layering */
+[data-radix-select-content] > *,
+.radix-select-content > *,
+[role="listbox"] > *,
+[data-radix-popper-content-wrapper] > *,
+.search-dropdown > *,
+.location-dropdown > *,
+.hero-search-dropdown > *,
+div[class*="dropdown"] > * {
+  background: transparent !important;
 }
 
 @keyframes dropdown-appear {
@@ -630,12 +658,12 @@ a:hover {
 }
 
 [data-radix-select-item],
-[data-radix-select-item] *,
 .radix-select-item,
-.radix-select-item *,
 [role="option"],
-[role="option"] * {
-  background: transparent !important;
+.search-dropdown-item,
+.location-dropdown-item,
+div[class*="dropdown-item"] {
+  background: transparent !important; /* Ensure transparent background */
   color: white !important;
   padding: 12px 16px !important;
   cursor: pointer !important;
@@ -651,18 +679,23 @@ a:hover {
 [data-radix-select-item]:hover,
 [data-radix-select-item][data-highlighted],
 .radix-select-item:hover,
+.radix-select-item[data-highlighted],
 [role="option"]:hover,
-[role="option"][data-highlighted] {
-  background: rgba(255, 211, 150, 0.15) !important;
+[role="option"][data-highlighted],
+.search-dropdown-item:hover,
+.location-dropdown-item:hover,
+div[class*="dropdown-item"]:hover {
+  background: rgba(255, 211, 150, 0.15) !important; /* Subtle yellow hover */
   color: var(--vl-yellow) !important;
   transform: translateX(4px) !important;
   box-shadow: 0 4px 12px rgba(255, 211, 150, 0.2) !important;
+  border-bottom-color: transparent !important; /* Remove border-bottom on hover for search dropdown items */
 }
 
 [data-radix-select-item][data-state="checked"],
 .radix-select-item[data-state="checked"],
 [role="option"][aria-selected="true"] {
-  background: rgba(255, 211, 150, 0.2) !important;
+  background: rgba(255, 211, 150, 0.2) !important; /* More pronounced checked state */
   color: var(--vl-yellow) !important;
   box-shadow: 0 4px 12px rgba(255, 211, 150, 0.3) !important;
 }
@@ -710,7 +743,8 @@ a:hover {
   backdrop-filter: blur(8px) saturate(180%);
   border: 1px solid rgba(255, 211, 150, 0.3);
   border-radius: 2rem;
-  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.2), inset 0 4px 20px rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.2),
+    inset 0 4px 20px rgba(255, 255, 255, 0.1);
 }
 .glass::after {
   content: "";
@@ -722,143 +756,19 @@ a:hover {
   background: rgba(255, 255, 255, 0.05);
   border-radius: 2rem;
   backdrop-filter: blur(1px);
-  box-shadow: inset -10px -8px 0px -11px rgba(255, 255, 255, 0.1), inset 0px -9px 0px -8px rgba(255, 255, 255, 0.1);
+  box-shadow: inset -10px -8px 0px -11px rgba(255, 255, 255, 0.1),
+    inset 0px -9px 0px -8px rgba(255, 255, 255, 0.1);
   opacity: 0.6;
   z-index: -1;
-  filter: blur(1px) drop-shadow(10px 4px 6px rgba(0, 0, 0, 0.3)) brightness(115%);
+  filter: blur(1px) drop-shadow(10px 4px 6px rgba(0, 0, 0, 0.3))
+    brightness(115%);
 }
 
-/* Enhanced Search Bar Dropdown Fixes - Dark Theme */
-.search-dropdown,
-.search-dropdown *,
-.location-dropdown,
-.location-dropdown *,
-.hero-search-dropdown,
-.hero-search-dropdown *,
-div[class*="dropdown"],
-div[class*="dropdown"] * {
-  background: rgba(30, 58, 138, 0.85) !important;
-  backdrop-filter: blur(15px) saturate(180%) !important;
-  color: white !important;
-  border: 1px solid rgba(255, 211, 150, 0.4) !important;
-  border-radius: 16px !important;
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 10px 10px -5px rgba(0, 0, 0, 0.1), inset 0 1px 0
-    rgba(255, 211, 150, 0.1) !important;
-  z-index: 99999 !important;
-  animation: dropdown-appear 0.2s ease-out !important;
-}
-
-.search-dropdown-item,
-.search-dropdown-item *,
-.location-dropdown-item,
-.location-dropdown-item *,
-div[class*="dropdown-item"],
-div[class*="dropdown-item"] * {
-  background: transparent !important;
-  color: white !important;
-  padding: 12px 16px !important;
-  border-bottom: 1px solid rgba(255, 211, 150, 0.1) !important;
-  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1) !important;
-  border-radius: 8px !important;
-  margin: 2px 4px !important;
-  font-weight: 500 !important;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3) !important;
-}
-
-.search-dropdown-item:hover,
-.location-dropdown-item:hover,
-div[class*="dropdown-item"]:hover {
-  background: rgba(255, 211, 150, 0.15) !important;
-  color: var(--vl-yellow) !important;
-  transform: translateX(4px) !important;
-  border-bottom-color: transparent !important;
-  box-shadow: 0 4px 12px rgba(255, 211, 150, 0.2) !important;
-}
-
-/* Hero Section Search Bar Specific Fixes - Dark Theme */
-.hero-search-select [data-radix-select-content],
-.hero-search-select [data-radix-select-content] *,
-section .hero-search-select [data-radix-select-content],
-section .hero-search-select [data-radix-select-content] * {
-  background: rgba(30, 58, 138, 0.85) !important;
-  backdrop-filter: blur(15px) saturate(180%) !important;
-  color: white !important;
-  border: 1px solid rgba(255, 211, 150, 0.4) !important;
-  border-radius: 16px !important;
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 10px 10px -5px rgba(0, 0, 0, 0.1), inset 0 1px 0
-    rgba(255, 211, 150, 0.1) !important;
-  z-index: 99999 !important;
-  padding: 8px !important;
-  animation: dropdown-appear 0.2s ease-out !important;
-}
-
-.hero-search-select [data-radix-select-item],
-.hero-search-select [data-radix-select-item] *,
-section .hero-search-select [data-radix-select-item],
-section .hero-search-select [data-radix-select-item] * {
-  background: transparent !important;
-  color: white !important;
-  padding: 12px 16px !important;
-  border-radius: 12px !important;
-  margin: 2px 0 !important;
-  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1) !important;
-  font-weight: 500 !important;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3) !important;
-}
-
-.hero-search-select [data-radix-select-item]:hover,
-section .hero-search-select [data-radix-select-item]:hover {
-  background: rgba(255, 211, 150, 0.15) !important;
-  color: var(--vl-yellow) !important;
-  transform: translateX(4px) !important;
-  box-shadow: 0 4px 12px rgba(255, 211, 150, 0.2) !important;
-}
-
-.hero-search-select [data-radix-select-item][data-highlighted],
-section .hero-search-select [data-radix-select-item][data-highlighted] {
-  background: rgba(255, 211, 150, 0.2) !important;
-  color: var(--vl-yellow) !important;
-  transform: translateX(4px) !important;
-  box-shadow: 0 4px 12px rgba(255, 211, 150, 0.3) !important;
-}
-
-/* Property Filters Dropdown Fixes - Dark Theme */
+/* Property Filters Dropdown Fixes - Dark Theme (consolidated with general dropdowns) */
 .property-filters [data-radix-select-content],
-.property-filters [data-radix-select-content] *,
-div.property-filters [data-radix-select-content],
-div.property-filters [data-radix-select-content] * {
-  background: rgba(30, 58, 138, 0.85) !important;
-  backdrop-filter: blur(15px) saturate(180%) !important;
-  color: white !important;
-  border: 1px solid rgba(255, 211, 150, 0.4) !important;
-  border-radius: 16px !important;
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 10px 10px -5px rgba(0, 0, 0, 0.1), inset 0 1px 0
-    rgba(255, 211, 150, 0.1) !important;
-  z-index: 99999 !important;
-  padding: 8px !important;
-  animation: dropdown-appear 0.2s ease-out !important;
-}
-
-.property-filters [data-radix-select-item],
-.property-filters [data-radix-select-item] *,
-div.property-filters [data-radix-select-item],
-div.property-filters [data-radix-select-item] * {
-  background: transparent !important;
-  color: white !important;
-  padding: 12px 16px !important;
-  border-radius: 12px !important;
-  margin: 2px 0 !important;
-  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1) !important;
-  font-weight: 500 !important;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3) !important;
-}
-
-.property-filters [data-radix-select-item]:hover,
-div.property-filters [data-radix-select-item]:hover {
-  background: rgba(255, 211, 150, 0.15) !important;
-  color: var(--vl-yellow) !important;
-  transform: translateX(4px) !important;
-  box-shadow: 0 4px 12px rgba(255, 211, 150, 0.2) !important;
+.property-filters [data-radix-select-content] * {
+  /* These will now inherit from the unified dropdown styles above, 
+     preventing redundant declarations and potential conflicts. */
 }
 
 /* Dialog and Modal Styling - Enhanced Glass Morphism */
@@ -872,7 +782,8 @@ div.property-filters [data-radix-select-item]:hover {
   backdrop-filter: blur(20px) saturate(180%) !important;
   border: 1px solid rgba(255, 211, 150, 0.4) !important;
   border-radius: 24px !important;
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 211, 150, 0.1) !important;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.4),
+    inset 0 1px 0 rgba(255, 211, 150, 0.1) !important;
   color: white !important;
 }
 
@@ -881,7 +792,8 @@ div.property-filters [data-radix-select-item]:hover {
   backdrop-filter: blur(20px) saturate(180%) !important;
   border: 1px solid rgba(255, 211, 150, 0.4) !important;
   border-radius: 24px !important;
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 211, 150, 0.1) !important;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.4),
+    inset 0 1px 0 rgba(255, 211, 150, 0.1) !important;
   color: white !important;
 }
 
@@ -996,7 +908,11 @@ div.property-filters [data-radix-select-item]:hover {
 
 /* Button Styling */
 .btn-primary {
-  background: linear-gradient(135deg, var(--vl-yellow) 0%, var(--vl-yellow-dark) 100%) !important;
+  background: linear-gradient(
+    135deg,
+    var(--vl-yellow) 0%,
+    var(--vl-yellow-dark) 100%
+  ) !important;
   border: none !important;
   color: var(--vl-blue) !important;
   border-radius: 12px !important;

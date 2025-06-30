@@ -449,14 +449,14 @@ export default function EnhancedPropertyCard({
           {/* Action Buttons */}
           <div className="flex gap-1">
             <Link href={`/properties/${property.id}`} className="flex-1">
-              <Button className="w-auto  text-white bg-transparent hover:text-vl-yellow font-semibold px-12 py-4 text-lg  transition-all duration-300 hover:scale-105 border-2 border-vl-yellow hover:border-black">
-                <Eye className="h-4 w-4 mr-2 group-hover:scale-110 transition-transform" />
+              <Button className="w-full md:w-auto text-white bg-transparent hover:text-vl-yellow font-semibold px-12 py-4 text-lg  transition-all duration-300 hover:scale-90 border-2 border-vl-yellow hover:border-black">
+                <Eye className="h-4 w-4 mr-2 group-hover:scale-90 transition-transform" />
                 {t("property.view.details") || "View Details"}
                 <ExternalLink className="h-3 w-3 ml-2 opacity-0 group-hover:opacity-100 transition-opacity" />
               </Button>
             </Link>
             <Button
-              className="w-auto bg-vl-white border-2 border-black hover:border-white text-white"
+              className="w-full bg-white text-blue transition-colors hover:scale-90"
               onClick={handleContactForm}
             >
               <MessageCircle className="h-4 w-4 mr-1" />
