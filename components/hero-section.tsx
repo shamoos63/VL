@@ -316,7 +316,7 @@ export default function HeroSection() {
 
               {/* Enhanced Location with Autocomplete and Geolocation */}
               <div className="relative" ref={locationDropdownRef}>
-                <div className="flex items-center h-12 bg-white/90 hover:bg-white border-0 rounded-md px-3 transition-colors group focus-within:bg-white focus-within:ring-2 focus-within:ring-vl-yellow/50 text-vl-blue">
+                <div className="flex text-white items-center h-12 bg-transparent border-0 rounded-md px-3 transition-colors group  focus-within:ring-2 focus-within:ring-vl-yellow/50 text-white">
                   <MapPin className="h-4 w-4 mr-2 text-vl-blue flex-shrink-0" />
                   <Input
                     ref={locationInputRef}
@@ -337,7 +337,7 @@ export default function HeroSection() {
                     {locationInput && (
                       <button
                         onClick={clearLocation}
-                        className="text-gray-400 hover:text-gray-600 transition-colors p-1 rounded-full hover:bg-gray-100"
+                        className="text-black hover:text-gray-600 transition-colors p-1 rounded-full hover:bg-gray-100"
                         type="button"
                       >
                         <X className="h-3 w-3" />

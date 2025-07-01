@@ -624,10 +624,10 @@ a:hover {
 .location-dropdown,
 .hero-search-dropdown,
 div[class*="dropdown"] /* General dropdowns */ {
-  background: rgba(30, 58, 138, 0.95) !important; /* Slightly more opaque for clarity */
+  background: rgba(30, 58, 138) !important; /* Slightly more opaque for clarity */
   backdrop-filter: blur(15px) saturate(180%) !important;
   color: white !important;
- 
+  border-radius: 16px !important;
   box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.5),
     inset 0 1px 0 rgba(255, 211, 150, 0.2) !important; /* Stronger, single shadow */
   z-index: 90 !important;
