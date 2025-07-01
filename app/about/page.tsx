@@ -1,7 +1,8 @@
 "use client"
-import { useEffect, useRef } from "react"
+import { useEffect, useRef, useState } from "react"
 import Footer from "@/components/footer"
 import Header from "@/components/header"
+import TimelineSection from "@/components/timeline-section"
 import { Button } from "@/components/ui/button"
 import { Award, Users, TrendingUp, Globe, MapPin, Mail, Calendar, Briefcase, GraduationCap, Check } from "lucide-react"
 import Image from "next/image"
@@ -43,18 +44,42 @@ const expertise = [
 ]
 
 export default function AboutPage() {
+  const [visibleSections, setVisibleSections] = useState<Set<number>>(new Set())
+  const [scrollDirection, setScrollDirection] = useState<"up" | "down">("down")
   const sectionRefs = useRef<(HTMLDivElement | null)[]>([])
+  const lastScrollY = useRef(0)
 
+  // Scroll direction detection
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY
+      setScrollDirection(currentScrollY > lastScrollY.current ? "down" : "up")
+      lastScrollY.current = currentScrollY
+    }
+
+    window.addEventListener("scroll", handleScroll, { passive: true })
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [])
+
+  // Intersection Observer for picture-text sections
   useEffect(() => {
     const observerOptions = {
-      threshold: 0.1,
-      rootMargin: "0px 0px -50px 0px",
+      threshold: 0.2,
+      rootMargin: "0px 0px -100px 0px",
     }
 
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("fade-in-visible")
+        const index = Number.parseInt(entry.target.getAttribute("data-section-index") || "0")
+
+        if (entry.isIntersecting && scrollDirection === "down") {
+          setVisibleSections((prev) => new Set([...prev, index]))
+        } else if (!entry.isIntersecting && scrollDirection === "up") {
+          setVisibleSections((prev) => {
+            const newSet = new Set(prev)
+            newSet.delete(index)
+            return newSet
+          })
         }
       })
     }, observerOptions)
@@ -64,7 +89,7 @@ export default function AboutPage() {
     })
 
     return () => observer.disconnect()
-  }, [])
+  }, [scrollDirection])
 
   return (
     <main className="min-h-screen bg-transparent">
@@ -106,7 +131,10 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* About Content Section with Alternating Photos and Scroll Animations */}
+      {/* Timeline Section */}
+    
+
+      {/* About Content Section with Dynamic Scroll Animations */}
       <section className="py-20 bg-transparent">
         <div className="container mx-auto px-4">
           {/* First Section - Photo Left, Text Right */}
@@ -114,7 +142,10 @@ export default function AboutPage() {
             ref={(el) => {
               sectionRefs.current[0] = el
             }}
-            className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-20 fade-in-left"
+            data-section-index="0"
+            className={`grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-20 transition-all duration-700 ease-out ${
+              visibleSections.has(0) ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-8"
+            }`}
           >
             {/* Photo Left */}
             <div className="relative">
@@ -152,7 +183,10 @@ export default function AboutPage() {
             ref={(el) => {
               sectionRefs.current[1] = el
             }}
-            className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-20 fade-in-right"
+            data-section-index="1"
+            className={`grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-20 transition-all duration-700 ease-out ${
+              visibleSections.has(1) ? "opacity-100 translate-x-0" : "opacity-0 translate-x-8"
+            }`}
           >
             {/* Content Left */}
             <div className="space-y-8">
@@ -193,7 +227,10 @@ export default function AboutPage() {
             ref={(el) => {
               sectionRefs.current[2] = el
             }}
-            className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center fade-in-left"
+            data-section-index="2"
+            className={`grid grid-cols-1 lg:grid-cols-2 gap-16 items-center transition-all duration-700 ease-out ${
+              visibleSections.has(2) ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-8"
+            }`}
           >
             {/* Photo Left */}
             <div className="relative">
@@ -331,9 +368,9 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
-
+  <TimelineSection />
       {/* CTA Section */}
-      <section className="py-20 bg-transparnet">
+      <section className="py-20 bg-transparent">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-4xl font-bold text-vl-yellow mb-6 font-sansumi">Ready to take the next step?</h2>
@@ -341,12 +378,11 @@ export default function AboutPage() {
               Let's start a conversation built on trust, guided by insight, and tailored to your goals. Share your
               details below — Victoria will personally review how she can support your next move.
             </p>
-            <div className="flex flex-wrap justify-center gap-2">
-            
-              <Button
+            <div className="flex flex-wrap justify-center gap-4">
+                  <Button
                 size="lg"
                 variant="outline"
-                className="bg-transparent border-2 border-vl-yellow text-white  px-8 py-4 hover::border-black text-black"
+                className="border-vl-yellow text-vl-yellow hover:bg-vl-yellow hover:text-black px-8 py-4 bg-transparent"
               >
                 <Mail className="mr-2 h-5 w-5" />
                 Send Message

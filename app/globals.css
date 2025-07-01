@@ -207,6 +207,8 @@ button {
     var(--font-sansumi-bold), var(--font-sansumi-ultralight), sans-serif;
 }
 
+/* In your global CSS file, below your existing .TabsList rules */
+
 /* RTL Support */
 [dir="rtl"] {
   font-family: var(--font-cairo), sans-serif;
@@ -243,6 +245,7 @@ button {
   text-shadow: 0 2px 4px rgba(21, 66, 112, 0.2);
   font-weight: 700;
 }
+
 
 /* Navigation Active State - Modern Yellow Glow Effect */
 .nav-active {
@@ -354,6 +357,7 @@ header.scrolled {
 button:not(.bg-vl-yellow):not(.btn-primary),
 .btn:not(.bg-vl-yellow):not(.btn-primary) {
   color: white !important;
+  background-color: transparent !important;
   border-color: var(--vl-yellow) !important;
 }
 
