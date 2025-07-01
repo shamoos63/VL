@@ -233,7 +233,7 @@ export default function Header() {
               {currentLanguage?.flag} {currentLanguage?.code.toUpperCase()}
             </Button>
           </DropdownMenuTrigger>
-          <DropdownMenuContent className="mobile-dropdown-content z-[150]"> {/* Added mobile-dropdown-content */}
+          <DropdownMenuContent className="mobile-dropdown-content z-999"> {/* Added mobile-dropdown-content */}
             {languages.map((lang) => (
               <DropdownMenuItem
                 key={lang.code}

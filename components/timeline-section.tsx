@@ -182,7 +182,7 @@ export default function TimelineSection() {
                         <div
                           className={`absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-4 h-4 rounded-full ${
                             item.highlight ? "bg-vl-yellow" : "bg-vl-blue border-2 border-vl-yellow"
-                          } hidden md:block z-10`}
+                          } hidden md:block`}
                         ></div>
 
                         {/* Year Circle */}
