@@ -10,7 +10,7 @@ export default function EvaluationPage() {
       <ServerPageHero
         title="Property Evaluation & Selling Support"
         subtitle="Considering your next move? Start with knowing exactly what your property is worth, and what it could do for you."
-        backgroundImage="/hero-images/evaluation-hero.png"
+        backgroundImage="/hero.webp"
         className="font-sansumi"
 
       />

@@ -277,7 +277,7 @@ export default function HeroSection() {
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage: `url('/hero-images/home-hero.png')`,
+          backgroundImage: `url('/hero.webp')`,
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
@@ -288,8 +288,8 @@ export default function HeroSection() {
       {/* Content */}
       <div className="relative z-10 container mx-auto px-4 text-center">
         <div className="max-w-4xl mx-auto">
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 font-sansumi">
-            {t("hero.title")} <span className="text-vl-yellow">{t("hero.title.highlight")}</span>
+          <h1 className="text-4xl md:text-6xl pt-3 lg:text-7xl font-bold text-white mb-6 font-sansumi">
+            {t("hero.title")} <span className="text-white">{t("hero.title.highlight")}</span>
           </h1>
 
           <p className="text-xl md:text-2xl text-white/90 mb-12 max-w-2xl mx-auto leading-relaxed font-sansumi font-semibold">
@@ -302,7 +302,7 @@ export default function HeroSection() {
               <Select onValueChange={(value) => setSearchData({ ...searchData, propertyType: value })}>
                 <SelectTrigger className="h-12 bg-white/90 border-0 hover:bg-white transition-colors text-vl-blue hero-search-select">
                   <div className="flex items-center text-slate-500">
-                    <Home className="h-4 w-4 mr-2 text-vl-blue" />
+                    <Home className="h-4 w-4 mr-2 text-white" />
                     <SelectValue className="text-black" placeholder={t("search.property.type")} />
                   </div>
                 </SelectTrigger>
@@ -317,7 +317,7 @@ export default function HeroSection() {
               {/* Enhanced Location with Autocomplete and Geolocation */}
               <div className="relative" ref={locationDropdownRef}>
                 <div className="flex text-white items-center h-12 bg-transparent border-0 rounded-md px-3 transition-colors group  focus-within:ring-2 focus-within:ring-vl-yellow/50 text-white">
-                  <MapPin className="h-4 w-4 mr-2 text-vl-blue flex-shrink-0" />
+                  <MapPin className="h-4 w-4 mr-2 text-white flex-shrink-0" />
                   <Input
                     ref={locationInputRef}
                     value={locationInput}
@@ -331,7 +331,7 @@ export default function HeroSection() {
                       }
                     }}
                     placeholder={t("search.location")}
-                    className="border-0 bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0 p-0 h-full placeholder:text-black"
+                    className="border-0 bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0 p-0 h-full placeholder:text-white"
                   />
                   <div className="flex items-center space-x-1">
                     {locationInput && (

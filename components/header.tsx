@@ -128,9 +128,7 @@ export default function Header() {
             </Link>
 
             {/* Mobile: Simplified branding */}
-            <div className="lg:hidden flex items-center">
-              <span className="text-sm font-bold text-vl-blue">VL Real Estate</span>
-            </div>
+         
 
             {/* Desktop Navigation */}
             <nav className={`hidden lg:flex items-center ${isRTL ? "space-x-reverse space-x-6" : "space-x-8"}`}>

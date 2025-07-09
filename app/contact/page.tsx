@@ -14,7 +14,7 @@ export default function ContactPage() {
       <ServerPageHero
         title="Contact Us"
         subtitle="Get in touch for personalized property consultation"
-        backgroundImage="/hero-images/contact-hero.png"
+        backgroundImage="/hero.webp"
         className="font-sansumi"
       />
 

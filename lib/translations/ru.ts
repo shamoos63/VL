@@ -70,7 +70,7 @@ const translations = {
   "properties.location": "Местоположение",
   "properties.features": "Особенности недвижимости",
   "properties.amenities": "Удобства здания",
-  "properties.contact.agent": "Связаться с агентом",
+  "properties.contact.agent": "Связаться с а��енто��",
   "properties.contact.now": "Связаться сей��а����",
   "properties.schedule.viewing": "Запланировать просмотр",
   "properties.available.for.viewing": "Доступно для просмотра",

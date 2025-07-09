@@ -4,15 +4,15 @@
 
 :root {
   --foreground-rgb: 255, 255, 255;
-  --background-start-rgb: 30, 58, 138;
-  --background-end-rgb: 30, 64, 175;
+  --background-start-rgb: 6, 27, 52;
+  --background-end-rgb: 6, 27, 52;
 
-  /* VL Brand Colors - Updated for WCAG AA Compliance */
-  --vl-blue: #1e3a8a; /* Contrast ratio: 8.59:1 (AAA compliant) */
-  --vl-blue-light: #1e40af; /* Contrast ratio: 7.04:1 (AAA compliant) - was too light */
-  --vl-blue-dark: #1e3a8a; /* Contrast ratio: 8.59:1 (AAA compliant) */
-  --vl-blue-darker: #1e2a5a; /* Contrast ratio: 12.1:1 (AAA compliant) */
-  --vl-blue-muted: #374151; /* Contrast ratio: 8.87:1 (AAA compliant) for secondary text */
+  /* VL Brand Colors - Updated with new primary color #061B34 */
+  --vl-blue: #061b34; /* New primary color */
+  --vl-blue-light: #0f172a; /* Slightly lighter variant */
+  --vl-blue-dark: #030712; /* Darker variant */
+  --vl-blue-darker: #020617; /* Darkest variant */
+  --vl-blue-muted: #374151; /* Muted variant for secondary text */
   --vl-yellow: #ffd396;
   --vl-yellow-dark: #f59e0b;
 }
@@ -20,14 +20,14 @@
 @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 30, 58, 138;
-    --background-end-rgb: 30, 64, 175;
+    --background-start-rgb: 6, 27, 52;
+    --background-end-rgb: 6, 27, 52;
   }
 }
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: url("/background-pattern.png") center center / cover no-repeat fixed;
+  background: url("/background.webp") center center / cover no-repeat fixed;
   min-height: 100vh;
   position: relative;
 }
@@ -45,7 +45,7 @@ main {
 .card,
 [data-card],
 .bg-white {
-  background: rgba(30, 58, 138, 0.3) !important;
+  background: rgba(6, 27, 52, 0.3) !important;
   backdrop-filter: blur(5px) !important;
   border: 1px solid rgba(255, 211, 150, 0.3) !important;
   color: white !important;
@@ -98,7 +98,7 @@ button {
   }
 }
 
-/* VL Brand Colors - WCAG AA/AAA Compliant */
+/* VL Brand Colors - Updated with new primary color */
 .text-vl-blue {
   color: var(--vl-yellow);
 }
@@ -155,13 +155,9 @@ button {
   border-color: var(--vl-yellow);
 }
 
-/* Hero gradient - More transparent to show background */
+/* Hero gradient - Updated with new primary color */
 .vl-hero-gradient {
-  background: linear-gradient(
-    135deg,
-    rgba(30, 58, 138, 0.4) 0%,
-    rgba(30, 64, 175, 0.4) 100%
-  );
+  background: linear-gradient(135deg, rgba(6, 27, 52, 0.4) 0%, rgba(15, 23, 42, 0.4) 100%);
   backdrop-filter: blur(5px);
 }
 
@@ -203,11 +199,9 @@ button {
 }
 
 .font-sansumi {
-  font-family: var(--font-sansumi-regular), var(--font-sansumi-demibold),
-    var(--font-sansumi-bold), var(--font-sansumi-ultralight), sans-serif;
+  font-family: var(--font-sansumi-regular), var(--font-sansumi-demibold), var(--font-sansumi-bold),
+    var(--font-sansumi-ultralight), sans-serif;
 }
-
-/* In your global CSS file, below your existing .TabsList rules */
 
 /* RTL Support */
 [dir="rtl"] {
@@ -234,7 +228,7 @@ button {
   -webkit-text-stroke: 2px var(--vl-blue);
   text-stroke: 2px var(--vl-blue);
   paint-order: stroke fill;
-  text-shadow: 0 0 4px rgba(21, 66, 112, 0.3);
+  text-shadow: 0 0 4px rgba(6, 27, 52, 0.3);
 }
 
 /* Enhanced text stroke for price display */
@@ -242,16 +236,14 @@ button {
   -webkit-text-stroke: 1.5px var(--vl-blue);
   text-stroke: 1.5px var(--vl-blue);
   paint-order: stroke fill;
-  text-shadow: 0 2px 4px rgba(21, 66, 112, 0.2);
+  text-shadow: 0 2px 4px rgba(6, 27, 52, 0.2);
   font-weight: 700;
 }
-
 
 /* Navigation Active State - Modern Yellow Glow Effect */
 .nav-active {
   color: var(--vl-yellow) !important;
-  text-shadow: 0 0 8px rgba(255, 211, 150, 0.6),
-    0 0 16px rgba(255, 211, 150, 0.4), 0 0 24px rgba(255, 211, 150, 0.2);
+  text-shadow: 0 0 8px rgba(255, 211, 150, 0.6), 0 0 16px rgba(255, 211, 150, 0.4), 0 0 24px rgba(255, 211, 150, 0.2);
   font-weight: 600;
   position: relative;
   transition: all 0.3s ease-in-out;
@@ -332,8 +324,7 @@ header svg {
 /* Mobile navigation active state */
 .nav-mobile-active {
   color: var(--vl-yellow) !important;
-  text-shadow: 0 0 6px rgba(255, 211, 150, 0.5),
-    0 0 12px rgba(255, 211, 150, 0.3);
+  text-shadow: 0 0 6px rgba(255, 211, 150, 0.5), 0 0 12px rgba(255, 211, 150, 0.3);
   font-weight: 600;
   background: rgba(255, 211, 150, 0.1);
   border-radius: 8px;
@@ -341,15 +332,15 @@ header svg {
   margin: 0 -12px;
 }
 
-/* Header background fixes - More transparent to show background */
+/* Header background fixes - Updated with new primary color */
 header {
-  background: rgba(30, 58, 138, 0.3) !important;
+  background: rgba(6, 27, 52, 0.3) !important;
   backdrop-filter: blur(10px) !important;
   border-bottom: 1px solid rgba(255, 211, 150, 0.2) !important;
 }
 
 header.scrolled {
-  background: rgba(30, 58, 138, 0.5) !important;
+  background: rgba(6, 27, 52, 0.5) !important;
   backdrop-filter: blur(15px) !important;
 }
 
@@ -448,7 +439,7 @@ a:hover {
 }
 
 ::-webkit-scrollbar-track {
-  background: rgba(30, 58, 138, 0.3);
+  background: rgba(6, 27, 52, 0.3);
 }
 
 ::-webkit-scrollbar-thumb {
@@ -460,15 +451,19 @@ a:hover {
   background: var(--vl-yellow-dark);
 }
 
-/* Dashboard specific styles - More transparent to show background */
+.dashboard {
+  color: rgb(var(--foreground-rgb));
+}
+
+/* Dashboard specific styles - Updated with new primary color */
 .dashboard-container {
   min-height: 100vh;
-  background: rgba(30, 58, 138, 0.3);
+  background: rgba(6, 27, 52, 0.3);
   backdrop-filter: blur(5px);
 }
 
 .dashboard-sidebar {
-  background: rgba(30, 58, 138, 0.4);
+  background: rgba(6, 27, 52, 0.4);
   backdrop-filter: blur(10px);
   border-right: 1px solid rgba(255, 211, 150, 0.2);
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
@@ -480,7 +475,7 @@ a:hover {
 }
 
 .dashboard-card {
-  background: rgba(30, 58, 138, 0.3) !important;
+  background: rgba(6, 27, 52, 0.3) !important;
   backdrop-filter: blur(8px) !important;
   border: 1px solid rgba(255, 211, 150, 0.2);
   border-radius: 0.5rem;
@@ -490,92 +485,7 @@ a:hover {
 }
 
 .dashboard-card:hover {
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
-    0 2px 4px -1px rgba(0, 0, 0, 0.06);
-}
-
-/* DASHBOARD-ONLY TEXT COLOR FIXES - TARGETED SELECTORS */
-/* Only target elements specifically within dashboard containers */
-.dashboard-main h1,
-.dashboard-main h2,
-.dashboard-main h3,
-.dashboard-main h4,
-.dashboard-main h5,
-.dashboard-main h6,
-.dashboard-card h1,
-.dashboard-card h2,
-.dashboard-card h3,
-.dashboard-card h4,
-.dashboard-card h5,
-.dashboard-card h6,
-.dashboard-container h1,
-.dashboard-container h2,
-.dashboard-container h3,
-.dashboard-container h4,
-.dashboard-container h5,
-.dashboard-container h6 {
-  color: var(--vl-yellow) !important;
-  font-weight: 600 !important;
-  -webkit-font-smoothing: antialiased !important;
-  -moz-osx-font-smoothing: grayscale !important;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5) !important;
-}
-
-.dashboard-main p,
-.dashboard-main
-  span:not(.text-vl-blue):not(.text-vl-yellow):not(.text-white),
-.dashboard-main
-  div:not(.text-vl-blue):not(.text-vl-yellow):not(.text-white),
-.dashboard-main td,
-.dashboard-main th,
-.dashboard-main label,
-.dashboard-card p,
-.dashboard-card
-  span:not(.text-vl-blue):not(.text-vl-yellow):not(.text-white),
-.dashboard-card
-  div:not(.text-vl-blue):not(.text-vl-yellow):not(.text-white),
-.dashboard-card td,
-.dashboard-card th,
-.dashboard-card label,
-.dashboard-container p,
-.dashboard-container
-  span:not(.text-vl-blue):not(.text-vl-yellow):not(.text-white),
-.dashboard-container
-  div:not(.text-vl-blue):not(.text-vl-yellow):not(.text-white),
-.dashboard-container td,
-.dashboard-container th,
-.dashboard-container label {
-  color: white !important;
-  -webkit-font-smoothing: antialiased !important;
-  -moz-osx-font-smoothing: grayscale !important;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3) !important;
-}
-
-/* Dashboard-specific table fixes */
-.dashboard-main table,
-.dashboard-main table *,
-.dashboard-card table,
-.dashboard-card table *,
-.dashboard-container table,
-.dashboard-container table * {
-  color: white !important;
-  background-color: transparent !important;
-}
-
-/* Dashboard-specific form elements */
-.dashboard-main input,
-.dashboard-main textarea,
-.dashboard-main select,
-.dashboard-card input,
-.dashboard-card textarea,
-.dashboard-card select,
-.dashboard-container input,
-.dashboard-container textarea,
-.dashboard-container select {
-  color: var(--vl-blue) !important;
-  background-color: rgba(255, 255, 255, 0.9) !important;
-  border: 1px solid var(--vl-yellow) !important;
-  backdrop-filter: blur(5px) !important;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
 }
 
 /*Coin-like effect*/
@@ -606,30 +516,20 @@ a:hover {
   animation: coin-reflection 3s ease-in-out infinite;
 }
 
-/* Dashboard-specific button text (excluding colored buttons) */
-.dashboard-main button:not(.bg-vl-blue):not(.bg-vl-yellow):not(.text-white),
-.dashboard-card button:not(.bg-vl-blue):not(.bg-vl-yellow):not(.text-white),
-.dashboard-container
-  button:not(.bg-vl-blue):not(.bg-vl-yellow):not(.text-white) {
-  color: white !important;
-}
-
-/* MODERN DROPDOWN STYLING - CLEAN DESIGN WITHOUT WHITE OVERLAYS */
-/* Radix UI Select Components - Dark Glass Design */
+/* MODERN DROPDOWN STYLING - Updated with new primary color */
 [data-radix-select-content],
 .radix-select-content,
 [role="listbox"],
 [data-radix-popper-content-wrapper],
-.search-dropdown, /* Unified search dropdowns */
+.search-dropdown,
 .location-dropdown,
 .hero-search-dropdown,
-div[class*="dropdown"] /* General dropdowns */ {
-  background: rgba(30, 58, 138) !important; /* Slightly more opaque for clarity */
+div[class*="dropdown"] {
+  background: rgba(6, 27, 52, 0.95) !important;
   backdrop-filter: blur(15px) saturate(180%) !important;
   color: white !important;
   border-radius: 16px !important;
-  box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.5),
-    inset 0 1px 0 rgba(255, 211, 150, 0.2) !important; /* Stronger, single shadow */
+  box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 211, 150, 0.2) !important;
   z-index: 90 !important;
   padding: 8px !important;
   animation: dropdown-appear 0.2s ease-out !important;
@@ -664,7 +564,7 @@ div[class*="dropdown"] > * {
 .search-dropdown-item,
 .location-dropdown-item,
 div[class*="dropdown-item"] {
-  background: transparent !important; /* Ensure transparent background */
+  background: transparent !important;
   color: white !important;
   padding: 12px 16px !important;
   cursor: pointer !important;
@@ -686,17 +586,17 @@ div[class*="dropdown-item"] {
 .search-dropdown-item:hover,
 .location-dropdown-item:hover,
 div[class*="dropdown-item"]:hover {
-  background: rgba(255, 211, 150, 0.15) !important; /* Subtle yellow hover */
+  background: rgba(255, 211, 150, 0.15) !important;
   color: var(--vl-yellow) !important;
   transform: translateX(4px) !important;
   box-shadow: 0 4px 12px rgba(255, 211, 150, 0.2) !important;
-  border-bottom-color: transparent !important; /* Remove border-bottom on hover for search dropdown items */
+  border-bottom-color: transparent !important;
 }
 
 [data-radix-select-item][data-state="checked"],
 .radix-select-item[data-state="checked"],
 [role="option"][aria-selected="true"] {
-  background: rgba(255, 211, 150, 0.2) !important; /* More pronounced checked state */
+  background: rgba(255, 211, 150, 0.2) !important;
   color: var(--vl-yellow) !important;
   box-shadow: 0 4px 12px rgba(255, 211, 150, 0.3) !important;
 }
@@ -713,10 +613,10 @@ div[class*="dropdown-item"]:hover {
   color: var(--vl-yellow) !important;
 }
 
-/* Modern Select Trigger Styling */
+/* Modern Select Trigger Styling - Updated with new primary color */
 [data-radix-select-trigger],
 .select-trigger {
-  background: rgba(30, 58, 138, 0.3) !important;
+  background: rgba(6, 27, 52, 0.3) !important;
   backdrop-filter: blur(8px) !important;
   border: 1px solid rgba(255, 211, 150, 0.3) !important;
   border-radius: 12px !important;
@@ -726,7 +626,7 @@ div[class*="dropdown-item"]:hover {
 
 [data-radix-select-trigger]:hover,
 .select-trigger:hover {
-  background: rgba(30, 58, 138, 0.5) !important;
+  background: rgba(6, 27, 52, 0.5) !important;
   border-color: var(--vl-yellow) !important;
   box-shadow: 0 0 0 3px rgba(255, 211, 150, 0.1) !important;
 }
@@ -740,12 +640,11 @@ div[class*="dropdown-item"]:hover {
 
 .glass {
   position: relative;
-  background: rgba(30, 58, 138, 0.2);
+  background: rgba(6, 27, 52, 0.2);
   backdrop-filter: blur(8px) saturate(180%);
   border: 1px solid rgba(255, 211, 150, 0.3);
   border-radius: 2rem;
-  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.2),
-    inset 0 4px 20px rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px rgba(6, 27, 52, 0.2), inset 0 4px 20px rgba(255, 255, 255, 0.1);
 }
 .glass::after {
   content: "";
@@ -757,40 +656,33 @@ div[class*="dropdown-item"]:hover {
   background: rgba(255, 255, 255, 0.05);
   border-radius: 2rem;
   backdrop-filter: blur(1px);
-  box-shadow: inset -10px -8px 0px -11px rgba(255, 255, 255, 0.1),
-    inset 0px -9px 0px -8px rgba(255, 255, 255, 0.1);
+  box-shadow: inset -10px -8px 0px -11px rgba(255, 255, 255, 0.1), inset 0px -9px 0px -8px rgba(255, 255, 255, 0.1);
   opacity: 0.6;
   z-index: -1;
-  filter: blur(1px) drop-shadow(10px 4px 6px rgba(0, 0, 0, 0.3))
-    brightness(115%);
+  filter: blur(1px) drop-shadow(10px 4px 6px rgba(0, 0, 0, 0.3)) brightness(115%);
 }
 
-/* Mobile Menu Container Specific Styling */
+/* Mobile Menu Container Specific Styling - Updated with new primary color */
 .mobile-menu-container {
-  background-color: var(--vl-blue) !important; /* Ensure it uses your brand blue */
-  backdrop-filter: blur(10px) !important; /* Add some blur to its background */
+  background-color: var(--vl-blue) !important;
+  backdrop-filter: blur(10px) !important;
 }
 
 /* Override dropdown content specifically for mobile menu */
 .mobile-dropdown-content {
-  /* This ensures the mobile dropdown content has a solid background 
-     and less transparency than the general glassmorphic dropdowns */
-  background: var(--vl-blue) !important; /* Use a darker blue for contrast */
+  background: var(--vl-blue) !important;
   backdrop-filter: blur(10px) saturate(150%) !important;
-  border: 1px solid rgba(255, 211, 150, 0.6) !important; /* Slightly stronger border */
-  box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.6),
-    inset 0 1px 0 rgba(255, 211, 150, 0.3) !important; /* More prominent shadow */
-  padding: 4px !important; /* Slightly less padding to make it feel denser */
-  border-radius: 8px !important; /* Match mobile styling for smaller elements */
+  border: 1px solid rgba(255, 211, 150, 0.6) !important;
+  box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 211, 150, 0.3) !important;
+  padding: 4px !important;
+  border-radius: 8px !important;
 }
 
-/* Ensure items within the mobile dropdown content are transparent, 
-   allowing the new solid background of .mobile-dropdown-content to show */
 .mobile-dropdown-content > [data-radix-select-item],
 .mobile-dropdown-content > .radix-select-item,
 .mobile-dropdown-content > [role="option"] {
-  background: transparent !important; /* Items themselves remain transparent */
-  padding: 8px 12px !important; /* Slightly less padding for mobile */
+  background: transparent !important;
+  padding: 8px 12px !important;
 }
 
 .mobile-dropdown-content > [data-radix-select-item]:hover,
@@ -799,34 +691,31 @@ div[class*="dropdown-item"]:hover {
 .mobile-dropdown-content > .radix-select-item[data-highlighted],
 .mobile-dropdown-content > [role="option"]:hover,
 .mobile-dropdown-content > [role="option"][data-highlighted] {
-  background: rgba(255, 211, 150, 0.1) !important; /* Slightly less opaque hover for better contrast */
-  transform: none !important; /* Prevent horizontal shift on mobile dropdown items if not desired */
+  background: rgba(255, 211, 150, 0.1) !important;
+  transform: none !important;
 }
 
-
-/* Dialog and Modal Styling - Enhanced Glass Morphism */
+/* Dialog and Modal Styling - Updated with new primary color */
 [data-radix-dialog-overlay] {
   background-color: rgba(0, 0, 0, 0.6) !important;
   backdrop-filter: blur(8px) !important;
 }
 
 [data-radix-dialog-content] {
-  background: rgba(30, 58, 138, 0.85) !important;
+  background: rgba(6, 27, 52, 0.85) !important;
   backdrop-filter: blur(20px) saturate(180%) !important;
   border: 1px solid rgba(255, 211, 150, 0.4) !important;
   border-radius: 24px !important;
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.4),
-    inset 0 1px 0 rgba(255, 211, 150, 0.1) !important;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 211, 150, 0.1) !important;
   color: white !important;
 }
 
 .dialog-content {
-  background: rgba(30, 58, 138, 0.85) !important;
+  background: rgba(6, 27, 52, 0.85) !important;
   backdrop-filter: blur(20px) saturate(180%) !important;
   border: 1px solid rgba(255, 211, 150, 0.4) !important;
   border-radius: 24px !important;
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.4),
-    inset 0 1px 0 rgba(255, 211, 150, 0.1) !important;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 211, 150, 0.1) !important;
   color: white !important;
 }
 
@@ -890,7 +779,7 @@ div[class*="dropdown-item"]:hover {
     border-radius: 20px !important;
   }
 
-  /* Mobile Dropdown Adjustments (General, but .mobile-dropdown-content overrides this if applied) */
+  /* Mobile Dropdown Adjustments */
   [data-radix-select-content],
   .search-dropdown,
   .location-dropdown {
@@ -939,13 +828,9 @@ div[class*="dropdown-item"]:hover {
   }
 }
 
-/* Button Styling */
+/* Button Styling - Updated with new primary color */
 .btn-primary {
-  background: linear-gradient(
-    135deg,
-    var(--vl-yellow) 0%,
-    var(--vl-yellow-dark) 100%
-  ) !important;
+  background: linear-gradient(135deg, var(--vl-yellow) 0%, var(--vl-yellow-dark) 100%) !important;
   border: none !important;
   color: var(--vl-blue) !important;
   border-radius: 12px !important;
@@ -959,7 +844,7 @@ div[class*="dropdown-item"]:hover {
 }
 
 .btn-secondary {
-  background: rgba(30, 58, 138, 0.3) !important;
+  background: rgba(6, 27, 52, 0.3) !important;
   backdrop-filter: blur(10px) !important;
   border: 1px solid rgba(255, 211, 150, 0.4) !important;
   color: var(--vl-yellow) !important;
@@ -974,11 +859,11 @@ div[class*="dropdown-item"]:hover {
   transform: translateY(-2px) !important;
 }
 
-/* Ensure all popups are opaque */
+/* Ensure all popups are opaque - Updated with new primary color */
 .popup-container,
 .modal-container,
 .dialog-container {
-  background: rgba(30, 58, 138, 0.85) !important;
+  background: rgba(6, 27, 52, 0.85) !important;
   backdrop-filter: blur(20px) !important;
   opacity: 1 !important;
   color: white !important;
@@ -1009,12 +894,12 @@ div[class*="dropdown-item"]:hover {
   outline-offset: 2px;
 }
 
-/* High contrast mode support */
+/* High contrast mode support - Updated with new primary color */
 @media (prefers-contrast: high) {
   :root {
-    --vl-blue: #000080;
-    --vl-blue-light: #000080;
-    --vl-blue-dark: #000080;
+    --vl-blue: #061b34;
+    --vl-blue-light: #0f172a;
+    --vl-blue-dark: #030712;
     --vl-blue-muted: #000000;
   }
 }

@@ -7,7 +7,7 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Textarea } from "@/components/ui/textarea"
-import { X, CheckCircle } from "lucide-react"
+import { CheckCircle } from "lucide-react"
 import { useI18n } from "@/lib/i18n"
 import Image from "next/image"
 import AnimatedCounter from "@/components/animated-counter"
@@ -91,22 +91,20 @@ export default function WelcomePopup({ onClose }: WelcomePopupProps) {
         className="w-full max-w-2xl max-h-[90vh] overflow-y-auto bg-vl-blue border border-vl-yellow shadow-2xl border-0 relative"
         ref={popupRef}
       >
-        {/* Modern Blue Header with Responsive Layout */}
+        {/* Modern Blue Header with Laptop-Centered Layout */}
         <CardHeader className="relative bg-gradient-to-br from-vl-blue via-vl-blue-light to-vl-blue-dark text-white rounded-t-2xl rounded-b-2xl shadow-lg mb-4 overflow-hidden border-b border-vl-yellow">
           {/* Background Pattern */}
           <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent"></div>
           <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -translate-y-16 translate-x-16"></div>
           <div className="absolute bottom-0 left-0 w-24 h-24 bg-white/10 rounded-full translate-y-12 -translate-x-12"></div>
 
-         
-
           <div className="relative z-10">
-            {/* Responsive Layout */}
-            <div className="flex flex-col items-center md:items-start md:flex-row gap-6 mb-6">
-              {/* Centered Photo */}
-              <div className="flex justify-center w-full md:w-auto">
+            {/* Mobile Layout (unchanged) - Responsive Layout for mobile */}
+            <div className="flex flex-col items-center md:hidden gap-6 mb-6">
+              {/* Centered Photo for Mobile */}
+              <div className="flex justify-center w-full">
                 <Image
-                  src="/victoria-photo-1.jpg"
+                  src="/victoria-photo-3.jpg"
                   alt="Victoria Lancaster"
                   width={128}
                   height={128}
@@ -114,20 +112,20 @@ export default function WelcomePopup({ onClose }: WelcomePopupProps) {
                 />
               </div>
 
-              {/* Text Content */}
-              <div className="flex-1 text-center md:text-left md:pt-2">
-                <CardTitle className="text-xl md:text-2xl font-bold text-vl-yellow mb-3 md:mb-4 leading-tight">
+              {/* Text Content for Mobile */}
+              <div className="flex-1 text-center">
+                <CardTitle className="text-xl font-bold text-vl-yellow mb-3 leading-tight">
                   Hi, I&apos;m Victoria.
                 </CardTitle>
-                <p className="text-white text-base md:text-lg leading-relaxed mb-4 md:mb-6 font-medium">
+                <p className="text-white text-base leading-relaxed mb-4 font-medium">
                   I help investors find the right property, aligned with their goals and truly worth pursuing.
                 </p>
 
-                {/* Two Column Stats */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
+                {/* Two Column Stats for Mobile */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                   {/* Experience */}
                   <div className="text-center">
-                    <div className="text-white font-semibold text-base md:text-lg mb-1">
+                    <div className="text-white font-semibold font-medium mb-1">
                       With over{" "}
                       <AnimatedCounter end={15} duration={2000} className="inline-block font-bold text-vl-yellow" />{" "}
                       years of experience
@@ -137,7 +135,50 @@ export default function WelcomePopup({ onClose }: WelcomePopupProps) {
 
                   {/* Strategic */}
                   <div className="text-center">
-                    <div className="text-white font-semibold text-base md:text-lg mb-1">Strategically</div>
+                    <div className="text-white font-semibold font-medium mb-1">Strategically</div>
+                    <p className="text-white/80 text-sm">recommend the best property for you</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Laptop/Desktop Layout (md and above) - Centered Image at Top */}
+            <div className="hidden md:flex md:flex-col md:items-center mb-6">
+              {/* Centered Photo at Top for Laptop */}
+              <div className="flex justify-center w-full mb-6">
+                <Image
+                  src="/victoria-photo-3.jpg"
+                  alt="Victoria Lancaster"
+                  width={128}
+                  height={128}
+                  className="rounded-full object-cover border-4 border-vl-yellow/20 shadow-lg w-32 h-32"
+                />
+              </div>
+
+              {/* Centered Text Content Below Image for Laptop */}
+              <div className="text-center w-full">
+                <CardTitle className="text-2xl font-bold text-vl-yellow mb-4 leading-tight">
+                  Hi, I&apos;m Victoria.
+                </CardTitle>
+                <p className="text-white text-lg leading-relaxed mb-6 font-medium max-w-2xl mx-auto">
+                  I help investors find the right property, aligned with their goals and truly worth pursuing.
+                </p>
+
+                {/* Two Column Stats for Laptop - Centered */}
+                <div className="grid grid-cols-2 gap-6 max-w-lg mx-auto">
+                  {/* Experience */}
+                  <div className="text-center">
+                    <div className="text-white font-semibold text-lg mb-1">
+                      With over{" "}
+                      <AnimatedCounter end={15} duration={2000} className="inline-block font-bold text-vl-yellow" />{" "}
+                      years of experience
+                    </div>
+                    <p className="text-white/80 text-sm">Across Dubai and the UK</p>
+                  </div>
+
+                  {/* Strategic */}
+                  <div className="text-center">
+                    <div className="text-white font-semibold text-lg mb-1">Strategically</div>
                     <p className="text-white/80 text-sm">recommend the best property for you</p>
                   </div>
                 </div>

@@ -4,7 +4,7 @@ import Footer from "@/components/footer"
 import Header from "@/components/header"
 import TimelineSection from "@/components/timeline-section"
 import { Button } from "@/components/ui/button"
-import { Award, Users, TrendingUp, Globe, MapPin, Mail, Calendar, Briefcase, GraduationCap, Check } from "lucide-react"
+import { Award, Users, TrendingUp, Globe, MapPin, Mail, Briefcase, GraduationCap, Check } from "lucide-react"
 import Image from "next/image"
 
 const achievements = [
@@ -99,11 +99,11 @@ export default function AboutPage() {
       <section className="relative pt-24 pb-20 overflow-hidden">
         <div className="absolute inset-0 bg-transparent opacity-95"></div>
         <div className="absolute inset-0">
-          <Image src="/hero-images/about-hero.png" alt="Victoria Lancaster" fill className="object-cover" priority />
+          <Image src="/hero.webp" alt="Victoria Lancaster" fill className="object-cover" priority />
         </div>
         <div className="relative container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center text-white">
-            <h1 className="text-5xl md:text-7xl font-bold mb-6 font-sansumi text-vl-yellow">About Victoria</h1>
+            <h1 className="text-5xl md:text-7xl font-bold mb-6 pt-8 font-sansumi text-vl-yellow">About Victoria</h1>
             <p className="text-xl md:text-2xl font-light leading-relaxed text-white">
               Where trust, insight, and performance come together.
             </p>
@@ -131,24 +131,25 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Timeline Section */}
-    
+   
 
-      {/* About Content Section with Dynamic Scroll Animations */}
+      {/* About Content Section with Reversed Animation Directions */}
       <section className="py-20 bg-transparent">
         <div className="container mx-auto px-4">
-          {/* First Section - Photo Left, Text Right */}
+          {/* First Section - Photo Left, Text Right - Photo animates from LEFT, Text animates from RIGHT */}
           <div
             ref={(el) => {
               sectionRefs.current[0] = el
             }}
             data-section-index="0"
-            className={`grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-20 transition-all duration-700 ease-out ${
-              visibleSections.has(0) ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-8"
-            }`}
+            className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-20"
           >
-            {/* Photo Left */}
-            <div className="relative">
+            {/* Photo Left - Animates from LEFT */}
+            <div
+              className={`relative transition-all duration-700 ease-out ${
+                visibleSections.has(0) ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-8"
+              }`}
+            >
               <div className="relative h-96 md:h-[500px] rounded-3xl overflow-hidden shadow-2xl">
                 <Image
                   src="/victoria-photo-1.jpg"
@@ -159,8 +160,12 @@ export default function AboutPage() {
               </div>
             </div>
 
-            {/* Content Right */}
-            <div className="space-y-8">
+            {/* Content Right - Animates from RIGHT */}
+            <div
+              className={`space-y-8 transition-all duration-700 ease-out ${
+                visibleSections.has(0) ? "opacity-100 translate-x-0" : "opacity-0 translate-x-8"
+              }`}
+            >
               <div>
                 <h2 className="text-4xl font-bold text-vl-yellow mb-6 font-sansumi leading-tight">
                   15+ Years of Market Excellence
@@ -178,18 +183,20 @@ export default function AboutPage() {
             </div>
           </div>
 
-          {/* Second Section - Text Left, Photo Right */}
+          {/* Second Section - Text Left, Photo Right - Text animates from LEFT, Photo animates from RIGHT */}
           <div
             ref={(el) => {
               sectionRefs.current[1] = el
             }}
             data-section-index="1"
-            className={`grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-20 transition-all duration-700 ease-out ${
-              visibleSections.has(1) ? "opacity-100 translate-x-0" : "opacity-0 translate-x-8"
-            }`}
+            className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-20"
           >
-            {/* Content Left */}
-            <div className="space-y-8">
+            {/* Content Left - Animates from LEFT */}
+            <div
+              className={`space-y-8 transition-all duration-700 ease-out ${
+                visibleSections.has(1) ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-8"
+              }`}
+            >
               <div>
                 <h2 className="text-4xl font-bold text-vl-yellow mb-6 font-sansumi leading-tight">
                   A Portfolio Built on Insight
@@ -209,8 +216,12 @@ export default function AboutPage() {
               </div>
             </div>
 
-            {/* Photo Right */}
-            <div className="relative">
+            {/* Photo Right - Animates from RIGHT */}
+            <div
+              className={`relative transition-all duration-700 ease-out ${
+                visibleSections.has(1) ? "opacity-100 translate-x-0" : "opacity-0 translate-x-8"
+              }`}
+            >
               <div className="relative h-96 md:h-[500px] rounded-3xl overflow-hidden shadow-2xl">
                 <Image
                   src="/victoria-photo-2.jpg"
@@ -222,18 +233,20 @@ export default function AboutPage() {
             </div>
           </div>
 
-          {/* Third Section - Photo Left, Text Right */}
+          {/* Third Section - Photo Left, Text Right - Photo animates from LEFT, Text animates from RIGHT */}
           <div
             ref={(el) => {
               sectionRefs.current[2] = el
             }}
             data-section-index="2"
-            className={`grid grid-cols-1 lg:grid-cols-2 gap-16 items-center transition-all duration-700 ease-out ${
-              visibleSections.has(2) ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-8"
-            }`}
+            className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center"
           >
-            {/* Photo Left */}
-            <div className="relative">
+            {/* Photo Left - Animates from LEFT */}
+            <div
+              className={`relative transition-all duration-700 ease-out ${
+                visibleSections.has(2) ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-8"
+              }`}
+            >
               <div className="relative h-96 md:h-[600px] rounded-3xl overflow-hidden shadow-2xl">
                 <Image
                   src="/victoria-photo-3.jpg"
@@ -244,8 +257,12 @@ export default function AboutPage() {
               </div>
             </div>
 
-            {/* Content Right */}
-            <div className="space-y-8">
+            {/* Content Right - Animates from RIGHT */}
+            <div
+              className={`space-y-8 transition-all duration-700 ease-out ${
+                visibleSections.has(2) ? "opacity-100 translate-x-0" : "opacity-0 translate-x-8"
+              }`}
+            >
               <div>
                 <h2 className="text-4xl font-bold text-vl-yellow mb-6 font-sansumi leading-tight">
                   Her Clients, Her Values
@@ -267,7 +284,8 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
-
+   {/* Timeline Section */}
+      <TimelineSection />
       {/* Academic & Professional Section */}
       <section className="py-20 bg-transparent">
         <div className="container mx-auto px-4">
@@ -368,7 +386,7 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
-  <TimelineSection />
+
       {/* CTA Section */}
       <section className="py-20 bg-transparent">
         <div className="container mx-auto px-4">
@@ -379,7 +397,7 @@ export default function AboutPage() {
               details below — Victoria will personally review how she can support your next move.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
-                  <Button
+              <Button
                 size="lg"
                 variant="outline"
                 className="border-vl-yellow text-vl-yellow hover:bg-vl-yellow hover:text-black px-8 py-4 bg-transparent"

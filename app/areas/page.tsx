@@ -47,40 +47,40 @@ export default function AreasPage() {
       <ServerPageHero
         title="Explore Dubai's Key Investment Areas"
         subtitle="Handpicked insights to help you choose with confidence."
-        backgroundImage="/hero-images/areas-hero.png"
+        backgroundImage="/hero.webp"
       />
 
       {/* Description Section */}
       <section className="py-12 bg-white">
         <div className="container mx-auto px-4 max-w-4xl">
-          <p className="text-lg text-gray-700 mb-6">
+          <p className="text-lg text-gray-700 mb-6 text-center">
             Dubai's real estate market is diverse, and not every area suits every investor.
           </p>
-          <p className="text-lg text-gray-700 mb-6">
+          <p className="text-lg text-gray-700 mb-6 text-center">
             In this section, Victoria highlights key districts she works in, sharing her honest perspective on:
           </p>
        <ul class="flex flex-col gap-6 md:flex-row md:gap-8">
 
-    <li class="flex flex-1 items-center justify-center rounded-xl bg-white p-6 text-center shadow-md transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+    <li class="flex flex-1 items-center justify-center rounded-xl glass p-6 text-center shadow-md transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
       <h3 class="text-lg font-medium text-gray-800">
         Strengths & potential
       </h3>
     </li>
 
-    <li class="flex flex-1 items-center justify-center rounded-xl bg-white p-6 text-center shadow-md transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+    <li class="flex flex-1 items-center justify-center rounded-xl glass p-6 text-center shadow-md transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
       <h3 class="text-lg font-medium text-gray-800">
         Risks to consider
       </h3>
     </li>
 
-    <li class="flex flex-1 items-center justify-center rounded-xl bg-white p-6 text-center shadow-md transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+    <li class="flex flex-1 items-center justify-center rounded-xl glass p-6 text-center shadow-md transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
       <h3 class="text-lg font-medium text-gray-800">
         Who the area fits best
       </h3>
     </li>
 
   </ul>
-          <p className="text-lg text-gray-700 font-medium">
+          <p className="text-lg text-gray-700 pt-4 font-medium text-center">
             Whether you're focused on yield, growth, or lifestyle, this will help you make the right move.
           </p>
         </div>

@@ -11,7 +11,7 @@ export default function PropertiesPage() {
       <ServerPageHero
         title="Personally Selected. Strategically Positioned."
         subtitle="No noise. No mass listings. Just curated opportunities, reviewed, refined, and investment-ready."
-        backgroundImage="/hero-images/properties-hero.png"
+        backgroundImage="/hero.webp"
         className="font-sansumi"
       />
       <HomePropertyListings />

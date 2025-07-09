@@ -47,7 +47,7 @@ export default function BlogPage() {
       <ServerPageHero
         title="Insights from the Market"
         subtitle="Stay informed. Stay ahead."
-        backgroundImage="/hero-images/blog-hero.png"
+        backgroundImage="/hero.webp"
         className="font-sansumi"
 
       />
