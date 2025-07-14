@@ -1,201 +1,127 @@
-const translations = {
+export const en = {
   // Navigation
   "nav.home": "Home",
   "nav.properties": "Properties",
   "nav.areas": "Areas",
   "nav.evaluation": "Property Evaluation",
-  "nav.blog": "Blog",
   "nav.about": "About",
-  "nav.contact": "Contact Us",
+  "nav.blog": "Blog",
+  "nav.contact": "Contact",
   "nav.search.placeholder": "Search properties...",
-  "nav.language": "Language",
 
   // Hero Section
-  "hero.title": "Find Your Dream Property in",
-  "hero.title.highlight": "Dubai",
-  "hero.subtitle": "Luxury homes, investment opportunities, and personalized service you can trust",
+  "hero.title": "Discover Your Perfect",
+  "hero.title.highlight": "Dubai Investment",
+  "hero.subtitle": "Expert guidance for strategic property investments in Dubai's most promising locations",
   "hero.search.button": "Search Properties",
   "hero.stats.properties": "Properties Sold",
-  "hero.stats.value": "Total Value",
+  "hero.stats.value": "Transaction Value",
   "hero.stats.experience": "Years Experience",
-  "hero.stats.satisfaction": "Client Satisfaction",
 
-  // Property Search Form
+  // Search
   "search.property.type": "Property Type",
-  "search.location": "Location",
-  "search.price.range": "Price Range",
-  "search.bedrooms": "Bedrooms",
   "search.apartment": "Apartment",
   "search.villa": "Villa",
   "search.townhouse": "Townhouse",
   "search.penthouse": "Penthouse",
+  "search.location": "Location",
+  "search.price.range": "Price Range",
+  "search.bedrooms": "Bedrooms",
   "search.1.bedroom": "1 Bedroom",
   "search.2.bedrooms": "2 Bedrooms",
   "search.3.bedrooms": "3 Bedrooms",
   "search.4plus.bedrooms": "4+ Bedrooms",
 
+  // Properties
+  "properties.view.details": "View Details",
+  "properties.status.ready": "Ready",
+  "properties.status.offplan": "Off Plan",
+  "properties.status.featured": "Featured",
+  "properties.status.for-rent": "For Rent",
+  "properties.status.sold": "Sold",
+  "properties.found": "properties found",
+  "properties.showing": "Showing",
+  "properties.of": "of",
+  "properties.results": "results",
+  "properties.no.results": "No Properties Found",
+  "properties.try.different.filters": "Try adjusting your search filters to see more results.",
+  "properties.suggestions": "Suggestions: Try expanding your price range, location, or property type filters.",
+  "properties.end.of.results": "You've seen all available properties matching your criteria.",
+  "properties.results.title": "Search Results",
+  "properties.hero.title": "Personally Selected. Strategically Positioned.",
+  "properties.hero.subtitle":
+    "No noise. No mass listings. Just curated opportunities, reviewed, refined, and investment-ready.",
+
+  // Filters
+  "filters.title": "Filters",
+  "filters.search": "Search",
+  "filters.search.placeholder": "Search properties...",
+  "filters.price.range": "Price Range",
+  "filters.bedrooms.range": "Bedrooms",
+  "filters.bathrooms.range": "Bathrooms",
+  "filters.rooms": "Rooms",
+  "filters.property.type": "Property Type",
+  "filters.status": "Status",
+  "filters.status.ready": "Ready",
+  "filters.status.offplan": "Off Plan",
+  "filters.status.for-rent": "For Rent",
+  "filters.status.sold": "Sold",
+  "filters.location": "Location",
+  "filters.amenities": "Amenities",
+  "filters.amenities.pool": "Swimming Pool",
+  "filters.amenities.garden": "Garden",
+  "filters.amenities.garage": "Garage",
+  "filters.amenities.balcony": "Balcony",
+  "filters.amenities.gym": "Gym",
+  "filters.amenities.security": "24/7 Security",
+  "filters.amenities.elevator": "Elevator",
+  "filters.amenities.parking": "Parking",
+  "filters.sort.label": "Sort By",
+  "filters.sort.default": "Default",
+  "filters.sort.price-asc": "Price: Low to High",
+  "filters.sort.price-desc": "Price: High to Low",
+  "filters.sort.newest": "Newest First",
+  "filters.sort.oldest": "Oldest First",
+  "filters.sort.bedrooms-asc": "Bedrooms: Low to High",
+  "filters.sort.bedrooms-desc": "Bedrooms: High to Low",
+  "filters.reset": "Reset All",
+  "filters.apply": "Apply Filters",
+  "filters.active": "active filters",
+
+  // Map
+  "map.properties.found": "properties found",
+  "map.available.properties": "Available Properties",
+  "map.selected.property": "Selected Property",
+
   // Locations
   "location.dubai.marina": "Dubai Marina",
   "location.downtown": "Downtown Dubai",
   "location.palm.jumeirah": "Palm Jumeirah",
-  "location.jvc": "Jumeirah Village Circle",
   "location.business.bay": "Business Bay",
+  "location.jvc": "Jumeirah Village Circle",
   "location.dubai.maritime": "Dubai Maritime City",
 
-  // Property Listings
-  "properties.title": "Featured Properties",
-  "properties.subtitle":
-    "Discover exceptional properties carefully curated by Victoria Lancaster for their investment potential and luxury appeal",
-  "properties.filter.all": "All Properties",
-  "properties.filter.featured": "Featured",
-  "properties.filter.ready": "Ready",
-  "properties.filter.offplan": "Off-Plan",
-  "properties.view.details": "View Details",
-  "properties.schedule.tour": "Schedule Tour",
-  "properties.view.all": "View All Properties",
-  "properties.status.ready": "Ready",
-  "properties.status.offplan": "Off-Plan",
-  "properties.status.featured": "Featured",
-
-  // Properties Detail Page
-  "properties.back.to.listings": "Back to Properties",
-  "properties.watch.video": "Watch Video",
-  "properties.tab.overview": "Overview",
-  "properties.tab.features": "Features",
-  "properties.tab.amenities": "Amenities",
-  "properties.overview": "Property Overview",
-  "properties.bedrooms": "Bedrooms",
-  "properties.bathrooms": "Bathrooms",
-  "properties.area": "Area",
-  "properties.location": "Location",
-  "properties.features": "Property Features",
-  "properties.amenities": "Building Amenities",
-  "properties.contact.agent": "Contact Agent",
-  "properties.contact.now": "Contact Now",
-  "properties.schedule.viewing": "Schedule Viewing",
-  "properties.available.for.viewing": "Available for Viewing",
-  "properties.similar": "Similar Properties",
-
-  // About Section
-  "about.title": "About Victoria Lancaster",
-  "about.subtitle": "Your trusted partner in Dubai real estate since 2020",
-  "about.quote": '"I don\'t just sell properties, I strategize wealth."',
-  "about.description.1":
-    "With over 15 years of experience in Dubai's dynamic real estate market, I specialize in strategic property investments that build lasting wealth. My approach combines deep market knowledge with personalized service to help clients make informed decisions.",
-  "about.description.2":
-    "From luxury penthouses in Downtown Dubai to promising off-plan developments, I guide investors through every step of their property journey. My multilingual expertise and extensive network ensure you get exclusive access to the best opportunities in the market.",
-  "about.trait.professional": "Professional Excellence",
-  "about.trait.experienced": "Market Expertise",
-  "about.trait.trustworthy": "Trusted Advisor",
-  "about.trait.multilingual": "Multilingual Service",
-  "about.trait.best.deals": "Best Investment Deals",
-  "about.trait.fast.service": "Fast & Efficient",
-  "about.expertise.title": "Investment Expertise & Strategic Services",
-  "about.expertise.offplan": "Off-Plan Investment Strategies",
-  "about.expertise.luxury": "Luxury Property Portfolio",
-  "about.expertise.buytolet": "Buy-to-Let Opportunities",
-  "about.expertise.portfolio": "Portfolio Optimization",
-  "about.expertise.forecasting": "Market Forecasting",
-
-  // Testimonials
-  "testimonials.title": "Client Success Stories",
-  "testimonials.subtitle": "Hear from investors who trusted Victoria Lancaster with their Dubai property journey",
-  "testimonials.join.title": "Join 585+ Satisfied Investors",
-  "testimonials.join.subtitle":
-    "Ready to start your Dubai property investment journey? Let Victoria help you achieve your goals.",
-  "testimonials.total.value": "Total Transaction Value",
-  "testimonials.years.experience": "Years Experience",
-  "testimonials.client.satisfaction": "Client Satisfaction",
-
-  // FAQ Section
-  "faq.title": "Frequently Asked Questions",
-  "faq.subtitle": "with Victoria Lancaster",
-  "faq.quote":
-    '"I chose these questions because they reflect what people really ask me - not just about buying in Dubai, but about how I think, how I work, and what I value. I believe clarity builds trust. When you know what to expect, you can make better decisions."',
-  "faq.quote.author": "— Victoria Lancaster",
-
-  // FAQ Questions and Answers
-  "faq.q1": "Can foreigners buy property in Dubai?",
-  "faq.a1":
-    "Absolutely. Non-residents can fully own property in designated freehold areas throughout Dubai. It's a streamlined process that welcomes global investors without residency requirements.",
-
-  "faq.q2": "I'm new to property investment - where do I start?",
-  "faq.a2":
-    "Start with clarity. Understand your investment goals - are you looking for long-term rental income, short-term gains, or a future home? Once your priorities are clear, Victoria will help you build a strategy around them, guiding you through the best areas, property types, and developers that align with your vision.",
-
-  "faq.q3": "What kind of returns can I expect from Dubai property investment?",
-  "faq.a3":
-    "Dubai offers some of the world's highest rental yields - typically ranging from 5% to 8.4%, and in some cases even up to 15%.",
-
-  "faq.q4": "Do I need to be in Dubai to buy property?",
-  "faq.a4":
-    "Not at all. With power of attorney and digital signatures, you can purchase remotely from anywhere in the world.",
-
-  "faq.q5": "Can international buyers get mortgages in Dubai?",
-  "faq.a5":
-    "Yes. Select banks offer financing options for non-residents, depending on your financial profile and property type.",
-
-  "faq.q6": "Are there taxes involved in property purchase?",
-  "faq.a6":
-    "Dubai has no property income tax or capital gains tax. The main fee is a 4% registration fee with Dubai Land Department, plus minor administrative and legal fees.",
-
-  "faq.q7": "Will property ownership give me a residence visa?",
-  "faq.a7":
-    "Yes. If you invest AED 750,000 or more in residential property, you're eligible to apply for a 2-year renewable residence visa through Dubai Land Department.",
-
-  "faq.q8": "What's better: ready property or off-plan?",
-  "faq.a8":
-    "It depends on your goals and what's available in the market. Ready properties can start generating income immediately, while off-plan projects often offer lower entry points, attractive payment plans, and capital growth potential.",
-
-  "faq.q9": "Which areas in Dubai offer the best investment opportunities?",
-  "faq.a9":
-    "Top-performing areas include: Dubai Marina, Downtown Dubai, Palm Jumeirah, Jumeirah Village Circle (JVC), Business Bay, and Dubai Maritime City. These areas offer a combination of strong rental demand, premium lifestyle appeal, and solid long-term returns.",
-
-  "faq.q10": "What makes working with Victoria different from others?",
-  "faq.a10":
-    "Victoria doesn't just sell - she strategizes. With over 15 years of experience, deep market knowledge, and strong relationships with top-tier developers, she secures high-value deals for her clients.",
-
-  "faq.q11": "How does Victoria choose properties to recommend?",
-  "faq.a11":
-    "If she wouldn't invest in it herself, she won't recommend it to you. Victoria personally vets every opportunity based on developer credibility, ROI projections, long-term value, and gut instinct.",
-
-  "faq.q12": "What's it like working with Victoria one-on-one?",
-  "faq.a12":
-    "Expect transparency, quiet confidence, and complete honesty. Victoria listens deeply, thinks strategically, and tells you what you need to hear - not just what you want to hear.",
-
-  "faq.q13": "Why does Victoria only work with select clients and developers?",
-  "faq.a13":
-    "Because quality over quantity leads to better results. By focusing only on credible developers and serious buyers, Victoria preserves her time, energy, and focus for deals that matter.",
-
-  // Property Evaluation
-  "evaluation.title": "Property Evaluation Tool",
-  "evaluation.subtitle": "Get a professional property valuation from Victoria's expert team",
-  "evaluation.hero.title": "Property Evaluation Tool",
-  "evaluation.hero.subtitle":
-    "Get an instant estimate of your property's value with Victoria's expert valuation system",
-  "evaluation.hero.properties.evaluated": "Properties Evaluated",
-  "evaluation.hero.total.value": "Total Estimated Value",
-  "evaluation.hero.years.experience": "Years Experience",
-  "evaluation.form.title": "Property Details",
+  // Evaluation
+  "evaluation.form.title": "Property Evaluation Tool",
   "evaluation.contact.info": "Contact Information",
   "evaluation.name": "Full Name",
-  "evaluation.name.placeholder": "Your full name",
+  "evaluation.name.placeholder": "Enter your full name",
   "evaluation.email": "Email Address",
-  "evaluation.email.placeholder": "your.email@example.com",
+  "evaluation.email.placeholder": "Enter your email",
   "evaluation.phone": "Phone Number",
-  "evaluation.phone.placeholder": "+971 XX XXX XXXX",
+  "evaluation.phone.placeholder": "Enter your phone number",
   "evaluation.property.type": "Property Type",
-  "evaluation.select.type": "Select Type",
+  "evaluation.select.type": "Select property type",
   "evaluation.location": "Location",
-  "evaluation.select.location": "Select Location",
+  "evaluation.select.location": "Select location",
   "evaluation.bedrooms": "Bedrooms",
-  "evaluation.select.beds": "Bedrooms",
+  "evaluation.select.beds": "Select bedrooms",
   "evaluation.bathrooms": "Bathrooms",
-  "evaluation.select.baths": "Bathrooms",
+  "evaluation.select.baths": "Select bathrooms",
   "evaluation.area": "Area (sq ft)",
   "evaluation.area.placeholder": "e.g., 1200",
   "evaluation.condition": "Property Condition",
-  "evaluation.select.condition": "Select Condition",
+  "evaluation.select.condition": "Select condition",
   "evaluation.condition.excellent": "Excellent",
   "evaluation.condition.good": "Good",
   "evaluation.condition.fair": "Fair",
@@ -203,120 +129,224 @@ const translations = {
   "evaluation.year.built": "Year Built",
   "evaluation.year.placeholder": "e.g., 2020",
   "evaluation.amenities": "Amenities",
-  "evaluation.amenities.placeholder": "e.g., Pool, Gym, Parking, Balcony",
-  "evaluation.description": "Additional Details",
-  "evaluation.description.placeholder": "Any additional information about the property...",
-  "evaluation.button": "Submit for Professional Evaluation",
-  "evaluation.success.title": "Thank you for your submission!",
+  "evaluation.amenities.placeholder": "e.g., Pool, Gym, Parking",
+  "evaluation.description": "Additional Description",
+  "evaluation.description.placeholder": "Any additional details about your property...",
+  "evaluation.button": "Get Property Evaluation",
+  "evaluation.success.title": "Evaluation Submitted Successfully!",
   "evaluation.success.message":
-    "We've received your property details and will get back to you as soon as possible with a comprehensive valuation and market analysis.",
-  "evaluation.success.contact.title": "We'll contact you via:",
-  "evaluation.success.new.evaluation": "Submit Another Evaluation",
-
-  // Contact Page
-  "contact.title": "Contact Us",
-  "contact.subtitle": "Ready to start your Dubai property journey? Let's discuss your investment goals.",
-  "contact.form.title": "Send Message",
-  "contact.first.name": "First Name",
-  "contact.first.name.placeholder": "Your first name",
-  "contact.last.name": "Last Name",
-  "contact.last.name.placeholder": "Your last name",
-  "contact.email": "Email Address",
-  "contact.email.placeholder": "your.email@example.com",
-  "contact.phone": "Phone Number",
-  "contact.phone.placeholder": "+971 XX XXX XXXX",
-  "contact.budget": "Investment Budget",
-  "contact.budget.placeholder": "e.g., $500K - $1M",
-  "contact.message": "Message",
-  "contact.message.placeholder": "Tell us about your property requirements and investment goals...",
-  "contact.send": "Send Message",
-  "contact.info.title": "Contact Information",
-  "contact.phone.label": "Phone",
-  "contact.email.label": "Email",
-  "contact.office.label": "Office",
-  "contact.hours.label": "Business Hours",
-  "contact.hours.value": "Sun - Thu: 9:00 AM - 6:00 PM",
-  "contact.location": "Our Location",
-  "contact.why.choose.title": "Why Choose Victoria Lancaster?",
-  "contact.why.choose.experience": "15+ years of Dubai real estate experience",
-  "contact.why.choose.transactions": "585+ successful property transactions",
-  "contact.why.choose.value": "AED 1.7+ billion in total transaction value",
-  "contact.why.choose.multilingual": "Multilingual service (English, Arabic, Russian)",
-  "contact.why.choose.strategies": "Personalized investment strategies",
-
-  // Areas Page
-  "areas.title": "Prime Dubai Areas",
-  "areas.subtitle": "Explore Dubai's most desirable neighborhoods and investment opportunities",
-
-  // Blog Page
-  "blog.title": "Property Insights",
-  "blog.subtitle": "Expert insights, market analysis, and investment guidance from Victoria Lancaster",
-
-  // Properties Page
-  "properties.page.title": "Our Properties",
-  "properties.page.subtitle": "Discover exceptional properties in Dubai's most prestigious locations",
+    "Thank you for submitting your property evaluation request. Our expert team will review your property details and contact you within 24 hours with a comprehensive market analysis.",
+  "evaluation.success.contact.title": "Contact Information",
+  "evaluation.success.new.evaluation": "Submit New Evaluation",
+  "evaluation.hero.title": "Property Evaluation & Selling Support",
+  "evaluation.hero.subtitle":
+    "Considering your next move? Start with knowing exactly what your property is worth, and what it could do for you.",
+  "evaluation.description.text1":
+    "Victoria offers a confidential, data-driven evaluation for property owners in Dubai and the UK. Whether you're planning to sell, rent, or simply want clarity, you'll receive strategic insight, not just a number.",
+  "evaluation.description.text2": "Backed by 15+ years of experience, your evaluation will include:",
+  "evaluation.feature1": "Accurate market value",
+  "evaluation.feature2": "Investment and income potential",
+  "evaluation.feature3": "Selling strategy (if applicable)",
+  "evaluation.description.conclusion":
+    "Submit your details below, Victoria will personally evaluate your property and advise on your best next move.",
+  "evaluation.stats.evaluated": "Properties Evaluated",
+  "evaluation.stats.value": "Total Value Assessed",
+  "evaluation.stats.experience": "Years Experience",
 
   // Footer
   "footer.description":
-    "Your trusted partner in Dubai real estate. Building futures through strategic property investments and personalized service.",
+    "Your trusted partner in Dubai real estate investment, offering personalized guidance and exclusive opportunities.",
   "footer.quick.links": "Quick Links",
-  "footer.contact.info": "Contact Information",
-  "footer.newsletter": "Stay Updated",
-  "footer.newsletter.description":
-    "Get the latest property insights and market updates delivered straight to your inbox.",
+  "footer.contact.info": "Contact Info",
+  "footer.newsletter": "Newsletter",
+  "footer.newsletter.description": "Subscribe to our newsletter for the latest updates and offers.",
   "footer.email.placeholder": "Your email address",
   "footer.subscribe": "Subscribe",
   "footer.copyright": "© 2025 VL Real Estate. All rights reserved.",
-  "footer.privacy": "Privacy Policy",
-  "footer.terms": "Terms of Service",
-  "footer.sitemap": "Sitemap",
 
-  // Map related translations
-  "map.reset.view": "Reset View",
-  "map.available.properties": "Available Properties",
-  "map.selected.property": "Selected Property",
-  "map.properties.found": "properties found",
-  "map.loading": "Loading map...",
+  // Contact
+  "contact.form.title": "Send us a message",
+  "contact.first.name": "First Name",
+  "contact.first.name.placeholder": "Enter your first name",
+  "contact.last.name": "Last Name",
+  "contact.last.name.placeholder": "Enter your last name",
+  "contact.email": "Email",
+  "contact.email.placeholder": "Enter your email address",
+  "contact.phone": "Phone",
+  "contact.phone.placeholder": "Enter your phone number",
+  "contact.budget": "Budget Range",
+  "contact.budget.placeholder": "e.g., $1M - $2M",
+  "contact.message": "Message",
+  "contact.message.placeholder": "Tell us about your property requirements...",
+  "contact.send": "Send Message",
+  "contact.hero.title": "Contact Us",
+  "contact.hero.subtitle": "Get in touch for personalized property consultation",
+  "contact.info.title": "Contact Information",
+  "contact.info.phone": "Phone",
+  "contact.info.email": "Email",
+  "contact.info.office": "Office",
+  "contact.info.hours": "Business Hours",
+  "contact.info.hours.time": "Sunday - Thursday: 9:00 AM - 6:00 PM",
+  "contact.location.title": "Our Location",
 
-  // Properties view translations
-  "properties.view.grid": "Grid View",
-  "properties.view.map": "Map View",
-
-  // Filter related translations
-  "filters.title": "Filters",
-  "filters.price.range": "Price Range",
-  "filters.property.type": "Property Type",
-  "filters.property.types.villa": "Villa",
-  "filters.property.types.apartment": "Apartment",
-  "filters.property.types.penthouse": "Penthouse",
-  "filters.property.types.mansion": "Mansion",
-  "filters.status": "Status",
-  "filters.status.ready": "Ready",
-  "filters.status.offplan": "Off-Plan",
-  "filters.bedrooms": "Bedrooms",
-  "filters.bathrooms": "Bathrooms",
-  "filters.any": "Any",
-  "filters.reset": "Reset",
-  "filters.apply": "Apply",
-  "filters.search": "Search",
-  "filters.search.placeholder": "Search by name or location",
-  "properties.no.results": "No Properties Found",
-  "properties.try.different.filters": "Try different filters or reset to see all properties",
+  // About
+  "about.title": "About Victoria Lancaster",
+  "about.subtitle": "Your Strategic Partner in Dubai Real Estate Investment",
+  "about.hero.title": "About Victoria",
+  "about.hero.subtitle": "Where trust, insight, and performance come together.",
+  "about.quote.text":
+    "To me, real estate is about building futures, not just deals. I treat every home or investment with the same care I'd give my own.",
+  "about.quote.author": "Victoria Lancaster",
+  "about.quote.title": "Director of Investment | Real Estate Strategist | Licensed Advisor",
+  "about.section1.title": "15+ Years of Market Excellence",
+  "about.section1.text1":
+    "With over 15 years of experience across the UAE and UK markets, Victoria Lancaster is a name synonymous with trust, results, and long-term vision.",
+  "about.section1.text2":
+    "As Investment Director at Select Property, she has successfully closed over 585 real estate transactions, exceeding AED 1.7 billion in value.",
+  "about.section1.updated": "Last updated: June 2025",
+  "about.section2.title": "A Portfolio Built on Insight",
+  "about.section2.text1":
+    "Victoria's portfolio spans luxury residential, off-plan, and buy-to-let investments, all carefully curated to build secure, high-yielding portfolios for global clients.",
+  "about.section2.text2":
+    "She is known for her sharp market insight and ability to spot opportunities before they hit the mainstream.",
+  "about.section2.text3":
+    "Clients choose her for her clarity, precision, and data-driven mindset, knowing that real estate, in her world, is not just a transaction, but a foundation for wealth, lifestyle, and legacy.",
+  "about.section3.title": "Her Clients, Her Values",
+  "about.section3.text1":
+    "Victoria works exclusively with selected developers and serious clients. Every portfolio she builds is backed by due diligence, long-term strategy, and a clear investment framework.",
+  "about.section3.text2":
+    "Whether you're investing or searching for a home, she brings the same meticulous care, honesty, and commitment to results.",
+  "about.section3.text3":
+    "Outside of work, Victoria is a proud wife, mother, and animal lover. Her grounded home life brings balance and clarity, the same values she brings to every client relationship.",
+  "about.academic.title": "Academic & Professional Credibility",
+  "about.academic.degrees": "Dual Bachelor of Science degrees from:",
+  "about.academic.university1": "Herzen State Pedagogical University",
+  "about.academic.university2": "Baltic University of Foreign Languages",
+  "about.academic.credentials": "Professional Credentials:",
+  "about.academic.license": "Licensed by the Dubai Land Department (BRN 27147)",
+  "about.academic.text1":
+    "She combines a global academic foundation with an analytical, results-driven approach, treating each investment with the same care and discernment as if it were her own.",
+  "about.academic.text2":
+    "She is known for her direct, no-fluff communication style, a quality her clients value for its transparency and efficiency.",
+  "about.excellence.title": "Professional Excellence",
+  "about.excellence.text":
+    "Great investments aren't rushed, they're chosen with purpose, timing, and clarity. Victoria brings meticulous attention to detail and unwavering commitment to every client relationship.",
+  "about.excellence.quote": "Great investments aren't rushed, they're chosen with purpose, timing, and clarity.",
+  "about.expertise.title": "Areas of Expertise",
+  "about.expertise.quote": "I don't just sell property. I strategize wealth.",
+  "about.expertise.description":
+    "Here's how I support investors in building real estate portfolios with purpose and clarity:",
+  "about.expertise.item1": "Off-plan Investments (Dubai & UK)",
+  "about.expertise.item2": "Selected Residential Properties",
+  "about.expertise.item3": "Buy-to-Let Strategy",
+  "about.expertise.item4": "Portfolio Diversification",
+  "about.expertise.item5": "Investor Onboarding & Consultation",
+  "about.expertise.item6": "Market Forecasting & Analytics",
+  "about.offices.title": "Offices",
+  "about.offices.dubai": "Dubai, United Arab Emirates",
+  "about.offices.manchester": "Manchester, United Kingdom",
+  "about.cta.title": "Ready to take the next step?",
+  "about.cta.text":
+    "Let's start a conversation built on trust, guided by insight, and tailored to your goals. Share your details below — Victoria will personally review how she can support your next move.",
+  "about.cta.button": "Send Message",
 
   // Common
   "common.loading": "Loading...",
-  "common.error": "Error",
+  "common.error": "An error occurred",
   "common.success": "Success",
   "common.close": "Close",
   "common.save": "Save",
   "common.cancel": "Cancel",
   "common.submit": "Submit",
-  "common.search": "Search",
-  "common.filter": "Filter",
-  "common.sort": "Sort",
+  "common.next": "Next",
+  "common.previous": "Previous",
   "common.view.more": "View More",
   "common.read.more": "Read More",
-  "common.learn.more": "Learn More",
-}
 
-export default translations
+  // Welcome Popup
+  "welcome.title": "Hi, I'm Victoria.",
+  "welcome.subtitle": "I help investors find the right property, aligned with their goals and truly worth pursuing.",
+  "welcome.experience": "With over 15 years of experience",
+  "welcome.experience.detail": "Across Dubai and the UK",
+  "welcome.strategic": "Strategically",
+  "welcome.strategic.detail": "recommend the best property for you",
+  "welcome.get.in.touch": "Get in touch",
+  "welcome.full.name": "Full Name",
+  "welcome.full.name.placeholder": "Your full name",
+  "welcome.phone.number": "Phone Number",
+  "welcome.phone.placeholder": "+971 XX XXX XXXX",
+  "welcome.email.address": "Email Address",
+  "welcome.email.placeholder": "your.email@example.com",
+  "welcome.details": "Details",
+  "welcome.details.placeholder":
+    "Tell me about your investment goals, preferred areas, budget range, or any specific requirements...",
+  "welcome.skip": "Skip for now",
+  "welcome.send": "Send to Victoria",
+  "welcome.thank.you": "Thank You!",
+  "welcome.thank.you.message":
+    "I've received your details and will be in touch soon with personalized recommendations.",
+  "welcome.expect.contact": "Expect to hear from me within 24 hours.",
+
+  // Dashboard
+  "dashboard.title": "Dashboard",
+  "dashboard.properties": "Properties",
+  "dashboard.contacts": "Contacts",
+  "dashboard.evaluations": "Evaluations",
+  "dashboard.blog": "Blog",
+  "dashboard.settings": "Settings",
+  "dashboard.logout": "Logout",
+
+  // Blog
+  "blog.title": "Latest Insights",
+  "blog.subtitle": "Expert analysis and market insights from Victoria Lancaster",
+  "blog.read.more": "Read More",
+  "blog.published": "Published",
+  "blog.by": "by",
+  "blog.hero.title": "Insights from the Market",
+  "blog.hero.subtitle": "Stay informed. Stay ahead.",
+  "blog.description.text1":
+    "Victoria shares expert commentary, investor trends, and strategic perspectives on the Dubai and UK real estate markets.",
+  "blog.description.text2":
+    "Whether you're exploring your first investment or managing a growing portfolio, these articles are designed to help you think clearly, act decisively, and stay ahead of the curve.",
+  "blog.description.text3": "You'll find:",
+  "blog.feature1": "Market updates & forecasts",
+  "blog.feature2": "Investor tips & property strategies",
+  "blog.feature3": "Area deep-dives & opportunity spotlights",
+  "blog.description.conclusion": "Read the latest posts, and move forward with confidence.",
+
+  // Areas
+  "areas.title": "Prime Investment Areas",
+  "areas.subtitle": "Discover Dubai's most promising neighborhoods for property investment",
+  "areas.hero.title": "Explore Dubai's Key Investment Areas",
+  "areas.hero.subtitle": "Handpicked insights to help you choose with confidence.",
+  "areas.description.text1": "Dubai's real estate market is diverse, and not every area suits every investor.",
+  "areas.description.text2":
+    "In this section, Victoria highlights key districts she works in, sharing her honest perspective on:",
+  "areas.feature1": "Strengths & potential",
+  "areas.feature2": "Risks to consider",
+  "areas.feature3": "Who the area fits best",
+  "areas.description.conclusion":
+    "Whether you're focused on yield, growth, or lifestyle, this will help you make the right move.",
+
+  // Testimonials
+  "testimonials.title": "Client Success Stories",
+  "testimonials.subtitle": "Hear from investors who trusted Victoria Lancaster with their Dubai property journey",
+  "testimonials.join": "Join 585+ Satisfied Investors",
+  "testimonials.ready":
+    "Ready to start your Dubai property investment journey? Let Victoria help you achieve your goals.",
+  "testimonials.total.value": "Total Transaction Value",
+  "testimonials.years.experience": "Years Experience",
+
+  // FAQ
+  "faq.title": "Frequently Asked Questions",
+  "faq.subtitle": "with Victoria Lancaster",
+  "faq.quote":
+    "I chose these questions because they reflect what people really ask me, not just about buying in Dubai, but about how I think, how I work, and what I value. I believe clarity builds trust. When you know what to expect, you can make better decisions.",
+
+  // AI Chat
+  "ai.chat.title": "Ask Victoria",
+  "ai.chat.placeholder": "Ask me about Dubai real estate...",
+  "ai.chat.send": "Send",
+  "ai.chat.thinking": "Victoria is thinking...",
+  "ai.chat.error": "Sorry, I'm having trouble responding right now. Please try again.",
+}

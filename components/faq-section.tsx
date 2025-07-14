@@ -1,157 +1,261 @@
 "use client"
 
-import { useState, useEffect, useRef } from "react"
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
+import { useState } from "react"
+import { Card } from "@/components/ui/card"
+import { ChevronDown, ChevronUp } from "lucide-react"
 import { useI18n } from "@/lib/i18n"
 
-const faqs = [
-  {
-    question: "What makes Dubai real estate a good investment?",
-    answer:
-      "Dubai offers tax-free rental income, high ROI potential (6-8% annually), world-class infrastructure, strategic location connecting East and West, and strong government support for foreign investment. The city's continuous growth, upcoming Expo legacy projects, and diverse economy make it an attractive long-term investment destination.",
-  },
-  {
-    question: "Can foreigners buy property in Dubai?",
-    answer:
-      "Yes, foreigners can buy freehold properties in designated areas of Dubai. These include popular locations like Downtown Dubai, Dubai Marina, Palm Jumeirah, and many other prime areas. Foreign buyers get the same ownership rights as UAE nationals in these freehold areas.",
-  },
-  {
-    question: "What are the costs involved in buying property in Dubai?",
-    answer:
-      "Additional costs include: 4% Dubai Land Department (DLD) transfer fee, real estate agent commission (typically 2%), mortgage registration fee (if applicable), property valuation fee, and legal fees. Budget approximately 6-8% of the property value for total transaction costs.",
-  },
-  {
-    question: "How does the buying process work?",
-    answer:
-      "The process involves: property selection and reservation, due diligence and legal checks, signing the Sale and Purchase Agreement (SPA), transferring ownership at DLD, and property handover. The entire process typically takes 2-4 weeks for ready properties and follows completion schedules for off-plan properties.",
-  },
-  {
-    question: "What financing options are available?",
-    answer:
-      "UAE banks offer mortgages to both residents and non-residents. Residents can get up to 80% financing, while non-residents typically get 50-60%. Interest rates are competitive, and various banks offer different packages. Pre-approval helps streamline the buying process.",
-  },
-  {
-    question: "Should I buy off-plan or ready properties?",
-    answer:
-      "Off-plan properties offer lower entry prices, flexible payment plans, and higher appreciation potential but carry construction risks. Ready properties provide immediate rental income and no construction delays but require full payment upfront. Your choice depends on your investment strategy and risk tolerance.",
-  },
-]
+const faqData = {
+  en: [
+    {
+      question: "Can foreigners buy property in Dubai?",
+      answer:
+        "Absolutely. Non-residents can fully own property in designated freehold areas across Dubai. It's a streamlined process that welcomes global investors without requiring residency.",
+    },
+    {
+      question: "I'm new to property investment — where should I start?",
+      answer:
+        "Start with clarity. Understand your investment goals — are you looking for long-term rental income, short-term gains, or a future home? Once your priorities are clear, Victoria will help you build a strategy around them, guiding you through the best areas, property types, and developers that match your vision. It's not about rushing — it's about smart, purpose-driven choices.",
+    },
+    {
+      question: "What kind of returns can I expect from property investment in Dubai?",
+      answer:
+        "Dubai offers some of the highest rental yields globally — typically ranging from 5% to 8.4%, and in some cases even up to 15%.",
+    },
+    {
+      question: "Do I need to be in Dubai to buy property?",
+      answer:
+        "Not at all. With power of attorney and digital signing, you can purchase remotely from anywhere in the world.",
+    },
+    {
+      question: "Can international buyers get a mortgage in Dubai?",
+      answer:
+        "Yes. Select banks offer financing options to non-residents, depending on your financial profile and the property type.",
+    },
+    {
+      question: "Are there taxes involved in buying property?",
+      answer:
+        "Dubai has no property income tax or capital gains tax. The main fee is a 4% registration charge with the Dubai Land Department, plus minor administrative and legal fees.",
+    },
+    {
+      question: "Will property ownership get me a residency visa?",
+      answer:
+        "Yes. If you invest AED 750,000 or more in a residential property, you're eligible to apply for a 2-year renewable residency visa through the Dubai Land Department. For mortgaged properties, at least 50% of the property's value must be paid, and a No Objection Certificate (NOC) from the bank is required.",
+    },
+    {
+      question: "What's better: ready property or off-plan?",
+      answer:
+        "It depends on your goals and what's available on the market. Ready properties can start generating income right away, while off-plan projects often offer lower entry points, attractive payment plans, and capital growth potential. Each option has its own advantages — Victoria helps you decide based on your unique situation.",
+    },
+    {
+      question: "Which areas in Dubai offer the best investment opportunities?",
+      answer:
+        "Top-performing areas include: Dubai Marina, Downtown Dubai, Palm Jumeirah, Jumeirah Village Circle (JVC), Business Bay, and Dubai Maritime City. These areas offer a combination of strong rental demand, premium lifestyle appeal, and solid long-term returns.",
+    },
+    {
+      question: "What makes working with Victoria different from others?",
+      answer:
+        "Victoria doesn't just sell — she strategizes. With over 15 years of experience, deep market knowledge, and strong connections with top-tier developers, she secures high-value deals for her clients. She builds long-term relationships — not one-off sales — and treats every portfolio as if it were her own. Her impressive track record includes 585+ successful deals worth over AED 1.7 billion, all registered with the Dubai Land Department.",
+    },
+    {
+      question: "How does Victoria choose which properties to recommend?",
+      answer:
+        "If she wouldn't invest in it herself, she won't recommend it. Victoria personally vets each opportunity based on developer credibility, ROI projections, long-term value, and gut instinct. She believes a smart investment must make sense on paper — and feel right in your hands.",
+    },
+    {
+      question: "What's it like to work with Victoria one-on-one?",
+      answer:
+        "Expect transparency, calm confidence, and complete honesty. Victoria listens deeply, thinks strategically, and tells you what you need to hear — not just what you want. She becomes your thinking partner, not a salesperson. Whether it's a quick deal or a year-long search, she stays fully invested in your goals.",
+    },
+    {
+      question: "Why does Victoria only work with selected clients and developers?",
+      answer:
+        "Because quality over quantity leads to better outcomes. By focusing only on trusted developers and serious buyers, Victoria preserves her time, energy, and focus for deals that matter — where she can make a real impact. This allows her to deliver exceptional results, not just transactions.",
+    },
+  ],
+  ar: [
+    {
+      question: "هل يمكن للأجانب شراء عقارات في دبي؟",
+      answer:
+        "بالطبع. يمكن لغير المقيمين امتلاك العقارات بالكامل في المناطق المخصصة للملكية الحرة في جميع أنحاء دبي. إنها عملية مبسطة ترحب بالمستثمرين العالميين دون الحاجة إلى الإقامة.",
+    },
+    {
+      question: "أنا جديد في الاستثمار العقاري - من أين أبدأ؟",
+      answer:
+        "ابدأ بالوضوح. افهم أهدافك الاستثمارية - هل تبحث عن دخل إيجار طويل المدى، أم مكاسب قصيرة المدى، أم منزل مستقبلي؟ بمجرد أن تصبح أولوياتك واضحة، ستساعدك فيكتوريا في بناء استراتيجية حولها، وتوجيهك عبر أفضل المناطق وأنواع العقارات والمطورين التي تتناسب مع رؤيتك.",
+    },
+    {
+      question: "ما نوع العائدات التي يمكنني توقعها من الاستثمار العقاري في دبي؟",
+      answer: "تقدم دبي بعض أعلى عائدات الإيجار عالميًا - تتراوح عادة من 5% إلى 8.4%، وفي بعض الحالات حتى 15%.",
+    },
+    {
+      question: "هل أحتاج إلى أن أكون في دبي لشراء عقار؟",
+      answer: "ليس على الإطلاق. مع التوكيل والتوقيع الرقمي، يمكنك الشراء عن بُعد من أي مكان في العالم.",
+    },
+    {
+      question: "هل يمكن للمشترين الدوليين الحصول على رهن عقاري في دبي؟",
+      answer: "نعم. تقدم البنوك المختارة خيارات التمويل لغير المقيمين، اعتمادًا على ملفك المالي ونوع العقار.",
+    },
+    {
+      question: "هل هناك ضرائب متضمنة في شراء العقار؟",
+      answer:
+        "دبي ليس لديها ضريبة دخل عقاري أو ضريبة أرباح رأس المال. الرسم الرئيسي هو رسم تسجيل 4% مع دائرة الأراضي والأملاك في دبي، بالإضافة إلى رسوم إدارية وقانونية طفيفة.",
+    },
+    {
+      question: "هل ملكية العقار ستمنحني تأشيرة إقامة؟",
+      answer:
+        "نعم. إذا استثمرت 750,000 درهم إماراتي أو أكثر في عقار سكني، فأنت مؤهل للتقدم للحصول على تأشيرة إقامة قابلة للتجديد لمدة عامين من خلال دائرة الأراضي والأملاك في دبي.",
+    },
+    {
+      question: "ما الأفضل: العقار الجاهز أم على الخريطة؟",
+      answer:
+        "يعتمد على أهدافك وما هو متاح في السوق. العقارات الجاهزة يمكن أن تبدأ في توليد الدخل على الفور، بينما المشاريع على الخريطة غالبًا ما تقدم نقاط دخول أقل وخطط دفع جذابة وإمكانية نمو رأس المال.",
+    },
+    {
+      question: "ما هي المناطق في دبي التي تقدم أفضل الفرص الاستثمارية؟",
+      answer:
+        "تشمل المناطق الأفضل أداءً: دبي مارينا، وسط مدينة دبي، نخلة جميرا، قرية جميرا الدائرية، الخليج التجاري، ومدينة دبي البحرية. هذه المناطق تقدم مزيجًا من الطلب القوي على الإيجار والجاذبية الفاخرة والعائدات الصلبة طويلة الأجل.",
+    },
+    {
+      question: "ما الذي يجعل العمل مع فيكتوريا مختلفًا عن الآخرين؟",
+      answer:
+        "فيكتوريا لا تبيع فقط - بل تضع استراتيجيات. مع أكثر من 15 عامًا من الخبرة ومعرفة عميقة بالسوق وعلاقات قوية مع المطورين من الدرجة الأولى، تؤمن صفقات عالية القيمة لعملائها.",
+    },
+    {
+      question: "كيف تختار فيكتوريا العقارات التي توصي بها؟",
+      answer:
+        "إذا لم تكن ستستثمر فيه بنفسها، فلن توصي به. فيكتوريا تفحص شخصيًا كل فرصة بناءً على مصداقية المطور وتوقعات العائد على الاستثمار والقيمة طويلة المدى والحدس.",
+    },
+    {
+      question: "كيف يكون العمل مع فيكتوريا وجهًا لوجه؟",
+      answer:
+        "توقع الشفافية والثقة الهادئة والصدق الكامل. فيكتوريا تستمع بعمق وتفكر استراتيجيًا وتخبرك بما تحتاج إلى سماعه - وليس فقط ما تريد سماعه.",
+    },
+    {
+      question: "لماذا تعمل فيكتوريا فقط مع عملاء ومطورين مختارين؟",
+      answer:
+        "لأن الجودة على الكمية تؤدي إلى نتائج أفضل. من خلال التركيز فقط على المطورين الموثوقين والمشترين الجديين، تحافظ فيكتوريا على وقتها وطاقتها وتركيزها للصفقات المهمة.",
+    },
+  ],
+  ru: [
+    {
+      question: "Могут ли иностранцы покупать недвижимость в Дубае?",
+      answer:
+        "Абсолютно. Нерезиденты могут полностью владеть недвижимостью в специально отведенных зонах свободного владения по всему Дубаю. Это упрощенный процесс, который приветствует глобальных инвесторов без требования резидентства.",
+    },
+    {
+      question: "Я новичок в инвестициях в недвижимость - с чего начать?",
+      answer:
+        "Начните с ясности. Поймите свои инвестиционные цели - ищете ли вы долгосрочный доход от аренды, краткосрочную прибыль или будущий дом? Как только ваши приоритеты станут ясными, Виктория поможет вам построить стратегию вокруг них.",
+    },
+    {
+      question: "Какую доходность можно ожидать от инвестиций в недвижимость в Дубае?",
+      answer:
+        "Дубай предлагает одни из самых высоких доходностей от аренды в мире - обычно от 5% до 8,4%, а в некоторых случаях даже до 15%.",
+    },
+    {
+      question: "Нужно ли мне быть в Дубае, чтобы купить недвижимость?",
+      answer: "Совсем нет. С доверенностью и цифровой подписью вы можете покупать удаленно из любой точки мира.",
+    },
+    {
+      question: "Могут ли международные покупатели получить ипотеку в Дубае?",
+      answer:
+        "Да. Отдельные банки предлагают варианты финансирования для нерезидентов, в зависимости от вашего финансового профиля и типа недвижимости.",
+    },
+    {
+      question: "Есть ли налоги при покупке недвижимости?",
+      answer:
+        "В Дубае нет подоходного налога на недвижимость или налога на прирост капитала. Основная плата - это 4% регистрационный сбор в Департаменте земли и недвижимости Дубая, плюс незначительные административные и юридические сборы.",
+    },
+    {
+      question: "Даст ли мне владение недвижимостью визу на жительство?",
+      answer:
+        "Да. Если вы инвестируете 750,000 дирхамов ОАЭ или более в жилую недвижимость, вы имеете право подать заявление на получение 2-летней возобновляемой визы на жительство через Департамент земли и недвижимости Дубая.",
+    },
+    {
+      question: "Что лучше: готовая недвижимость или на стадии строительства?",
+      answer:
+        "Это зависит от ваших целей и того, что доступно на рынке. Готовая недвижимость может сразу начать приносить доход, в то время как проекты на стадии строительства часто предлагают более низкие точки входа, привлекательные планы платежей и потенциал роста капитала.",
+    },
+    {
+      question: "Какие районы в Дубае предлагают лучшие инвестиционные возможности?",
+      answer:
+        "Лучшие районы включают: Дубай Марина, Центр Дубая, Палм Джумейра, Джумейра Виллидж Серкл (JVC), Бизнес Бей и Дубай Маритайм Сити. Эти районы предлагают сочетание сильного спроса на аренду, премиальной привлекательности образа жизни и солидной долгосрочной доходности.",
+    },
+    {
+      question: "Что делает работу с Викторией отличной от других?",
+      answer:
+        "Виктория не просто продает - она разрабатывает стратегии. Имея более 15 лет опыта, глубокие знания рынка и прочные связи с ведущими застройщиками, она обеспечивает высокоценные сделки для своих клиентов.",
+    },
+    {
+      question: "Как Виктория выбирает недвижимость для рекомендации?",
+      answer:
+        "Если она сама не стала бы в это инвестировать, она не будет это рекомендовать. Виктория лично проверяет каждую возможность на основе надежности застройщика, прогнозов ROI, долгосрочной стоимости и интуиции.",
+    },
+    {
+      question: "Каково это - работать с Викторией один на один?",
+      answer:
+        "Ожидайте прозрачности, спокойной уверенности и полной честности. Виктория глубоко слушает, стратегически думает и говорит вам то, что вам нужно услышать - не только то, что вы хотите услышать.",
+    },
+    {
+      question: "Почему Виктория работает только с избранными клиентами и застройщиками?",
+      answer:
+        "Потому что качество важнее количества и приводит к лучшим результатам. Сосредотачиваясь только на надежных застройщиках и серьезных покупателях, Виктория сохраняет свое время, энергию и фокус для сделок, которые имеют значение.",
+    },
+  ],
+}
 
-export default function FAQSection() {
+export default function FaqSection() {
+  const [openIndex, setOpenIndex] = useState<number | null>(null)
   const { t, isRTL, language } = useI18n()
-  const [headerVisible, setHeaderVisible] = useState(false)
-  const [accordionVisible, setAccordionVisible] = useState(false)
-  const headerRef = useRef<HTMLDivElement>(null)
-  const accordionRef = useRef<HTMLDivElement>(null)
 
-  useEffect(() => {
-    const observerOptions = {
-      threshold: 0.1,
-      rootMargin: "0px 0px -50px 0px",
-    }
+  const toggleFaq = (index: number) => {
+    setOpenIndex(openIndex === index ? null : index)
+  }
 
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          const element = entry.target as HTMLElement
-
-          if (element === headerRef.current) {
-            setHeaderVisible(true)
-          } else if (element === accordionRef.current) {
-            setAccordionVisible(true)
-          }
-        }
-      })
-    }, observerOptions)
-
-    if (headerRef.current) {
-      observer.observe(headerRef.current)
-    }
-
-    if (accordionRef.current) {
-      observer.observe(accordionRef.current)
-    }
-
-    return () => {
-      observer.disconnect()
-    }
-  }, [])
+  const currentFaqs = faqData[language] || faqData.en
 
   return (
-    <section className="py-20 bg-gray-50" dir={isRTL ? "rtl" : "ltr"}>
-      <div className="container mx-auto px-4">
-        <div
-          ref={headerRef}
-          className={`text-center mb-16 transition-all duration-1000 ${
-            headerVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-          }`}
-        >
-          <h2 className="text-4xl md:text-5xl font-bold text-vl-blue mb-6 font-heading">
-            {language === "en"
-              ? "Frequently Asked Questions"
-              : language === "ar"
-                ? "الأسئلة الشائعة"
-                : "Часто задаваемые вопросы"}
-          </h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            {language === "en"
-              ? "Get answers to common questions about Dubai real estate investment"
-              : language === "ar"
-                ? "احصل على إجابات للأسئلة الشائعة حول الاستثمار العقاري في دبي"
-                : "Получите ответы на часто задаваемые вопросы об инвестициях в недвижимость Дубая"}
-          </p>
+    <section className="py-20 bg-transparent" dir={isRTL ? "rtl" : "ltr"}>
+      <div className="px-6 pb-6">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-bold text-vl-blue mb-6 font-heading">{t("faq.title")}</h2>
+          <p className="text-xl text-gray-600 max-w-2xl mx-auto mb-4">{t("faq.subtitle")}</p>
+          <div className="w-40 h-1 bg-vl-yellow mx-auto"></div>
         </div>
 
-        <div
-          ref={accordionRef}
-          className={`max-w-4xl mx-auto transition-all duration-1000 delay-300 ${
-            accordionVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-          }`}
-        >
-          <Accordion type="single" collapsible className="space-y-4">
-            {faqs.map((faq, index) => (
-              <AccordionItem
-                key={index}
-                value={`item-${index}`}
-                className={`bg-white rounded-lg border border-gray-200 hover:border-vl-yellow/30 transition-all duration-300 hover:shadow-lg ${
-                  accordionVisible ? "animate-fade-in-up" : ""
-                }`}
-                style={{
-                  animationDelay: accordionVisible ? `${index * 100}ms` : "0ms",
-                }}
-              >
-                <AccordionTrigger className="px-6 py-4 text-left hover:no-underline hover:text-vl-blue transition-colors duration-300 text-lg font-semibold">
-                  {faq.question}
-                </AccordionTrigger>
-                <AccordionContent className="px-6 pb-4 text-gray-600 leading-relaxed">{faq.answer}</AccordionContent>
-              </AccordionItem>
-            ))}
-          </Accordion>
+        <div className="max-w-4xl mx-auto space-y-4 bg-transparent">
+          {currentFaqs.map((faq, index) => (
+            <Card key={index} className="glass overflow-hidden rounded-xl">
+              <div>
+                <button
+                  onClick={() => toggleFaq(index)}
+                  className="w-full p-5 sm:p-6 text-left flex items-center justify-between bg-transparent hover:bg-white/5 transition-colors duration-300"
+                >
+                  <h3 className="text-lg sm:text-xl font-semibold text-vl-blue tracking-wide pr-4 shadow-none !important">
+                    {faq.question}
+                  </h3>
+                  {openIndex === index ? (
+                    <ChevronUp className="h-5 w-5 text-vl-yellow flex-shrink-0 transition-transform duration-200" />
+                  ) : (
+                    <ChevronDown className="h-5 w-5 text-vl-yellow flex-shrink-0 transition-transform duration-200" />
+                  )}
+                </button>
+              </div>
+
+              {openIndex === index && (
+                <div className="px-5 sm:px-6 pb-6 pt-4 bg-white/5 text-gray-200 rounded-b-xl border-t border-slate-500/40 transition-all duration-300 ease-in-out">
+                  <p className="leading-relaxed text-sm sm:text-base">{faq.answer}</p>
+                </div>
+              )}
+            </Card>
+          ))}
         </div>
 
-        <div
-          className={`text-center mt-12 transition-all duration-1000 delay-500 ${
-            accordionVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-          }`}
-        >
-          <div className="bg-vl-blue rounded-2xl p-8 max-w-2xl mx-auto hover:shadow-2xl transition-all duration-500 hover:scale-105">
-            <h3 className="text-2xl font-bold text-white mb-4">
-              {language === "en"
-                ? "Still Have Questions?"
-                : language === "ar"
-                  ? "لا تزال لديك أسئلة؟"
-                  : "Остались вопросы?"}
-            </h3>
-            <p className="text-white/90 mb-6">
-              {language === "en"
-                ? "Get personalized answers from Victoria Lancaster, your Dubai real estate expert"
-                : language === "ar"
-                  ? "احصل على إجابات شخصية من فيكتوريا لانكستر، خبيرة العقارات في دبي"
-                  : "Получите персональные ответы от Виктории Ланкастер, вашего эксперта по недвижимости в Дубае"}
-            </p>
-            <button className="bg-vl-yellow text-vl-blue px-8 py-3 rounded-lg font-semibold hover:bg-white transition-all duration-300 hover:scale-105 hover:shadow-lg">
-              {language === "en" ? "Contact Victoria" : language === "ar" ? "اتصل بفيكتوريا" : "Связаться с Викторией"}
-            </button>
+        <div className="text-center mt-12">
+          <div className="glass p-8 rounded-2xl max-w-2xl mx-auto">
+            <p className="text-white font-medium italic">{t("faq.quote")}</p>
+            <p className="!important font-semibold mt-4 text-vl-yellow">{t("about.quote.author")}</p>
           </div>
         </div>
       </div>

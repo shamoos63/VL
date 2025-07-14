@@ -12,11 +12,11 @@ export default function Footer() {
 
   return (
     <footer className="bg-vl-blue text-white" dir={isRTL ? "rtl" : "ltr"}>
-      <div className="container mx-auto px-4 py-16">
+      <div className="space-y-6 p-8 bg-transparent">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
           <div className="lg:col-span-1">
-            <div className="mb-6">
+            <div className="mb-6 ml-10">
               <Image
                 src="/VL_logo.svg"
                 alt="Victoria Lancaster Real Estate"

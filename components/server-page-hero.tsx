@@ -13,7 +13,7 @@ export default function ServerPageHero({ title, subtitle, backgroundImage }: Pag
         <Image src={backgroundImage || "/placeholder.svg"} alt={title} fill className="object-cover" priority />
       </div>
       <div className="container mx-auto px-4 relative z-10 text-center">
-        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 font-heading">{title}</h1>
+        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 font-heading font-sansumi">{title}</h1>
         {subtitle && <p className="text-xl text-white max-w-3xl mx-auto">{subtitle}</p>}
       </div>
     </section>

@@ -9,20 +9,20 @@ import { Textarea } from "@/components/ui/textarea"
 
 export default function ContactPage() {
   return (
-    <main className="min-h-screen pt-24 bg-white">
+    <main className="min-h-screen pt-24 bg-transparent">
       <Header />
       <ServerPageHero
         title="Contact Us"
         subtitle="Get in touch for personalized property consultation"
-        backgroundImage="/hero-images/contact-hero.png"
+        backgroundImage="/hero.webp"
         className="font-sansumi"
       />
 
-      <div className="pt-8 bg-white">
+      <div className="pt-8">
         <div className="container mx-auto px-4 py-16">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Contact Form */}
-            <Card className="p-8">
+            <Card className="p-8 glass">
               <h2 className="text-2xl font-bold text-vl-blue dark:text-white mb-6">Send us a message</h2>
 
               <form className="space-y-6">
@@ -61,15 +61,15 @@ export default function ContactPage() {
                   <Textarea placeholder="Tell us about your property requirements..." rows={4} />
                 </div>
 
-                <Button className="w-full bg-vl-yellow hover:bg-vl-yellow-dark text-vl-blue font-semibold py-3">
+                <Button className="w-full bg-transparent text-white border-2 border-vl-yellow hover:border-black font-semibold py-3">
                   Send Message
                 </Button>
               </form>
             </Card>
 
             {/* Contact Information */}
-            <div className="space-y-8">
-              <Card className="p-6">
+            <div className="space-y-8 ">
+              <Card className="p-6 glass">
                 <h3 className="text-xl font-bold text-vl-blue dark:text-white mb-4">Contact Information</h3>
 
                 <div className="space-y-4">
@@ -108,7 +108,7 @@ export default function ContactPage() {
               </Card>
 
               {/* Map Integration */}
-              <Card className="p-6">
+              <Card className="p-6 glass">
                 <h3 className="text-xl font-bold text-vl-blue dark:text-white mb-4">Our Location</h3>
                 <div className="w-full h-64 bg-gray-200 dark:bg-gray-700 rounded-lg overflow-hidden">
                   <iframe

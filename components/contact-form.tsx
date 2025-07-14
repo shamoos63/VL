@@ -4,46 +4,61 @@ import { Card } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
+import { useI18n } from "@/lib/i18n"
 
 export default function ContactForm() {
+  const { t, isRTL } = useI18n()
+
   return (
-    <Card className="p-8">
-      <h2 className="text-2xl font-bold text-vl-blue dark:text-white mb-6">Send us a message</h2>
+    <Card className="p-8" dir={isRTL ? "rtl" : "ltr"}>
+      <h2 className="text-2xl font-bold text-vl-blue dark:text-white mb-6">{t("contact.form.title")}</h2>
 
       <form className="space-y-6">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div>
-            <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">First Name</label>
-            <Input placeholder="Enter your first name" />
+            <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+              {t("contact.first.name")}
+            </label>
+            <Input placeholder={t("contact.first.name.placeholder")} />
           </div>
           <div>
-            <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Last Name</label>
-            <Input placeholder="Enter your last name" />
+            <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+              {t("contact.last.name")}
+            </label>
+            <Input placeholder={t("contact.last.name.placeholder")} />
           </div>
         </div>
 
         <div>
-          <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Email</label>
-          <Input type="email" placeholder="Enter your email address" />
+          <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+            {t("contact.email")}
+          </label>
+          <Input type="email" placeholder={t("contact.email.placeholder")} />
         </div>
 
         <div>
-          <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Phone</label>
-          <Input placeholder="Enter your phone number" />
+          <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+            {t("contact.phone")}
+          </label>
+          <Input placeholder={t("contact.phone.placeholder")} />
         </div>
 
         <div>
-          <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Budget Range</label>
-          <Input placeholder="e.g., $1M - $2M" />
+          <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+            {t("contact.budget")}
+          </label>
+          <Input placeholder={t("contact.budget.placeholder")} />
         </div>
 
         <div>
-          <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Message</label>
-          <Textarea placeholder="Tell us about your property requirements..." rows={4} />
+          <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+            {t("contact.message")}
+          </label>
+          <Textarea placeholder={t("contact.message.placeholder")} rows={4} />
         </div>
 
         <Button className="w-full bg-vl-yellow hover:bg-vl-yellow-dark text-vl-blue font-semibold py-3">
-          Send Message
+          {t("contact.send")}
         </Button>
       </form>
     </Card>
