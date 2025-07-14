@@ -103,7 +103,7 @@ export default function LoginPage() {
   }
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-white">
+    <div className="min-h-screen flex items-center justify-center bg-gray-100">
       <div className="w-full max-w-md p-4">
         <div className="text-center mb-8 bg-white rounded-lg p-6 shadow-lg">
           <Image

@@ -81,21 +81,21 @@ const translations = {
   "about.subtitle": "شريكك الموثوق في عقارات دبي منذ 2020",
   "about.quote": '"أنا لا أبيع العقارات فقط، بل أضع استراتيجيات للثروة."',
   "about.description.1":
-    "مع أكثر من 15 عامًا من الخبرة في أسواق الإمارات والمملكة المتحدة، فيكتوريا لانكستر اسم مرادف للثقة والنتائج والرؤية طويلة المدى. كمديرة استثمار في سيليكت بروبرتي، أتمت بنجاح أكثر من 585 صفقة عقارية بقيمة تزيد عن 1.7 مليار درهم إماراتي.",
+    "مع أكثر من 15 عامًا من الخبرة في سوق العقارات الديناميكي في دبي، أتخصص في الاستثمارات العقارية الاستراتيجية التي تبني ثروة دائمة. يجمع نهجي بين المعرفة العميقة بالسوق والخدمة الشخصية لمساعدة العملاء على اتخاذ قرارات مدروسة.",
   "about.description.2":
-    "تشمل محفظتها العقارات السكنية الفاخرة والاستثمارات على الخريطة والاستثمارات للإيجار، وكلها منسقة لبناء محافظ آمنة وعالية العائد للعملاء العالميين.",
-  "about.trait.professional": "محترف",
-  "about.trait.experienced": "ذو خبرة",
-  "about.trait.trustworthy": "جدير بالثقة",
-  "about.trait.multilingual": "متعدد اللغات",
-  "about.trait.best.deals": "أفضل الصفقات",
-  "about.trait.fast.service": "خدمة سريعة",
-  "about.expertise.title": "مجالات الخبرة",
-  "about.expertise.offplan": "• استثمارات على الخريطة (دبي والمملكة المتحدة)",
-  "about.expertise.luxury": "• العقارات السكنية الفاخرة",
-  "about.expertise.buytolet": "• استراتيجية الشراء للإيجار",
-  "about.expertise.portfolio": "• تنويع المح��ظة",
-  "about.expertise.forecasting": "• توقعات السوق والتحليلات",
+    "من البنتهاوس الفاخرة في وسط مدينة دبي إلى التطويرات الواعدة على الخريطة، أوجه المستثمرين خلال كل خطوة من رحلة العقارات الخاصة بهم. خبرتي متعددة اللغات وشبكتي الواسعة تضمن حصولك على وصول حصري لأفضل الفرص في السوق.",
+  "about.trait.professional": "التميز المهني",
+  "about.trait.experienced": "خبرة السوق",
+  "about.trait.trustworthy": "مستشار موثوق",
+  "about.trait.multilingual": "خدمة متعددة اللغات",
+  "about.trait.best.deals": "أفضل صفقات الاستثمار",
+  "about.trait.fast.service": "سريع وفعال",
+  "about.expertise.title": "خبرة الاستثمار والخدمات الاستراتيجية",
+  "about.expertise.offplan": "استراتيجيات الاستثمار على الخريطة",
+  "about.expertise.luxury": "محفظة العقارات الفاخرة",
+  "about.expertise.buytolet": "فرص الشراء للإيجار",
+  "about.expertise.portfolio": "تحسين المحفظة",
+  "about.expertise.forecasting": "توقعات السوق",
 
   // Testimonials
   "testimonials.title": "قصص نجاح العملاء",
@@ -133,7 +133,7 @@ const translations = {
 
   "faq.q6": "هل هناك ضرائب متضمنة في شراء العقار؟",
   "faq.a6":
-    "دبي ليس لديها ضريبة دخل عقاري أو ضريبة أ��با�� رأس ا��م��ل. ال��سم الرئيسي ��و رسم تسجيل 4% مع دائرة الأراضي والأملاك في دبي، بالإضافة إلى رسوم إدارية وقانونية طفيفة.",
+    "دبي ليس لديها ضريبة دخل عقاري أو ضريبة أرباح رأس المال. الرسم الرئيسي هو رسم تسجيل 4% مع دائرة الأراضي والأملاك في دبي، بالإضافة إلى رسوم إدارية وقانونية طفيفة.",
 
   "faq.q7": "هل ملكية العقار ستمنحني تأشيرة إقامة؟",
   "faq.a7":
@@ -141,23 +141,23 @@ const translations = {
 
   "faq.q8": "ما الأفضل: العقار الجاهز أم على الخريطة؟",
   "faq.a8":
-    "يعتمد على أهدافك وما هو متاح في السوق. العقارات الجاهزة يمكن أن تبدأ في توليد الدخل على الفور، بينما المشاريع على الخريطة غالبًا ما تقدم نقاط دخول أقل وخطط دفع جذابة وإمكانية نمو رأس المال.",
+    "يعتمد على أهدافك وما هو متاح في السوق. يمكن للعقارات الجاهزة أن تبدأ في توليد الدخل فورًا، بينما تقدم المشاريع على الخريطة غالبًا نقاط دخول أقل وخطط دفع جذابة وإمكانية نمو رأس المال.",
 
   "faq.q9": "ما هي المناطق في دبي التي تقدم أفضل الفرص الاستثمارية؟",
   "faq.a9":
-    "تشمل المناطق الأفضل أداءً: دبي مارينا، وسط مدينة دبي، نخلة جميرا، قرية جميرا الدائرية، الخليج التجاري، ومدينة دبي البحرية. هذه المناطق تقدم مزيجًا من الطلب القوي على الإيجار والجاذبية الفاخرة والعائدات الصلبة طويلة الأجل.",
+    "المناطق الأفضل أداءً تشمل: دبي مارينا، وسط مدينة دبي، نخلة جميرا، قرية جميرا الدائرية (JVC)، الخليج التجاري، ومدينة دبي البحرية. تقدم هذه المناطق مزيجًا من الطلب القوي على الإيجار وجاذبية نمط الحياة المتميز والعائدات الصلبة طويلة المدى.",
 
   "faq.q10": "ما الذي يجعل العمل مع فيكتوريا مختلفًا عن الآخرين؟",
   "faq.a10":
-    "فيكتوريا لا تبيع فقط - بل تضع استراتيجيات. مع أكثر من 15 عامًا من الخبرة ومعرفة عميقة بالسوق وعلاقات قوية مع المطورين من الدرجة الأولى، تؤمن صفقات عالية القيمة لعملائها.",
+    "فيكتوريا لا تبيع فقط - بل تضع استراتيجيات. مع أكثر من 15 عامًا من الخبرة والمعرفة العميقة بالسوق والعلاقات القوية مع المطورين من الدرجة الأولى، تؤمن صفقات عالية القيمة لعملائها.",
 
-  "faq.q11": "كيف تختار فيكتوريا العقارات التي توصي بها؟",
+  "faq.q11": "كيف تختار فيكتوريا العقارات للتوصية بها؟",
   "faq.a11":
-    "إذا لم تكن ستستثمر فيه بنفسها، فلن توصي به. فيكتوريا تفحص شخصيًا كل فرصة بناءً على مصداقية المطور وتوقعات العائد على الاستثمار والقيمة طويلة المدى والحدس.",
+    "إذا لم تكن ستستثمر فيها بنفسها، فلن توصي بها لك. تفحص فيكتوريا شخصيًا كل فرصة بناءً على مصداقية المطور وتوقعات العائد على الاستثمار والقيمة طويلة المدى والحدس.",
 
   "faq.q12": "كيف يكون العمل مع فيكتوريا وجهًا لوجه؟",
   "faq.a12":
-    "توقع الشفافية والثقة الهادئة والصدق الكامل. فيكتوريا تستمع بعمق وتفكر استراتيجيًا وتخبرك بما تحتاج إلى سماعه - وليس فقط ما تريد سماعه.",
+    "توقع الشفافية والثقة الهادئة والصدق الكامل. تستمع فيكتوريا بعمق وتفكر استراتيجيًا وتخبرك بما تحتاج إلى سماعه - وليس فقط ما تريد سماعه.",
 
   "faq.q13": "لماذا تعمل فيكتوريا فقط مع عملاء ومطورين مختارين؟",
   "faq.a13":
@@ -165,7 +165,7 @@ const translations = {
 
   // Property Evaluation
   "evaluation.title": "أداة تقييم العقار",
-  "evaluation.subtitle": "احصل على تقييم مهني للعقار من فريق خبراء فيكتوريا",
+  "evaluation.subtitle": "احصل على تقييم عقاري مهني من فريق خبراء فيكتوريا",
   "evaluation.hero.title": "أداة تقييم العقار",
   "evaluation.hero.subtitle": "احصل على تقدير فوري لقيمة عقارك مع نظام التقييم الخبير لفيكتوريا",
   "evaluation.hero.properties.evaluated": "عقار تم تقييمه",
@@ -184,31 +184,31 @@ const translations = {
   "evaluation.location": "الموقع",
   "evaluation.select.location": "اختر الموقع",
   "evaluation.bedrooms": "غرف النوم",
-  "evaluation.select.beds": "غرف",
+  "evaluation.select.beds": "غرف النوم",
   "evaluation.bathrooms": "الحمامات",
-  "evaluation.select.baths": "حمامات",
+  "evaluation.select.baths": "الحمامات",
   "evaluation.area": "المساحة (قدم مربع)",
-  "evaluation.area.placeholder": "مثال: 1200",
+  "evaluation.area.placeholder": "مثال، 1200",
   "evaluation.condition": "حالة العقار",
   "evaluation.select.condition": "اختر الحالة",
   "evaluation.condition.excellent": "ممتاز",
   "evaluation.condition.good": "جيد",
   "evaluation.condition.fair": "مقبول",
-  "evaluation.condition.renovation": "يحتاج تجديد",
+  "evaluation.condition.renovation": "يحتاج إلى تجديد",
   "evaluation.year.built": "سنة البناء",
-  "evaluation.year.placeholder": "مثال: 2020",
+  "evaluation.year.placeholder": "مثال، 2020",
   "evaluation.amenities": "المرافق",
-  "evaluation.amenities.placeholder": "مثال: مسبح، صالة رياضية، موقف سيارات، شرفة",
+  "evaluation.amenities.placeholder": "مثال، مسبح، صالة رياضية، موقف سيارات، شرفة",
   "evaluation.description": "تفاصيل إضافية",
-  "evaluation.description.placeholder": "أي معلومات إضافية عن العقار...",
+  "evaluation.description.placeholder": "أي معلومات إضافية حول العقار...",
   "evaluation.button": "إرسال للتقييم المهني",
   "evaluation.success.title": "شكرًا لك على إرسالك!",
-  "evaluation.success.message": "لقد تلقينا تفاصيل عقارك ��سنتواصل معك في أقرب وقت ممكن مع تقييم شامل وتحليل السوق.",
-  "evaluation.success.contact.title": "سنتواصل معك عبر:",
+  "evaluation.success.message": "لقد تلقينا تفاصيل عقارك وسنعود إليك في أقرب وقت ممكن بتقييم شامل وتحليل السوق.",
+  "evaluation.success.contact.title": "سنتصل بك عبر:",
   "evaluation.success.new.evaluation": "إرسال تقييم آخر",
 
   // Contact Page
-  "contact.title": "تواصل معنا",
+  "contact.title": "اتصل بنا",
   "contact.subtitle": "مستعد لبدء رحلة عقارات دبي؟ دعنا نناقش أهدافك الاستثمارية.",
   "contact.form.title": "إرسال رسالة",
   "contact.first.name": "الاسم الأول",
@@ -220,7 +220,7 @@ const translations = {
   "contact.phone": "رقم الهاتف",
   "contact.phone.placeholder": "+971 XX XXX XXXX",
   "contact.budget": "ميزانية الاستثمار",
-  "contact.budget.placeholder": "مثال: $500K - $1M",
+  "contact.budget.placeholder": "مثال، 500 ألف - 1 مليون دولار",
   "contact.message": "الرسالة",
   "contact.message.placeholder": "أخبرنا عن متطلبات العقار وأهدافك الاستثمارية...",
   "contact.send": "إرسال الرسالة",
@@ -232,15 +232,15 @@ const translations = {
   "contact.hours.value": "الأحد - الخميس: 9:00 ص - 6:00 م",
   "contact.location": "موقعنا",
   "contact.why.choose.title": "لماذا تختار فيكتوريا لانكستر؟",
-  "contact.why.choose.experience": "15+ سنة من الخبرة في عقارات دبي",
+  "contact.why.choose.experience": "15+ سنة من خبرة عقارات دبي",
   "contact.why.choose.transactions": "585+ معاملة عقارية ناجحة",
   "contact.why.choose.value": "1.7+ مليار درهم إماراتي في إجمالي قيمة المعاملات",
   "contact.why.choose.multilingual": "خدمة متعددة اللغات (الإنجليزية، العربية، الروسية)",
   "contact.why.choose.strategies": "استراتيجيات استثمار شخصية",
 
   // Areas Page
-  "areas.title": "المناطق الرئيسية في دبي",
-  "areas.subtitle": "استكشف أكثر الأحياء المرغوبة في دبي والفرص الاستثمارية",
+  "areas.title": "مناطق دبي الرئيسية",
+  "areas.subtitle": "استكشف أحياء دبي الأكثر رغبة وفرص الاستثمار",
 
   // Blog Page
   "blog.title": "رؤى العقارات",
@@ -248,7 +248,7 @@ const translations = {
 
   // Properties Page
   "properties.page.title": "عقاراتنا",
-  "properties.page.subtitle": "اكتشف العقارات الاستثنائية في أكثر المواقع المرموقة في دبي",
+  "properties.page.subtitle": "اكتشف العقارات الاستثنائية في أرقى مواقع دبي",
 
   // Footer
   "footer.description":
@@ -259,7 +259,7 @@ const translations = {
   "footer.newsletter.description": "احصل على أحدث رؤى العقارات وتحديثات السوق مباشرة في صندوق الوارد الخاص بك.",
   "footer.email.placeholder": "عنوان بريدك الإلكتروني",
   "footer.subscribe": "اشترك",
-  "footer.copyright": "© 2025 VL Real Estate. جميع الحقوق محفوظة.",
+  "footer.copyright": "© 2025 VL العقارية. جميع الحقوق محفوظة.",
   "footer.privacy": "سياسة الخصوصية",
   "footer.terms": "شروط الخدمة",
   "footer.sitemap": "خريطة الموقع",
@@ -268,15 +268,15 @@ const translations = {
   "map.reset.view": "إعادة تعيين العرض",
   "map.available.properties": "العقارات المتاحة",
   "map.selected.property": "العقار المحدد",
-  "map.properties.found": "عقار تم العثور عليه",
-  "map.loading": "جاري تحميل الخريطة...",
+  "map.properties.found": "عقار موجود",
+  "map.loading": "تحميل الخريطة...",
 
   // Properties view translations
   "properties.view.grid": "عرض الشبكة",
   "properties.view.map": "عرض الخريطة",
 
   // Filter related translations
-  "filters.title": "الفلاتر",
+  "filters.title": "المرشحات",
   "filters.price.range": "نطاق السعر",
   "filters.property.type": "نوع العقار",
   "filters.property.types.villa": "فيلا",
@@ -294,7 +294,7 @@ const translations = {
   "filters.search": "بحث",
   "filters.search.placeholder": "البحث بالاسم أو الموقع",
   "properties.no.results": "لم يتم العثور على عقارات",
-  "properties.try.different.filters": "جرب فلاتر مختلفة أو أعد التعيين لرؤية جميع العقارات",
+  "properties.try.different.filters": "جرب مرشحات مختلفة أو أعد التعيين لرؤية جميع العقارات",
 
   // Common
   "common.loading": "جاري التحميل...",
@@ -305,7 +305,7 @@ const translations = {
   "common.cancel": "إلغاء",
   "common.submit": "إرسال",
   "common.search": "بحث",
-  "common.filter": "تصفية",
+  "common.filter": "مرشح",
   "common.sort": "ترتيب",
   "common.view.more": "عرض المزيد",
   "common.read.more": "اقرأ المزيد",

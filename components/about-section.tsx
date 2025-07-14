@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState, useEffect, useRef } from "react"
 import Image from "next/image"
 import { useI18n } from "@/lib/i18n"
 import { Button } from "@/components/ui/button"
@@ -10,6 +10,9 @@ import { ChevronLeft, ChevronRight, Award, Users, TrendingUp, Globe, DollarSign,
 export default function AboutSection() {
   const { t, isRTL } = useI18n()
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
+  const [visibleSections, setVisibleSections] = useState<Set<string>>(new Set())
+  const sectionRefs = useRef<{ [key: string]: HTMLDivElement | null }>({})
+  const observerRef = useRef<IntersectionObserver | null>(null)
 
   const images = ["/victoria-photo-1.jpg", "/victoria-photo-2.jpg", "/victoria-photo-3.jpg", "/victoria-photo-4.jpg"]
 
@@ -29,6 +32,50 @@ export default function AboutSection() {
     return () => clearInterval(interval)
   }, [images.length])
 
+  useEffect(() => {
+    // Clean up previous observer
+    if (observerRef.current) {
+      observerRef.current.disconnect()
+    }
+
+    observerRef.current = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          const sectionId = entry.target.getAttribute("data-section")
+          if (sectionId) {
+            setVisibleSections((prev) => {
+              const newSet = new Set(prev)
+              if (entry.isIntersecting) {
+                newSet.add(sectionId)
+              } else {
+                newSet.delete(sectionId)
+              }
+              return newSet
+            })
+          }
+        })
+      },
+      {
+        threshold: 0.2,
+        rootMargin: "-20px 0px",
+      },
+    )
+
+    // Observe all sections
+    const currentRefs = Object.values(sectionRefs.current)
+    currentRefs.forEach((ref) => {
+      if (ref && observerRef.current) {
+        observerRef.current.observe(ref)
+      }
+    })
+
+    return () => {
+      if (observerRef.current) {
+        observerRef.current.disconnect()
+      }
+    }
+  }, [])
+
   const nextImage = () => {
     setCurrentImageIndex((prev) => (prev + 1) % images.length)
   }
@@ -43,8 +90,18 @@ export default function AboutSection() {
       dir={isRTL ? "rtl" : "ltr"}
     >
       {/* Interactive Image Carousel Section */}
-      <div className="py-20">
-        <div className="container mx-auto px-4">
+      <div
+        className="py-20"
+        ref={(el) => {
+          sectionRefs.current["carousel"] = el
+        }}
+        data-section="carousel"
+      >
+        <div
+          className={`container mx-auto px-4 transition-all duration-1000 ease-out ${
+            visibleSections.has("carousel") ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
+          }`}
+        >
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             {/* Image Carousel */}
             <div className="relative">
@@ -133,8 +190,18 @@ export default function AboutSection() {
       </div>
 
       {/* Interactive Traits Section */}
-      <div className="py-20 bg-white dark:bg-gray-800">
-        <div className="container mx-auto px-4">
+      <div
+        className="py-20 bg-white dark:bg-gray-800"
+        ref={(el) => {
+          sectionRefs.current["traits"] = el
+        }}
+        data-section="traits"
+      >
+        <div
+          className={`container mx-auto px-4 transition-all duration-1000 ease-out delay-200 ${
+            visibleSections.has("traits") ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
+          }`}
+        >
           <div className="text-center mb-16">
             <h3 className="text-3xl md:text-4xl font-bold text-vl-blue dark:text-white mb-6 font-sansumi">
               Why Choose Victoria?
@@ -150,7 +217,12 @@ export default function AboutSection() {
               return (
                 <Card
                   key={trait.key}
-                  className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-0 bg-gradient-to-br from-white to-gray-50 dark:from-gray-700 dark:to-gray-800"
+                  className={`group hover:shadow-xl transition-all duration-500 hover:-translate-y-2 border-0 bg-gradient-to-br from-white to-gray-50 dark:from-gray-700 dark:to-gray-800 ${
+                    visibleSections.has("traits") ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+                  }`}
+                  style={{
+                    transitionDelay: visibleSections.has("traits") ? `${400 + index * 100}ms` : "0ms",
+                  }}
                 >
                   <CardContent className="p-8 text-center">
                     <div
@@ -173,8 +245,18 @@ export default function AboutSection() {
       </div>
 
       {/* Expertise Section */}
-      <div className="py-20 bg-gradient-to-r from-vl-blue to-vl-blue-dark">
-        <div className="container mx-auto px-4">
+      <div
+        className="py-20 bg-gradient-to-r from-vl-blue to-vl-blue-dark"
+        ref={(el) => {
+          sectionRefs.current["expertise"] = el
+        }}
+        data-section="expertise"
+      >
+        <div
+          className={`container mx-auto px-4 transition-all duration-1000 ease-out delay-400 ${
+            visibleSections.has("expertise") ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
+          }`}
+        >
           <div className="max-w-4xl mx-auto text-center">
             <h3 className="text-3xl md:text-4xl font-bold text-white mb-8 font-sansumi">
               {t("about.expertise.title")}

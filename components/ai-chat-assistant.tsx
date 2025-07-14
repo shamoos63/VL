@@ -1,7 +1,6 @@
 "use client"
 
 import type React from "react"
-import "./ai-chat-assistant.css"
 
 import { useState, useRef, useEffect } from "react"
 import { Button } from "@/components/ui/button"
@@ -315,21 +314,29 @@ Remember: You're not just providing information - you're building excitement and
 
   if (!isOpen) {
     return (
-      <Button onClick={() => setIsOpen(true)} className="ai-chat-button coin-reflect" size="icon">
+      <Button
+        onClick={() => setIsOpen(true)}
+        className="fixed bottom-4 right-4 z-40 h-14 w-14 rounded-full bg-gradient-to-r from-vl-blue to-vl-blue-light hover:from-vl-blue-dark hover:to-vl-blue text-vl-yellow shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 coin-reflect"
+        size="icon"
+      >
         <div className="relative">
           <MessageCircle className="h-6 w-6" />
-          <Sparkles className="h-3 w-3 absolute -top-1 -right-1 text-vl-yellow ai-chat-sparkles" />
+          <Sparkles className="h-3 w-3 absolute -top-1 -right-1 text-vl-yellow animate-bounce" />
         </div>
       </Button>
     )
   }
 
   return (
-    <Card ref={chatCardRef} className="ai-chat-card" dir={isRTL ? "rtl" : "ltr"}>
-      <CardHeader className="ai-chat-header">
+    <Card
+      ref={chatCardRef}
+      className="fixed bottom-4 right-4 z-40 w-80 h-[420px] shadow-2xl border-2 border-vl-yellow/30 bg-white backdrop-blur-sm"
+      dir={isRTL ? "rtl" : "ltr"}
+    >
+      <CardHeader className="bg-gradient-to-r from-vl-blue to-vl-blue-light text-white p-3 rounded-t-lg">
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-2">
-            <div className="ai-chat-avatar">
+            <div className="w-8 h-8 bg-vl-yellow rounded-full flex items-center justify-center animate-pulse">
               <Bot className="h-5 w-5 text-vl-blue" />
             </div>
             <div>
@@ -341,7 +348,7 @@ Remember: You're not just providing information - you're building excitement and
                     : "Victoria's AI Assistant"}
                 <Sparkles className="h-2 w-2 ml-1 text-vl-yellow" />
               </CardTitle>
-              <p className="text-xs text-white">
+              <p className="text-xs text-white/90">
                 {language === "ar"
                   ? "متصل ومتحمس للمساعدة! 😊"
                   : language === "ru"
@@ -350,24 +357,31 @@ Remember: You're not just providing information - you're building excitement and
               </p>
             </div>
           </div>
-          <Button variant="ghost" size="sm" onClick={() => setIsOpen(false)} className="ai-chat-close-button">
+          <Button
+            variant="ghost"
+            size="sm"
+            onClick={() => setIsOpen(false)}
+            className="text-white hover:bg-white/20 h-6 w-6 p-0"
+          >
             <X className="h-3 w-3" />
           </Button>
         </div>
       </CardHeader>
 
-      <CardContent className="ai-chat-content">
-        <ScrollArea className="ai-chat-scroll-area">
+      <CardContent className="p-0 flex flex-col h-[calc(420px-60px)] bg-white">
+        <ScrollArea className="flex-1 p-3">
           <div className="space-y-3">
             {messages.map((message) => (
               <div key={message.id} className={`flex ${message.role === "user" ? "justify-end" : "justify-start"}`}>
                 <div
                   className={`max-w-[85%] rounded-xl p-2 ${
-                    message.role === "user" ? "ai-chat-message-user" : "ai-chat-message-assistant"
+                    message.role === "user"
+                      ? "bg-gradient-to-r from-vl-yellow to-vl-yellow-light text-vl-blue shadow-md"
+                      : "bg-gradient-to-r from-gray-50 to-gray-100 text-gray-900 shadow-md border border-gray-200"
                   }`}
                 >
                   <div className="flex items-start space-x-1">
-                    {message.role === "assistant" && <Bot className="h-3 w-3 mt-0.5 text-white flex-shrink-0" />}
+                    {message.role === "assistant" && <Bot className="h-3 w-3 mt-0.5 text-vl-blue flex-shrink-0" />}
                     {message.role === "user" && <User className="h-3 w-3 mt-0.5 flex-shrink-0" />}
                     <div className="flex-1">
                       <p className="text-xs leading-relaxed whitespace-pre-wrap">
@@ -381,11 +395,11 @@ Remember: You're not just providing information - you're building excitement and
             ))}
             {isLoading && (
               <div className="flex justify-start">
-                <div className="ai-chat-typing">
+                <div className="bg-gradient-to-r from-gray-50 to-gray-100 rounded-xl p-2 shadow-md">
                   <div className="flex items-center space-x-1">
                     <Bot className="h-3 w-3 text-vl-blue" />
                     <Loader2 className="h-3 w-3 animate-spin text-vl-blue" />
-                    <span className="text-xs text-white">
+                    <span className="text-xs text-gray-600">
                       {language === "ar"
                         ? "يكتب بحماس..."
                         : language === "ru"
@@ -400,7 +414,7 @@ Remember: You're not just providing information - you're building excitement and
           <div ref={messagesEndRef} />
         </ScrollArea>
 
-        <div className="ai-chat-input-area">
+        <div className="border-t bg-gray-50/50 p-3">
           <div className="flex space-x-2">
             <Input
               ref={inputRef}
@@ -415,12 +429,12 @@ Remember: You're not just providing information - you're building excitement and
                     : "Type your message here... 😊"
               }
               disabled={isLoading}
-              className="ai-chat-input"
+              className="flex-1 border-2 border-vl-yellow/20 focus:border-vl-yellow rounded-lg text-xs bg-white text-gray-900 placeholder-gray-500"
             />
             <Button
               onClick={sendMessage}
               disabled={!input.trim() || isLoading}
-              className="ai-chat-send-button"
+              className="bg-gradient-to-r from-vl-yellow to-vl-yellow-light hover:from-vl-yellow-dark hover:to-vl-yellow text-vl-blue rounded-lg shadow-md hover:shadow-lg transition-all duration-200"
               size="sm"
             >
               <Send className="h-3 w-3" />

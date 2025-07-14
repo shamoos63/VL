@@ -67,30 +67,30 @@ export default function Header() {
                 alt="Victoria Lancaster Real Estate"
                 width={240}
                 height={90}
-                className="h-20 w-auto brightness-0 invert"
+                className="h-20 w-auto"
                 priority
               />
             </Link>
             <div className="hidden lg:flex items-center space-x-8">
-              <Link href="/" className="text-vl-blue !important hover:text-vl-blue transition-colors font-medium">
+              <Link href="/" className="text-vl-blue hover:text-vl-yellow transition-colors font-medium">
                 Home
               </Link>
-              <Link href="/properties" className="text-vl-blue !important hover:text-vl-blue transition-colors font-medium">
+              <Link href="/properties" className="text-vl-blue hover:text-vl-yellow transition-colors font-medium">
                 Properties
               </Link>
-              <Link href="/areas" className="text-vl-blue !important hover:text-vl-blue transition-colors font-medium">
+              <Link href="/areas" className="text-vl-blue hover:text-vl-yellow transition-colors font-medium">
                 Areas
               </Link>
-              <Link href="/evaluation" className="text-vl-blue !important hover:text-vl-blue transition-colors font-medium">
+              <Link href="/evaluation" className="text-vl-blue hover:text-vl-yellow transition-colors font-medium">
                 Property Evaluation
               </Link>
-              <Link href="/about" className="text-vl-blue !important hover:text-vl-blue transition-colors font-medium">
+              <Link href="/about" className="text-vl-blue hover:text-vl-yellow transition-colors font-medium">
                 About
               </Link>
-              <Link href="/blog" className="text-vl-blue !important hover:text-vl-blue transition-colors font-medium">
+              <Link href="/blog" className="text-vl-blue hover:text-vl-yellow transition-colors font-medium">
                 Blog
               </Link>
-              <Link href="/contact" className="text-vl-blue !important hover:text-vl-blue transition-colors font-medium">
+              <Link href="/contact" className="text-vl-blue hover:text-vl-yellow transition-colors font-medium">
                 Contact
               </Link>
             </div>
@@ -108,15 +108,15 @@ export default function Header() {
       <header
         className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-300 ${
           isScrolled
-            ? "mt-2 mx-4 bg-transparent backdrop-blur-md shadow-xl rounded-2xl"
-            : "bg-white/60 backdrop-blur-md shadow-lg"
+            ? "mt-2 mx-4 bg-white/90 backdrop-blur-md shadow-xl rounded-2xl"
+            : "bg-white/95 backdrop-blur-md shadow-lg"
         }`}
         dir={isRTL ? "rtl" : "ltr"}
       >
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between h-24">
             {/* Updated Logo */}
-            <Link href="/" className="flex items-center space-x-2 flex-shrink-0 text-white">
+            <Link href="/" className="flex items-center space-x-2 flex-shrink-0">
               <Image
                 src="/VL_logo.svg"
                 alt="Victoria Lancaster Real Estate"
@@ -128,7 +128,9 @@ export default function Header() {
             </Link>
 
             {/* Mobile: Simplified branding */}
-         
+            <div className="lg:hidden flex items-center">
+              <span className="text-sm font-bold text-vl-blue">VL Real Estate</span>
+            </div>
 
             {/* Desktop Navigation */}
             <nav className={`hidden lg:flex items-center ${isRTL ? "space-x-reverse space-x-6" : "space-x-8"}`}>
@@ -136,7 +138,7 @@ export default function Header() {
                 <Link
                   key={item.key}
                   href={item.path}
-                  className={`nav-item text-sm xl:text-base font-medium transition-colors text-vl-blue ${
+                  className={`nav-item text-sm xl:text-base font-medium transition-colors ${
                     isActiveNavItem(item.path) ? "nav-active" : "text-vl-blue hover:text-vl-yellow"
                   }`}
                 >
@@ -207,46 +209,46 @@ export default function Header() {
           </div>
 
           {/* Mobile Menu */}
-         {isMenuOpen && (
-  <div className="lg:hidden absolute top-full left-0 right-0 mobile-menu-container shadow-lg border-t rounded-b-2xl z-[110]"> {/* Added mobile-menu-container */}
-    <nav className="flex flex-col p-4 space-y-4">
-      {navItems.map((item) => (
-        <Link
-          key={item.key}
-          href={item.path}
-          className={`font-medium py-2 transition-colors ${
-            isActiveNavItem(item.path) ? "nav-mobile-active" : "text-vl-blue hover:text-vl-yellow"
-          }`}
-          onClick={() => setIsMenuOpen(false)}
-        >
-          {t(`nav.${item.key}`)}
-        </Link>
-      ))}
+          {isMenuOpen && (
+            <div className="lg:hidden absolute top-full left-0 right-0 bg-white shadow-lg border-t rounded-b-2xl z-[110]">
+              <nav className="flex flex-col p-4 space-y-4">
+                {navItems.map((item) => (
+                  <Link
+                    key={item.key}
+                    href={item.path}
+                    className={`font-medium py-2 transition-colors ${
+                      isActiveNavItem(item.path) ? "nav-mobile-active" : "text-vl-blue hover:text-vl-yellow"
+                    }`}
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    {t(`nav.${item.key}`)}
+                  </Link>
+                ))}
 
-      <div className="flex items-center justify-center pt-4 border-t">
-        <DropdownMenu>
-          <DropdownMenuTrigger asChild>
-            <Button variant="ghost" size="sm" className="text-vl-blue">
-              <Globe className="h-4 w-4 mr-1" />
-              {currentLanguage?.flag} {currentLanguage?.code.toUpperCase()}
-            </Button>
-          </DropdownMenuTrigger>
-          <DropdownMenuContent className="mobile-dropdown-content z-999"> {/* Added mobile-dropdown-content */}
-            {languages.map((lang) => (
-              <DropdownMenuItem
-                key={lang.code}
-                onClick={() => setLanguage(lang.code)}
-                className={language === lang.code ? "bg-vl-yellow/20" : ""}
-              >
-                {lang.flag} {lang.name}
-              </DropdownMenuItem>
-            ))}
-          </DropdownMenuContent>
-        </DropdownMenu>
-      </div>
-    </nav>
-  </div>
-)}
+                <div className="flex items-center justify-center pt-4 border-t">
+                  <DropdownMenu>
+                    <DropdownMenuTrigger asChild>
+                      <Button variant="ghost" size="sm" className="text-vl-blue">
+                        <Globe className="h-4 w-4 mr-1" />
+                        {currentLanguage?.flag} {currentLanguage?.code.toUpperCase()}
+                      </Button>
+                    </DropdownMenuTrigger>
+                    <DropdownMenuContent className="z-[150]">
+                      {languages.map((lang) => (
+                        <DropdownMenuItem
+                          key={lang.code}
+                          onClick={() => setLanguage(lang.code)}
+                          className={language === lang.code ? "bg-vl-yellow/20" : ""}
+                        >
+                          {lang.flag} {lang.name}
+                        </DropdownMenuItem>
+                      ))}
+                    </DropdownMenuContent>
+                  </DropdownMenu>
+                </div>
+              </nav>
+            </div>
+          )}
         </div>
       </header>
     </>

@@ -365,7 +365,7 @@ const translations = {
     // Navigation Arabic
     "nav.home": "الرئيسية",
     "nav.properties": "العقارات",
-    "nav.areas": "المناطق",
+    "nav.areas": "الم��اطق",
     "nav.evaluation": "تقييم العقار",
     "nav.blog": "المدونة",
     "nav.about": "حول",
@@ -474,7 +474,7 @@ const translations = {
     // Sort Options Arabic
     "filters.sort.label": "ترتيب حسب",
     "filters.sort.default": "افتراضي",
-    "filters.sort.price-asc": "ا��سعر: من الأقل إلى الأعلى",
+    "filters.sort.price-asc": "السعر: من الأقل إلى الأعلى",
     "filters.sort.price-desc": "السعر: من الأعلى إلى الأقل",
     "filters.sort.newest": "الأحدث أولاً",
     "filters.sort.oldest": "الأقدم أولاً",

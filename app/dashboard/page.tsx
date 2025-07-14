@@ -1,168 +1,226 @@
 "use client"
+
+import type React from "react"
+
+import { useState, useEffect } from "react"
 import DashboardLayout from "@/components/dashboard/layout"
-import { Building2, Users, Calculator, TrendingUp, Calendar, FileText } from "lucide-react"
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { Building, FileText, MessageSquare, ClipboardList, TrendingUp, Users, Eye, Calendar } from "lucide-react"
+import { properties } from "@/lib/properties-data"
+import { useRouter } from "next/navigation"
 
-const stats = [
-  {
-    title: "Total Properties",
-    value: "247",
-    change: "+12%",
-    changeType: "positive" as const,
-    icon: Building2,
-    color: "blue" as const,
-  },
-  {
-    title: "Active Clients",
-    value: "89",
-    change: "+8%",
-    changeType: "positive" as const,
-    icon: Users,
-    color: "green" as const,
-  },
-  {
-    title: "Evaluations",
-    value: "156",
-    change: "+23%",
-    changeType: "positive" as const,
-    icon: Calculator,
-    color: "yellow" as const,
-  },
-  {
-    title: "Revenue",
-    value: "AED 2.4M",
-    change: "+15%",
-    changeType: "positive" as const,
-    icon: TrendingUp,
-    color: "purple" as const,
-  },
-]
-
-const recentActivities = [
-  {
-    id: 1,
-    title: "New property listing added",
-    description: "Luxury Villa in Palm Jumeirah",
-    time: "2 hours ago",
-    type: "property",
-  },
-  {
-    id: 2,
-    title: "Client consultation scheduled",
-    description: "Meeting with Ahmed Al-Rashid",
-    time: "4 hours ago",
-    type: "meeting",
-  },
-  {
-    id: 3,
-    title: "Property evaluation completed",
-    description: "Downtown apartment valuation",
-    time: "6 hours ago",
-    type: "evaluation",
-  },
-  {
-    id: 4,
-    title: "New blog post published",
-    description: "Dubai Real Estate Market Trends 2024",
-    time: "1 day ago",
-    type: "blog",
-  },
-]
-
-const quickActions = [
-  {
-    title: "Add Property",
-    description: "List a new property",
-    icon: Building2,
-    href: "/dashboard/properties/new",
-  },
-  {
-    title: "Schedule Meeting",
-    description: "Book client consultation",
-    icon: Calendar,
-    href: "/dashboard/calendar",
-  },
-  {
-    title: "Create Evaluation",
-    description: "Start property valuation",
-    icon: Calculator,
-    href: "/dashboard/evaluations/new",
-  },
-  {
-    title: "Write Blog Post",
-    description: "Publish new article",
-    icon: FileText,
-    href: "/dashboard/blog/new",
-  },
-]
+// Mock data for dashboard
+const mockData = {
+  totalProperties: properties.length,
+  featuredProperties: properties.filter((p) => p.featured).length,
+  totalBlogPosts: 12,
+  totalContacts: 28,
+  totalEvaluations: 15,
+  recentActivity: [
+    { type: "property", action: "added", name: "Luxury Penthouse", date: "2 hours ago" },
+    { type: "contact", action: "received", name: "John Smith", date: "5 hours ago" },
+    { type: "blog", action: "published", name: "Dubai Market Trends 2025", date: "1 day ago" },
+    { type: "evaluation", action: "submitted", name: "Villa in Palm Jumeirah", date: "2 days ago" },
+  ],
+}
 
 export default function DashboardPage() {
+  const [mounted, setMounted] = useState(false)
+  const router = useRouter()
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
+
+  if (!mounted) {
+    return null
+  }
+
+  const stats = [
+    {
+      title: "Total Properties",
+      value: mockData.totalProperties,
+      icon: Building,
+      color: "bg-blue-100 text-blue-600",
+      link: "/dashboard/properties",
+    },
+    {
+      title: "Featured Properties",
+      value: mockData.featuredProperties,
+      icon: TrendingUp,
+      color: "bg-yellow-100 text-yellow-600",
+      link: "/dashboard/properties",
+    },
+    {
+      title: "Blog Posts",
+      value: mockData.totalBlogPosts,
+      icon: FileText,
+      color: "bg-green-100 text-green-600",
+      link: "/dashboard/blog",
+    },
+    {
+      title: "Contact Requests",
+      value: mockData.totalContacts,
+      icon: MessageSquare,
+      color: "bg-purple-100 text-purple-600",
+      link: "/dashboard/contacts",
+    },
+    {
+      title: "Property Evaluations",
+      value: mockData.totalEvaluations,
+      icon: ClipboardList,
+      color: "bg-pink-100 text-pink-600",
+      link: "/dashboard/evaluations",
+    },
+  ]
+
+  const getActivityIcon = (type: string) => {
+    switch (type) {
+      case "property":
+        return <Building className="h-4 w-4" />
+      case "blog":
+        return <FileText className="h-4 w-4" />
+      case "contact":
+        return <Users className="h-4 w-4" />
+      case "evaluation":
+        return <ClipboardList className="h-4 w-4" />
+      default:
+        return <Eye className="h-4 w-4" />
+    }
+  }
+
   return (
     <DashboardLayout>
-      <div className="dashboard-page">
-        <div className="dashboard-page-header">
-          <h1 className="dashboard-page-title">Welcome back, Victoria</h1>
-          <p className="dashboard-page-subtitle">Here's what's happening with your real estate business today.</p>
-        </div>
+      <div className="mb-8">
+        <h1 className="text-2xl font-bold text-gray-800">Dashboard</h1>
+        <p className="text-gray-600">Welcome to your VL Real Estate admin dashboard.</p>
+      </div>
 
-        {/* Statistics Cards */}
-        <div className="dashboard-stats-grid">
-          {stats.map((stat, index) => (
-            <div key={index} className={`dashboard-stat-card ${stat.color}`}>
-              <div className="dashboard-stat-header">
-                <h3 className="dashboard-stat-title">{stat.title}</h3>
-                <stat.icon className={`dashboard-stat-icon ${stat.color}`} />
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4 mb-8">
+        {stats.map((stat, index) => (
+          <Card
+            key={index}
+            className="hover:shadow-md transition-shadow cursor-pointer"
+            onClick={() => router.push(stat.link)}
+          >
+            <CardContent className="p-6">
+              <div className="flex items-center justify-between">
+                <div>
+                  <p className="text-sm font-medium text-gray-500">{stat.title}</p>
+                  <p className="text-2xl font-bold">{stat.value}</p>
+                </div>
+                <div className={`p-3 rounded-full ${stat.color}`}>
+                  <stat.icon className="h-6 w-6" />
+                </div>
               </div>
-              <div className="dashboard-stat-value">{stat.value}</div>
-              <div className={`dashboard-stat-change ${stat.changeType}`}>
-                <TrendingUp size={16} />
-                <span>{stat.change} from last month</span>
-              </div>
-            </div>
-          ))}
-        </div>
+            </CardContent>
+          </Card>
+        ))}
+      </div>
 
-        {/* Quick Actions */}
-        <div className="dashboard-card">
-          <div className="dashboard-card-header">
-            <h2 className="dashboard-card-title">Quick Actions</h2>
-          </div>
-          <div className="dashboard-card-content">
-            <div className="dashboard-quick-actions">
-              {quickActions.map((action, index) => (
-                <a key={index} href={action.href} className="dashboard-quick-action">
-                  <div className="dashboard-quick-action-icon">
-                    <action.icon size={20} />
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <Card>
+          <CardHeader>
+            <CardTitle>Recent Activity</CardTitle>
+            <CardDescription>Latest actions and updates</CardDescription>
+          </CardHeader>
+          <CardContent>
+            <div className="space-y-4">
+              {mockData.recentActivity.map((activity, index) => (
+                <div key={index} className="flex items-start">
+                  <div className={`p-2 rounded-full mr-3 ${getActivityTypeColor(activity.type)}`}>
+                    {getActivityIcon(activity.type)}
                   </div>
-                  <div className="dashboard-quick-action-content">
-                    <h3>{action.title}</h3>
-                    <p>{action.description}</p>
+                  <div className="flex-1">
+                    <p className="text-sm font-medium">
+                      {activity.name}{" "}
+                      <span className="font-normal text-gray-500">
+                        was {activity.action} {activity.date}
+                      </span>
+                    </p>
                   </div>
-                </a>
-              ))}
-            </div>
-          </div>
-        </div>
-
-        {/* Recent Activity */}
-        <div className="dashboard-card">
-          <div className="dashboard-card-header">
-            <h2 className="dashboard-card-title">Recent Activity</h2>
-          </div>
-          <div className="dashboard-card-content">
-            <div className="dashboard-activity-timeline">
-              {recentActivities.map((activity) => (
-                <div key={activity.id} className="dashboard-activity-item">
-                  <div className="dashboard-activity-header">
-                    <h4 className="dashboard-activity-title">{activity.title}</h4>
-                    <span className="dashboard-activity-time">{activity.time}</span>
+                  <div className="text-xs text-gray-500 flex items-center">
+                    <Calendar className="h-3 w-3 mr-1" />
+                    {activity.date}
                   </div>
-                  <p className="dashboard-activity-description">{activity.description}</p>
                 </div>
               ))}
             </div>
-          </div>
-        </div>
+          </CardContent>
+        </Card>
+
+        <Card>
+          <CardHeader>
+            <CardTitle>Quick Actions</CardTitle>
+            <CardDescription>Common tasks you can perform</CardDescription>
+          </CardHeader>
+          <CardContent>
+            <div className="grid grid-cols-2 gap-4">
+              <QuickActionButton
+                icon={Building}
+                title="Add Property"
+                description="Create a new property listing"
+                onClick={() => router.push("/dashboard/properties?action=new")}
+                color="bg-blue-100 text-blue-600 hover:bg-blue-200"
+              />
+              <QuickActionButton
+                icon={FileText}
+                title="New Blog Post"
+                description="Write a new article"
+                onClick={() => router.push("/dashboard/blog?action=new")}
+                color="bg-green-100 text-green-600 hover:bg-green-200"
+              />
+              <QuickActionButton
+                icon={MessageSquare}
+                title="View Messages"
+                description="Check recent inquiries"
+                onClick={() => router.push("/dashboard/contacts")}
+                color="bg-purple-100 text-purple-600 hover:bg-purple-200"
+              />
+              <QuickActionButton
+                icon={ClipboardList}
+                title="Property Evaluations"
+                description="Review submitted evaluations"
+                onClick={() => router.push("/dashboard/evaluations")}
+                color="bg-pink-100 text-pink-600 hover:bg-pink-200"
+              />
+            </div>
+          </CardContent>
+        </Card>
       </div>
     </DashboardLayout>
+  )
+}
+
+function getActivityTypeColor(type: string) {
+  switch (type) {
+    case "property":
+      return "bg-blue-100 text-blue-600"
+    case "blog":
+      return "bg-green-100 text-green-600"
+    case "contact":
+      return "bg-purple-100 text-purple-600"
+    case "evaluation":
+      return "bg-pink-100 text-pink-600"
+    default:
+      return "bg-gray-100 text-gray-600"
+  }
+}
+
+interface QuickActionButtonProps {
+  icon: React.ElementType
+  title: string
+  description: string
+  onClick: () => void
+  color: string
+}
+
+function QuickActionButton({ icon: Icon, title, description, onClick, color }: QuickActionButtonProps) {
+  return (
+    <button className={`p-4 rounded-lg text-left transition-colors ${color}`} onClick={onClick}>
+      <Icon className="h-6 w-6 mb-2" />
+      <h3 className="font-medium">{title}</h3>
+      <p className="text-xs opacity-80">{description}</p>
+    </button>
   )
 }
