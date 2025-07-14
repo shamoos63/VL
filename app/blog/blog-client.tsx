@@ -80,7 +80,7 @@ export default function BlogClient({ blogPosts }: BlogClientProps) {
                   </div>
 
                   <Button className="w-full bg-transparent border-2 border-vl-yellow hover:border-black text-white">
-                    {t("blog.read.more")}
+                    {t("common.read.more")}
                     <ArrowRight className="h-4 w-4 ml-2" />
                   </Button>
                 </CardContent>
