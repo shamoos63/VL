@@ -48,9 +48,6 @@ export const en = {
   "properties.suggestions": "Suggestions: Try expanding your price range, location, or property type filters.",
   "properties.end.of.results": "You've seen all available properties matching your criteria.",
   "properties.results.title": "Search Results",
-  "properties.hero.title": "Personally Selected. Strategically Positioned.",
-  "properties.hero.subtitle":
-    "No noise. No mass listings. Just curated opportunities, reviewed, refined, and investment-ready.",
 
   // Filters
   "filters.title": "Filters",
@@ -138,20 +135,6 @@ export const en = {
     "Thank you for submitting your property evaluation request. Our expert team will review your property details and contact you within 24 hours with a comprehensive market analysis.",
   "evaluation.success.contact.title": "Contact Information",
   "evaluation.success.new.evaluation": "Submit New Evaluation",
-  "evaluation.hero.title": "Property Evaluation & Selling Support",
-  "evaluation.hero.subtitle":
-    "Considering your next move? Start with knowing exactly what your property is worth, and what it could do for you.",
-  "evaluation.description.text1":
-    "Victoria offers a confidential, data-driven evaluation for property owners in Dubai and the UK. Whether you're planning to sell, rent, or simply want clarity, you'll receive strategic insight, not just a number.",
-  "evaluation.description.text2": "Backed by 15+ years of experience, your evaluation will include:",
-  "evaluation.feature1": "Accurate market value",
-  "evaluation.feature2": "Investment and income potential",
-  "evaluation.feature3": "Selling strategy (if applicable)",
-  "evaluation.description.conclusion":
-    "Submit your details below, Victoria will personally evaluate your property and advise on your best next move.",
-  "evaluation.stats.evaluated": "Properties Evaluated",
-  "evaluation.stats.value": "Total Value Assessed",
-  "evaluation.stats.experience": "Years Experience",
 
   // Footer
   "footer.description":
@@ -179,76 +162,10 @@ export const en = {
   "contact.message": "Message",
   "contact.message.placeholder": "Tell us about your property requirements...",
   "contact.send": "Send Message",
-  "contact.hero.title": "Contact Us",
-  "contact.hero.subtitle": "Get in touch for personalized property consultation",
-  "contact.info.title": "Contact Information",
-  "contact.info.phone": "Phone",
-  "contact.info.email": "Email",
-  "contact.info.office": "Office",
-  "contact.info.hours": "Business Hours",
-  "contact.info.hours.time": "Sunday - Thursday: 9:00 AM - 6:00 PM",
-  "contact.location.title": "Our Location",
 
   // About
   "about.title": "About Victoria Lancaster",
   "about.subtitle": "Your Strategic Partner in Dubai Real Estate Investment",
-  "about.hero.title": "About Victoria",
-  "about.hero.subtitle": "Where trust, insight, and performance come together.",
-  "about.quote.text":
-    "To me, real estate is about building futures, not just deals. I treat every home or investment with the same care I'd give my own.",
-  "about.quote.author": "Victoria Lancaster",
-  "about.quote.title": "Director of Investment | Real Estate Strategist | Licensed Advisor",
-  "about.section1.title": "15+ Years of Market Excellence",
-  "about.section1.text1":
-    "With over 15 years of experience across the UAE and UK markets, Victoria Lancaster is a name synonymous with trust, results, and long-term vision.",
-  "about.section1.text2":
-    "As Investment Director at Select Property, she has successfully closed over 585 real estate transactions, exceeding AED 1.7 billion in value.",
-  "about.section1.updated": "Last updated: June 2025",
-  "about.section2.title": "A Portfolio Built on Insight",
-  "about.section2.text1":
-    "Victoria's portfolio spans luxury residential, off-plan, and buy-to-let investments, all carefully curated to build secure, high-yielding portfolios for global clients.",
-  "about.section2.text2":
-    "She is known for her sharp market insight and ability to spot opportunities before they hit the mainstream.",
-  "about.section2.text3":
-    "Clients choose her for her clarity, precision, and data-driven mindset, knowing that real estate, in her world, is not just a transaction, but a foundation for wealth, lifestyle, and legacy.",
-  "about.section3.title": "Her Clients, Her Values",
-  "about.section3.text1":
-    "Victoria works exclusively with selected developers and serious clients. Every portfolio she builds is backed by due diligence, long-term strategy, and a clear investment framework.",
-  "about.section3.text2":
-    "Whether you're investing or searching for a home, she brings the same meticulous care, honesty, and commitment to results.",
-  "about.section3.text3":
-    "Outside of work, Victoria is a proud wife, mother, and animal lover. Her grounded home life brings balance and clarity, the same values she brings to every client relationship.",
-  "about.academic.title": "Academic & Professional Credibility",
-  "about.academic.degrees": "Dual Bachelor of Science degrees from:",
-  "about.academic.university1": "Herzen State Pedagogical University",
-  "about.academic.university2": "Baltic University of Foreign Languages",
-  "about.academic.credentials": "Professional Credentials:",
-  "about.academic.license": "Licensed by the Dubai Land Department (BRN 27147)",
-  "about.academic.text1":
-    "She combines a global academic foundation with an analytical, results-driven approach, treating each investment with the same care and discernment as if it were her own.",
-  "about.academic.text2":
-    "She is known for her direct, no-fluff communication style, a quality her clients value for its transparency and efficiency.",
-  "about.excellence.title": "Professional Excellence",
-  "about.excellence.text":
-    "Great investments aren't rushed, they're chosen with purpose, timing, and clarity. Victoria brings meticulous attention to detail and unwavering commitment to every client relationship.",
-  "about.excellence.quote": "Great investments aren't rushed, they're chosen with purpose, timing, and clarity.",
-  "about.expertise.title": "Areas of Expertise",
-  "about.expertise.quote": "I don't just sell property. I strategize wealth.",
-  "about.expertise.description":
-    "Here's how I support investors in building real estate portfolios with purpose and clarity:",
-  "about.expertise.item1": "Off-plan Investments (Dubai & UK)",
-  "about.expertise.item2": "Selected Residential Properties",
-  "about.expertise.item3": "Buy-to-Let Strategy",
-  "about.expertise.item4": "Portfolio Diversification",
-  "about.expertise.item5": "Investor Onboarding & Consultation",
-  "about.expertise.item6": "Market Forecasting & Analytics",
-  "about.offices.title": "Offices",
-  "about.offices.dubai": "Dubai, United Arab Emirates",
-  "about.offices.manchester": "Manchester, United Kingdom",
-  "about.cta.title": "Ready to take the next step?",
-  "about.cta.text":
-    "Let's start a conversation built on trust, guided by insight, and tailored to your goals. Share your details below — Victoria will personally review how she can support your next move.",
-  "about.cta.button": "Send Message",
 
   // Common
   "common.loading": "Loading...",
@@ -302,31 +219,10 @@ export const en = {
   "blog.read.more": "Read More",
   "blog.published": "Published",
   "blog.by": "by",
-  "blog.hero.title": "Insights from the Market",
-  "blog.hero.subtitle": "Stay informed. Stay ahead.",
-  "blog.description.text1":
-    "Victoria shares expert commentary, investor trends, and strategic perspectives on the Dubai and UK real estate markets.",
-  "blog.description.text2":
-    "Whether you're exploring your first investment or managing a growing portfolio, these articles are designed to help you think clearly, act decisively, and stay ahead of the curve.",
-  "blog.description.text3": "You'll find:",
-  "blog.feature1": "Market updates & forecasts",
-  "blog.feature2": "Investor tips & property strategies",
-  "blog.feature3": "Area deep-dives & opportunity spotlights",
-  "blog.description.conclusion": "Read the latest posts, and move forward with confidence.",
 
   // Areas
   "areas.title": "Prime Investment Areas",
   "areas.subtitle": "Discover Dubai's most promising neighborhoods for property investment",
-  "areas.hero.title": "Explore Dubai's Key Investment Areas",
-  "areas.hero.subtitle": "Handpicked insights to help you choose with confidence.",
-  "areas.description.text1": "Dubai's real estate market is diverse, and not every area suits every investor.",
-  "areas.description.text2":
-    "In this section, Victoria highlights key districts she works in, sharing her honest perspective on:",
-  "areas.feature1": "Strengths & potential",
-  "areas.feature2": "Risks to consider",
-  "areas.feature3": "Who the area fits best",
-  "areas.description.conclusion":
-    "Whether you're focused on yield, growth, or lifestyle, this will help you make the right move.",
 
   // Testimonials
   "testimonials.title": "Client Success Stories",
