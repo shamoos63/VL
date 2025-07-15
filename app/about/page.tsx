@@ -315,11 +315,11 @@ export default function AboutPage() {
               </div>
             </div>
 
-            <p className="text-lg text-white leading-relaxed">
+            <p className="text-lg text-white text-center leading-relaxed">
               She combines a global academic foundation with an analytical, results-driven approach, treating each
               investment with the same care and discernment as if it were her own.
             </p>
-            <p className="text-lg text-white leading-relaxed mt-4">
+            <p className="text-lg text-white text-center leading-relaxed mt-4">
               She is known for her direct, no-fluff communication style, a quality her clients value for its
               transparency and efficiency.
             </p>
@@ -394,7 +394,7 @@ export default function AboutPage() {
             <h2 className="text-4xl font-bold text-vl-yellow mb-6 font-sansumi">Ready to take the next step?</h2>
             <p className="text-xl text-white mb-8 leading-relaxed">
               Let's start a conversation built on trust, guided by insight, and tailored to your goals. Share your
-              details below — Victoria will personally review how she can support your next move.
+              details below. Victoria will personally review how she can support your next move.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Button

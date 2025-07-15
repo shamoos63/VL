@@ -128,7 +128,7 @@ export default function WelcomePopup({ onClose }: WelcomePopupProps) {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                   {/* Experience */}
                   <div className="text-center">
-                    <div className="text-white font-semibold font-medium mb-1">
+                    <div className="text-white  whitespace-nowrap font-semibold font-medium mb-1">
                       With over{" "}
                       <AnimatedCounter end={15} duration={2000} className="inline-block font-bold text-vl-yellow" />{" "}
                       years of experience
@@ -168,10 +168,10 @@ export default function WelcomePopup({ onClose }: WelcomePopupProps) {
                 </p>
 
                 {/* Two Column Stats for Laptop - Centered */}
-                <div className="grid grid-cols-2 gap-6 max-w-lg mx-auto">
+                <div className="grid grid-cols-2 gap-6 max-w-xl mx-auto">
                   {/* Experience */}
                   <div className="text-center">
-                    <div className="text-white font-semibold text-lg mb-1">
+                    <div className="text-white font-semibold  whitespace-nowrap text-lg mb-1">
                       With over{" "}
                       <AnimatedCounter end={15} duration={2000} className="inline-block font-bold text-vl-yellow" />{" "}
                       years of experience

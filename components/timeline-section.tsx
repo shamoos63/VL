@@ -189,9 +189,9 @@ export default function TimelineSection() {
                         <div
                           className={`w-20 h-20 rounded-full flex items-center justify-center font-bold text-lg transition-all duration-300 ${
                             item.highlight
-                              ? "bg-vl-yellow text-vl-blue shadow-lg scale-110"
+                              ? "bg-vl-yellow text-white shadow-lg scale-110"
                               : visibleItems.has(index)
-                                ? "bg-vl-blue border-2 border-vl-yellow text-vl-yellow shadow-md scale-105"
+                                ? "bg-vl-blue border-2 border-vl-yellow text-white shadow-md scale-105"
                                 : "bg-vl-blue border border-vl-yellow border-opacity-30 text-vl-yellow opacity-70"
                           }`}
                         >
