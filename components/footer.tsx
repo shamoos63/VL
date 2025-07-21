@@ -18,7 +18,7 @@ export default function Footer() {
           <div className="lg:col-span-1">
             <div className="mb-6 ml-10">
               <Image
-                src="/VL1_W.svg"
+                src="/VL1_w.svg"
                 alt="Victoria Lancaster Real Estate"
                 width={200}
                 height={120}
