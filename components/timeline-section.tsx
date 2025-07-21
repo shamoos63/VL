@@ -15,7 +15,7 @@ interface TimelineItem {
 
 const timelineData: TimelineItem[] = [
   {
-    year: "2008",
+    year: "2005",
     title: "Academic Foundation",
     description:
       "Graduated with dual Bachelor of Science degrees from Herzen State Pedagogical University and Baltic University of Foreign Languages, establishing a strong analytical foundation.",
@@ -47,7 +47,7 @@ const timelineData: TimelineItem[] = [
     year: "2018",
     title: "Global Client Base",
     description:
-      "Built an international clientele spanning 30+ countries, providing multilingual services in English, Arabic, and Russian.",
+      "Built an international clientele spanning 30+ countries, providing multilingual services in English, and Russian.",
     icon: <Users className="h-6 w-6" />,
   },
   {
@@ -209,7 +209,7 @@ export default function TimelineSection() {
           <div className="mt-16 text-center">
             <div className="bg-transparent backdrop-blur-sm border border-vl-yellow rounded-2xl p-8">
               <div className="mb-4">
-                <Image src="/quotation_marks.svg" alt="Quote" width={40} height={40} className="mx-auto" />
+                <Image src="/comma_sign.svg" alt="Quote" width={40} height={40} className="mx-auto" />
               </div>
               <p className="text-xl italic mb-4 text-white leading-relaxed">
                 Every milestone represents not just professional growth, but a commitment to excellence and client

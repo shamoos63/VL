@@ -73,9 +73,10 @@ export default function WelcomePopup({ onClose }: WelcomePopupProps) {
             </div>
             <h3 className="text-xl font-semibold text-vl-yellow mb-2">Thank You!</h3>
             <p className="text-white mb-4">
-              I've received your details and will be in touch soon with personalized recommendations.
+              Your request is in trusted hands.
+Victoria or a member of her private advisory team will contact you soon.
             </p>
-            <p className="text-sm text-white opacity-70">Expect to hear from me within 24 hours.</p>
+      
           </CardContent>
         </Card>
       </div>
@@ -161,10 +162,10 @@ export default function WelcomePopup({ onClose }: WelcomePopupProps) {
               {/* Centered Text Content Below Image for Laptop */}
               <div className="text-center w-full">
                 <CardTitle className="text-2xl font-bold text-vl-yellow mb-4 leading-tight">
-                  Hi, I&apos;m Victoria.
+                  Hello, I&apos;m Victoria.
                 </CardTitle>
                 <p className="text-white text-lg leading-relaxed mb-6 font-medium max-w-2xl mx-auto">
-                  I help investors find the right property, aligned with their goals and truly worth pursuing.
+                 I help global investors and discerning buyers secure prime assets in Dubai and the UK, strategically selected for growth, security, and prestige.
                 </p>
 
                 {/* Two Column Stats for Laptop - Centered */}
@@ -193,7 +194,7 @@ export default function WelcomePopup({ onClose }: WelcomePopupProps) {
         {/* Form Content - Tucked under header */}
         <CardContent className="bg-vl-blue p-4 md:p-6 -mt-4 relative z-10 rounded-t-xl">
           <div className="mb-6 text-center">
-            <h3 className="text-xl font-semibold text-vl-yellow mb-2">Get in touch</h3>
+            <h3 className="text-xl font-semibold text-vl-yellow mb-2">Start Your Private Consultation</h3>
           </div>
 
           <form onSubmit={handleSubmit} className="space-y-4 md:space-y-5">

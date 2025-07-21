@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import DashboardLayout from "@/components/dashboard/layout"
+import ModernDashboardLayout from "@/components/dashboard/modern-layout"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
@@ -87,16 +87,16 @@ export default function SettingsPage() {
 
   if (isLoading) {
     return (
-      <DashboardLayout>
+      <ModernDashboardLayout>
         <div className="flex justify-center items-center h-64">
           <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-vl-blue"></div>
         </div>
-      </DashboardLayout>
+      </ModernDashboardLayout>
     )
   }
 
   return (
-    <DashboardLayout>
+    <ModernDashboardLayout>
       <div className="max-w-4xl bg-white rounded-lg shadow-lg p-6">
         <div className="mb-6">
           <h1 className="text-2xl font-bold text-gray-800">Settings</h1>
@@ -326,6 +326,6 @@ export default function SettingsPage() {
           </Button>
         </div>
       </div>
-    </DashboardLayout>
+    </ModernDashboardLayout>
   )
 }

@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import DashboardLayout from "@/components/dashboard/layout"
+import ModernDashboardLayout from "@/components/dashboard/modern-layout"
 import { Button } from "@/components/ui/button"
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table"
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "@/components/ui/dialog"
@@ -211,7 +211,7 @@ export default function EvaluationsPage() {
   const newEvaluationsCount = evaluations.filter((e) => e.status === "new").length
 
   return (
-    <DashboardLayout>
+    <ModernDashboardLayout>
       <div className="flex justify-between items-center mb-6">
         <div>
           <h1 className="text-2xl font-bold text-gray-800">Property Evaluations</h1>
@@ -517,6 +517,6 @@ export default function EvaluationsPage() {
           </div>
         </DialogContent>
       </Dialog>
-    </DashboardLayout>
+    </ModernDashboardLayout>
   )
 }

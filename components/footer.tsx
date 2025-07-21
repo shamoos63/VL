@@ -4,7 +4,7 @@ import Link from "next/link"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
-import { Facebook, Instagram, Twitter, Linkedin, Phone, Mail, MapPin } from "lucide-react"
+import { Facebook, Instagram, Linkedin, Phone, Mail, MapPin } from "lucide-react"
 import { useI18n } from "@/lib/i18n"
 
 export default function Footer() {
@@ -18,7 +18,7 @@ export default function Footer() {
           <div className="lg:col-span-1">
             <div className="mb-6 ml-10">
               <Image
-                src="/VL_logo.svg"
+                src="/VL1_W.svg"
                 alt="Victoria Lancaster Real Estate"
                 width={200}
                 height={120}

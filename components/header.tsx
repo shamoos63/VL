@@ -63,7 +63,7 @@ export default function Header() {
           <div className="flex items-center justify-between h-24">
             <Link href="/" className="flex items-center space-x-2">
               <Image
-                src="/VL_logo.svg"
+                src="/VL1_w.svg"
                 alt="Victoria Lancaster Real Estate"
                 width={240}
                 height={90}
@@ -118,7 +118,7 @@ export default function Header() {
             {/* Updated Logo */}
             <Link href="/" className="flex items-center space-x-2 flex-shrink-0 text-white">
               <Image
-                src="/VL_logo.svg"
+                src="/VL1_w.svg"
                 alt="Victoria Lancaster Real Estate"
                 width={240}
                 height={90}

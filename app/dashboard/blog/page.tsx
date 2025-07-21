@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react"
 import { useSearchParams, useRouter } from "next/navigation"
-import DashboardLayout from "@/components/dashboard/layout"
+import ModernDashboardLayout from "@/components/dashboard/modern-layout"
 import { Button } from "@/components/ui/button"
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table"
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "@/components/ui/dialog"
@@ -190,7 +190,7 @@ export default function BlogPage() {
   }
 
   return (
-    <DashboardLayout>
+    <ModernDashboardLayout>
       <div className="flex justify-between items-center mb-6">
         <div>
           <h1 className="text-2xl font-bold text-gray-800">Blog Management</h1>
@@ -515,6 +515,6 @@ export default function BlogPage() {
           </div>
         </DialogContent>
       </Dialog>
-    </DashboardLayout>
+    </ModernDashboardLayout>
   )
 }

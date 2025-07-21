@@ -13,14 +13,14 @@ const faqData = {
         "Absolutely. Non-residents can fully own property in designated freehold areas across Dubai. It's a streamlined process that welcomes global investors without requiring residency.",
     },
     {
-      question: "I'm new to property investment — where should I start?",
+      question: "I'm new to property investment, where should I start?",
       answer:
-        "Start with clarity. Understand your investment goals — are you looking for long-term rental income, short-term gains, or a future home? Once your priorities are clear, Victoria will help you build a strategy around them, guiding you through the best areas, property types, and developers that match your vision. It's not about rushing — it's about smart, purpose-driven choices.",
+        "Start with clarity. Understand your investment goals , are you looking for long-term rental income, short-term gains, or a future home? Once your priorities are clear, Victoria will help you build a strategy around them, guiding you through the best areas, property types, and developers that match your vision. It's not about rushing , it's about smart, purpose-driven choices.",
     },
     {
       question: "What kind of returns can I expect from property investment in Dubai?",
       answer:
-        "Dubai offers some of the highest rental yields globally — typically ranging from 5% to 8.4%, and in some cases even up to 15%.",
+        "Dubai offers some of the highest rental yields globally , typically ranging from 5% to 8.4%, and in some cases even up to 15%.",
     },
     {
       question: "Do I need to be in Dubai to buy property?",
@@ -45,7 +45,7 @@ const faqData = {
     {
       question: "What's better: ready property or off-plan?",
       answer:
-        "It depends on your goals and what's available on the market. Ready properties can start generating income right away, while off-plan projects often offer lower entry points, attractive payment plans, and capital growth potential. Each option has its own advantages — Victoria helps you decide based on your unique situation.",
+        "It depends on your goals and what's available on the market. Ready properties can start generating income right away, while off-plan projects often offer lower entry points, attractive payment plans, and capital growth potential. Each option has its own advantages , Victoria helps you decide based on your unique situation.",
     },
     {
       question: "Which areas in Dubai offer the best investment opportunities?",
@@ -55,22 +55,22 @@ const faqData = {
     {
       question: "What makes working with Victoria different from others?",
       answer:
-        "Victoria doesn't just sell — she strategizes. With over 15 years of experience, deep market knowledge, and strong connections with top-tier developers, she secures high-value deals for her clients. She builds long-term relationships — not one-off sales — and treats every portfolio as if it were her own. Her impressive track record includes 585+ successful deals worth over AED 1.7 billion, all registered with the Dubai Land Department.",
+        "Victoria doesn't just sell , she strategizes. With over 15 years of experience, deep market knowledge, and strong connections with top-tier developers, she secures high-value deals for her clients. She builds long-term relationships , not one-off sales , and treats every portfolio as if it were her own. Her impressive track record includes 585+ successful deals worth over AED 1.7 billion, all registered with the Dubai Land Department.",
     },
     {
       question: "How does Victoria choose which properties to recommend?",
       answer:
-        "If she wouldn't invest in it herself, she won't recommend it. Victoria personally vets each opportunity based on developer credibility, ROI projections, long-term value, and gut instinct. She believes a smart investment must make sense on paper — and feel right in your hands.",
+        "If she wouldn't invest in it herself, she won't recommend it. Victoria personally vets each opportunity based on developer credibility, ROI projections, long-term value, and gut instinct. She believes a smart investment must make sense on paper , and feel right in your hands.",
     },
     {
       question: "What's it like to work with Victoria one-on-one?",
       answer:
-        "Expect transparency, calm confidence, and complete honesty. Victoria listens deeply, thinks strategically, and tells you what you need to hear — not just what you want. She becomes your thinking partner, not a salesperson. Whether it's a quick deal or a year-long search, she stays fully invested in your goals.",
+        "Expect transparency, calm confidence, and complete honesty. Victoria listens deeply, thinks strategically, and tells you what you need to hear , not just what you want. She becomes your thinking partner, not a salesperson. Whether it's a quick deal or a year-long search, she stays fully invested in your goals.",
     },
     {
       question: "Why does Victoria only work with selected clients and developers?",
       answer:
-        "Because quality over quantity leads to better outcomes. By focusing only on trusted developers and serious buyers, Victoria preserves her time, energy, and focus for deals that matter — where she can make a real impact. This allows her to deliver exceptional results, not just transactions.",
+        "Because quality over quantity leads to better outcomes. By focusing only on trusted developers and serious buyers, Victoria preserves her time, energy, and focus for deals that matter , where she can make a real impact. This allows her to deliver exceptional results, not just transactions.",
     },
   ],
   ar: [
@@ -218,6 +218,7 @@ export default function FaqSection() {
   return (
     <section className="py-20 bg-transaparent" dir={isRTL ? "rtl" : "ltr"}>
       <div className="px-6 pb-6">
+       
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-vl-blue mb-6 font-heading">
             {language === "en"
@@ -236,7 +237,25 @@ export default function FaqSection() {
           <div className="w-40 h-1 bg-vl-yellow mx-auto"></div>
         </div>
 
-        <div className="max-w-4xl mx-auto space-y-4 bg-transparent">
+ <div className="text-center mt-12">
+          <div className="glass p-8 rounded-2xl max-w-2xl mx-auto">
+            <p className="text-white font-medium italic">
+              {language === "en"
+                ? '"I chose these questions because they reflect what people really ask me, not just about buying in Dubai, but about how I think, how I work, and what I value. I believe clarity builds trust.When you know what to expect, you can make better decisions."'
+                : language === "ar"
+                  ? '"اخترت هذه الأسئلة لأنها تعكس ما يسألني الناس حقًا - ليس فقط عن الشراء في دبي، ولكن عن كيف أفكر وكيف أعمل وما أقدره. أؤمن أن الوضوح يبني الثقة. عندما تعرف ما تتوقعه، يمكنك اتخاذ قرارات أفضل."'
+                  : '"Я выбрала эти вопросы, потому что они отражают то, что люди действительно спрашивают меня, не только о покупке в Дубае, но о том, как я думаю, как работаю и что ценю. Я верю, что ясность строит доверие. Когда вы знаете, чего ожидать, вы можете принимать лучшие решения."'}
+            </p>
+            <p className="!important font-semibold mt-4 text-vl-yellow">
+              {language === "en"
+                ? "Victoria Lancaster"
+                : language === "ar"
+                  ? "فيكتوريا لانكستر"
+                  : "Виктория Ланкастер"}
+            </p>
+          </div>
+        </div>
+        <div className="max-w-4xl py-5 mx-auto space-y-4 bg-transparent">
           {currentFaqs.map((faq, index) => (
             <Card key={index} className="glass overflow-hidden rounded-xl">
   <div>
@@ -262,24 +281,7 @@ export default function FaqSection() {
           ))}
         </div>
 
-        <div className="text-center mt-12">
-          <div className="glass p-8 rounded-2xl max-w-2xl mx-auto">
-            <p className="text-white font-medium italic">
-              {language === "en"
-                ? '"I chose these questions because they reflect what people really ask me, not just about buying in Dubai, but about how I think, how I work, and what I value. I believe clarity builds trust.When you know what to expect, you can make better decisions."'
-                : language === "ar"
-                  ? '"اخترت هذه الأسئلة لأنها تعكس ما يسألني الناس حقًا - ليس فقط عن الشراء في دبي، ولكن عن كيف أفكر وكيف أعمل وما أقدره. أؤمن أن الوضوح يبني الثقة. عندما تعرف ما تتوقعه، يمكنك اتخاذ قرارات أفضل."'
-                  : '"Я выбрала эти вопросы, потому что они отражают то, что люди действительно спрашивают меня, не только о покупке в Дубае, но о том, как я думаю, как работаю и что ценю. Я верю, что ясность строит доверие. Когда вы знаете, чего ожидать, вы можете принимать лучшие решения."'}
-            </p>
-            <p className="!important font-semibold mt-4 text-vl-yellow">
-              {language === "en"
-                ? "Victoria Lancaster"
-                : language === "ar"
-                  ? "فيكتوريا لانكستر"
-                  : "Виктория Ланкастер"}
-            </p>
-          </div>
-        </div>
+      
       </div>
     </section>
   )

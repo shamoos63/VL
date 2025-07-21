@@ -208,17 +208,17 @@ export default function TestimonialsSection() {
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-vl-blue mb-6 font-heading">
             {language === "en"
-              ? "Client Success Stories"
+              ? "Trusted by Global Investors"
               : language === "ar"
-                ? "قصص نجاح العملاء"
-                : "Истории успеха клиентов"}
+                ? "موثوقة من قبل عملاء عالميين"
+                : "Доверие мировых инвесторов"}
           </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
             {language === "en"
-              ? "Hear from investors who trusted Victoria Lancaster with their Dubai property journey"
+              ? "Hear from clients who chose strategy, discretion, and results."
               : language === "ar"
-                ? "استمع إلى المستثمرين الذين وثقوا بفيكتوريا لانكستر في رحلة عقارات دبي"
-                : "Послушайте инвесторов, которые доверили Виктории Ланкастер свое путешествие в недвижимость Дубая"}
+                ? "استمع إلى العملاء الذين اختاروا الاستراتيجية والتقدير والنتائج."
+                : "Послушайте мнения клиентов, которые выбрали стратегию, осмотрительность и результаты."}
           </p>
         </div>
 

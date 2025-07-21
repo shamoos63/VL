@@ -105,7 +105,7 @@ export default function AboutPage() {
           <div className="max-w-4xl mx-auto text-center text-white">
             <h1 className="text-5xl md:text-7xl font-bold mb-6 pt-8 font-sansumi text-vl-yellow">About Victoria</h1>
             <p className="text-xl md:text-2xl font-light leading-relaxed text-white">
-              Where trust, insight, and performance come together.
+              Where trust, insight, and performance come together
             </p>
           </div>
         </div>
@@ -116,14 +116,13 @@ export default function AboutPage() {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <div className="mb-6">
-              <Image src="/quotation_marks.svg" alt="Quote" width={60} height={60} className="mx-auto" />
+              <Image src="/comma_sign.svg" alt="Quote" width={60} height={60} className="mx-auto" />
             </div>
             <p className="text-2xl md:text-3xl text-vl-yellow font-light italic mb-6 leading-relaxed">
-              To me, real estate is about building futures, not just deals. I treat every home or investment with the
-              same care I'd give my own.
+              To me, real estate is about building futures, not just deals. I treat every home or investment with the same care I'd give my own.
             </p>
             <div className="mb-6">
-              <Image src="/quotation_marks.svg" alt="Quote" width={60} height={60} className="mx-auto" />
+              <Image src="/comma_sign.svg" alt="Quote" width={60} height={60} className="mx-auto" />
             </div>
             <p className="text-xl font-semibold text-vl-yellow">Victoria Lancaster</p>
             <p className="text-white mt-2">Director of Investment | Real Estate Strategist | Licensed Advisor</p>
@@ -300,8 +299,8 @@ export default function AboutPage() {
                 <div>
                   <h3 className="text-xl font-semibold text-vl-yellow mb-2">Dual Bachelor of Science degrees from:</h3>
                   <ul className="list-disc pl-5 space-y-2 text-white">
-                    <li>Herzen State Pedagogical University</li>
-                    <li>Baltic University of Foreign Languages</li>
+                    <li>Herzen State Pedagogical University (2003 - 2005)</li>
+                    <li>Baltic University of Foreign Languages (2000-2005)</li>
                   </ul>
                 </div>
               </div>
@@ -316,7 +315,7 @@ export default function AboutPage() {
             </div>
 
             <p className="text-lg text-white text-center leading-relaxed">
-              She combines a global academic foundation with an analytical, results-driven approach, treating each
+              Victoria combines a global academic foundation with an analytical, results-driven approach, treating each
               investment with the same care and discernment as if it were her own.
             </p>
             <p className="text-lg text-white text-center leading-relaxed mt-4">
@@ -339,7 +338,7 @@ export default function AboutPage() {
 
             <div className="mt-12 p-6 bg-transparent backdrop-blur-sm rounded-2xl border border-vl-yellow">
               <div className="mb-4">
-                <Image src="/quotation_marks.svg" alt="Quote" width={40} height={40} className="mx-auto" />
+                <Image src="/comma_sign.svg" alt="Quote" width={40} height={40} className="mx-auto" />
               </div>
               <p className="text-xl italic mb-4 text-white">
                 Great investments aren't rushed, they're chosen with purpose, timing, and clarity.
@@ -359,7 +358,7 @@ export default function AboutPage() {
               "I don't just sell property. I strategize wealth."
             </p>
             <p className="text-lg text-white mb-8 text-center">
-              Here's how I support investors in building real estate portfolios with purpose and clarity:
+              Here's how we support investors in building real estate portfolios with purpose and clarity:
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
