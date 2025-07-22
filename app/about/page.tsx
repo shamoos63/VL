@@ -116,13 +116,13 @@ export default function AboutPage() {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <div className="mb-6">
-              <Image src="/comma_sign.svg" alt="Quote" width={60} height={60} className="mx-auto" />
+              <Image src="/comma_sign.svg" alt="Quote" width={30} height={30} className="mx-auto" />
             </div>
             <p className="text-2xl md:text-3xl text-vl-yellow font-light italic mb-6 leading-relaxed">
               To me, real estate is about building futures, not just deals. I treat every home or investment with the same care I'd give my own.
             </p>
             <div className="mb-6">
-              <Image src="/comma_sign.svg" alt="Quote" width={60} height={60} className="mx-auto" />
+              <Image src="/comma_sign.svg" alt="Quote" width={30} height={30} className="mx-auto" />
             </div>
             <p className="text-xl font-semibold text-vl-yellow">Victoria Lancaster</p>
             <p className="text-white mt-2">Director of Investment | Real Estate Strategist | Licensed Advisor</p>
@@ -226,7 +226,7 @@ export default function AboutPage() {
                   src="/victoria-photo-2.jpg"
                   alt="Victoria Lancaster - Client Meeting"
                   fill
-                  className="object-contain"
+                  className="object-contain left-4 md:left-6 absolute"
                 />
               </div>
             </div>

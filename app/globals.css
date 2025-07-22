@@ -203,13 +203,200 @@ button {
     var(--font-sansumi-ultralight), sans-serif;
 }
 
-/* RTL Support */
+/* Noto Sans Mono font classes for Russian text */
+.font-noto-sans-mono-regular {
+  font-family: var(--font-noto-sans-mono-regular), monospace;
+  font-weight: 400;
+}
+
+.font-noto-sans-mono-bold {
+  font-family: var(--font-noto-sans-mono-bold), monospace;
+  font-weight: 700;
+}
+
+.font-noto-sans-mono-semibold {
+  font-family: var(--font-noto-sans-mono-semibold), monospace;
+  font-weight: 600;
+}
+
+.font-noto-sans-mono {
+  font-family: var(--font-noto-sans-mono-regular), var(--font-noto-sans-mono-semibold), var(--font-noto-sans-mono-bold),
+    monospace;
+}
+
+/* Language-specific font assignments */
+
+/* Russian text - Use Noto Sans Mono */
+:lang(ru),
+[lang="ru"],
+.lang-ru,
+html[lang="ru"] *,
+html[lang="ru-RU"] *,
+[data-lang="ru"] *,
+[data-lang="ru-RU"] * {
+  font-family: var(--font-noto-sans-mono-regular), var(--font-noto-sans-mono-semibold), var(--font-noto-sans-mono-bold),
+    monospace !important;
+}
+
+/* Russian headings - Use Noto Sans Mono Bold */
+:lang(ru) h1,
+:lang(ru) h2,
+:lang(ru) h3,
+:lang(ru) h4,
+:lang(ru) h5,
+:lang(ru) h6,
+[lang="ru"] h1,
+[lang="ru"] h2,
+[lang="ru"] h3,
+[lang="ru"] h4,
+[lang="ru"] h5,
+[lang="ru"] h6,
+.lang-ru h1,
+.lang-ru h2,
+.lang-ru h3,
+.lang-ru h4,
+.lang-ru h5,
+.lang-ru h6,
+html[lang="ru"] h1,
+html[lang="ru"] h2,
+html[lang="ru"] h3,
+html[lang="ru"] h4,
+html[lang="ru"] h5,
+html[lang="ru"] h6,
+html[lang="ru-RU"] h1,
+html[lang="ru-RU"] h2,
+html[lang="ru-RU"] h3,
+html[lang="ru-RU"] h4,
+html[lang="ru-RU"] h5,
+html[lang="ru-RU"] h6 {
+  font-family: var(--font-noto-sans-mono-bold), monospace !important;
+}
+
+/* Arabic text - Use Cairo */
+:lang(ar),
+[lang="ar"],
+.lang-ar,
+html[lang="ar"] *,
+html[lang="ar-SA"] *,
+[data-lang="ar"] *,
+[data-lang="ar-SA"] *,
 [dir="rtl"] {
-  font-family: var(--font-cairo), sans-serif;
+  font-family: var(--font-cairo), sans-serif !important;
+}
+
+/* Arabic headings - Use Cairo */
+:lang(ar) h1,
+:lang(ar) h2,
+:lang(ar) h3,
+:lang(ar) h4,
+:lang(ar) h5,
+:lang(ar) h6,
+[lang="ar"] h1,
+[lang="ar"] h2,
+[lang="ar"] h3,
+[lang="ar"] h4,
+[lang="ar"] h5,
+[lang="ar"] h6,
+.lang-ar h1,
+.lang-ar h2,
+.lang-ar h3,
+.lang-ar h4,
+.lang-ar h5,
+.lang-ar h6,
+html[lang="ar"] h1,
+html[lang="ar"] h2,
+html[lang="ar"] h3,
+html[lang="ar"] h4,
+html[lang="ar"] h5,
+html[lang="ar"] h6,
+html[lang="ar-SA"] h1,
+html[lang="ar-SA"] h2,
+html[lang="ar-SA"] h3,
+html[lang="ar-SA"] h4,
+html[lang="ar-SA"] h5,
+html[lang="ar-SA"] h6,
+[dir="rtl"] h1,
+[dir="rtl"] h2,
+[dir="rtl"] h3,
+[dir="rtl"] h4,
+[dir="rtl"] h5,
+[dir="rtl"] h6 {
+  font-family: var(--font-cairo), sans-serif !important;
+}
+
+/* RTL Support - Updated to use Cairo for Arabic */
+[dir="rtl"] {
+  font-family: var(--font-cairo), sans-serif !important;
 }
 
 [dir="ltr"] {
   font-family: var(--font-inter), sans-serif;
+}
+
+/* Override for Russian text in RTL context */
+[dir="rtl"]:lang(ru),
+[dir="rtl"] [lang="ru"],
+[dir="rtl"] .lang-ru {
+  font-family: var(--font-noto-sans-mono-regular), var(--font-noto-sans-mono-semibold), var(--font-noto-sans-mono-bold),
+    monospace !important;
+}
+
+/* Specific selectors for common text elements */
+/* Russian text elements */
+p:lang(ru),
+span:lang(ru),
+div:lang(ru),
+li:lang(ru),
+a:lang(ru),
+label:lang(ru),
+button:lang(ru),
+input:lang(ru),
+textarea:lang(ru),
+p[lang="ru"],
+span[lang="ru"],
+div[lang="ru"],
+li[lang="ru"],
+a[lang="ru"],
+label[lang="ru"],
+button[lang="ru"],
+input[lang="ru"],
+textarea[lang="ru"] {
+  font-family: var(--font-noto-sans-mono-regular), monospace !important;
+}
+
+/* Arabic text elements */
+p:lang(ar),
+span:lang(ar),
+div:lang(ar),
+li:lang(ar),
+a:lang(ar),
+label:lang(ar),
+button:lang(ar),
+input:lang(ar),
+textarea:lang(ar),
+p[lang="ar"],
+span[lang="ar"],
+div[lang="ar"],
+li[lang="ar"],
+a[lang="ar"],
+label[lang="ar"],
+button[lang="ar"],
+input[lang="ar"],
+textarea[lang="ar"] {
+  font-family: var(--font-cairo), sans-serif !important;
+}
+
+/* Utility classes for manual font assignment */
+.font-russian {
+  font-family: var(--font-noto-sans-mono-regular), monospace !important;
+}
+
+.font-russian-bold {
+  font-family: var(--font-noto-sans-mono-bold), monospace !important;
+}
+
+.font-russian-semibold {
+  font-family: var(--font-noto-sans-mono-semibold), monospace !important;
 }
 
 /* Parallax effect */

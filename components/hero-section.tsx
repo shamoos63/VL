@@ -512,7 +512,7 @@ export default function HeroSection() {
             </div>
             <div className="text-center">
               <div className="text-3xl md:text-4xl font-bold text-vl-yellow mb-2">
-                <AnimatedCounter prefix="AED " end={1.7} suffix="B" />
+                <AnimatedCounter prefix="AED " end={1.7} suffix="B+"  decimals={1} />
               </div>
               <div className="text-white/80 font-sansumi">{t("hero.stats.value")}</div>
             </div>
