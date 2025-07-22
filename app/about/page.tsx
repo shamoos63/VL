@@ -2,6 +2,7 @@
 import { useEffect, useRef, useState } from "react"
 import Footer from "@/components/footer"
 import Header from "@/components/header"
+import ServerPageHero from "@/components/server-page-hero"
 import TimelineSection from "@/components/timeline-section"
 import { Button } from "@/components/ui/button"
 import { Award, Users, TrendingUp, Globe, MapPin, Mail, Briefcase, GraduationCap, Check } from "lucide-react"
@@ -92,24 +93,13 @@ export default function AboutPage() {
   }, [scrollDirection])
 
   return (
-    <main className="min-h-screen bg-transparent">
+     <main className="min-h-screen pt-24 bg-white">
       <Header />
-
-      {/* Hero Section */}
-      <section className="relative pt-24 pb-20 overflow-hidden">
-        <div className="absolute inset-0 bg-transparent opacity-95"></div>
-        <div className="absolute inset-0">
-          <Image src="/hero.webp" alt="Victoria Lancaster" fill className="object-cover" priority />
-        </div>
-        <div className="relative container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center text-white">
-            <h1 className="text-5xl md:text-7xl font-bold mb-6 pt-8 font-sansumi text-vl-yellow">About Victoria</h1>
-            <p className="text-xl md:text-2xl font-light leading-relaxed text-white">
-              Where trust, insight, and performance come together
-            </p>
-          </div>
-        </div>
-      </section>
+      <ServerPageHero
+        title="About Victoria"
+        subtitle="Where trust, insight, and performance come together"
+        backgroundImage="/hero.webp"
+      />
 
       {/* Quote Section */}
       <section className="py-16 bg-transparent">

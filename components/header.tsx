@@ -72,6 +72,9 @@ export default function Header() {
               />
             </Link>
             <div className="hidden lg:flex items-center space-x-8">
+                  <Link href="/about" className="text-vl-blue !important hover:text-vl-blue transition-colors font-medium">
+                About
+              </Link>
               <Link href="/" className="text-vl-blue !important hover:text-vl-blue transition-colors font-medium">
                 Home
               </Link>
@@ -90,9 +93,7 @@ export default function Header() {
               >
                 Property Evaluation
               </Link>
-              <Link href="/about" className="text-vl-blue !important hover:text-vl-blue transition-colors font-medium">
-                About
-              </Link>
+        
               <Link href="/blog" className="text-vl-blue !important hover:text-vl-blue transition-colors font-medium">
                 Blog
               </Link>

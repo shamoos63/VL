@@ -9,7 +9,7 @@ import { Textarea } from "@/components/ui/textarea"
 
 export default function ContactPage() {
   return (
-    <main className="min-h-screen pt-24 bg-transparent">
+    <main className="min-h-screen pt-24 bg-white">
       <Header />
       <ServerPageHero
         title="Contact Us"

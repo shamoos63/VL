@@ -5,7 +5,7 @@ import EvaluationClient from "./evaluation-client"
 
 export default function EvaluationPage() {
   return (
-    <main className="min-h-screen pt-24 bg-transparent">
+    <main className="min-h-screen pt-24 bg-white">
       <Header />
       <ServerPageHero
         title="Property Evaluation & Selling Support"
