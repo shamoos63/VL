@@ -376,6 +376,10 @@ const translations = {
     "hero.title.highlight": "دبي",
     "hero.subtitle":"اغتنم فرص العقارات الأكثر رواجًا في دبي، والمصممة لنمو الثروة والتراث والهيبة العالمية.",
     "hero.search.button": "البحث عن العقارات",
+    "hero.stats.properties": "عقارات مباعة",
+    "hero.stats.value": "قيمة إجمالية",
+    "hero.stats.experience": "سنوات خبرة",
+    "hero.stats.satisfaction": "عميل راضٍ",
 
     // Locations Arabic
     "location.dubai.marina": "دبي مارينا",
@@ -535,6 +539,10 @@ const translations = {
     "hero.title.highlight": "Дубае",
     "hero.subtitle":"Получите доступ к самым престижным объектам недвижимости Дубая, созданным для увеличения капитала, сохранения наследия и достижения глобального статуса.",
     "hero.search.button": "Поиск недвижимости",
+    "hero.stats.properties": "Проданная недвижимость",
+    "hero.stats.value": "Общая стоимость",
+    "hero.stats.experience": "Многолетний опыт",
+    "hero.stats.satisfaction": "Удовлетворенность клиентов",
 
     // Locations Russian
     "location.dubai.marina": "Дубай Марина",
@@ -587,7 +595,7 @@ const translations = {
 
     // Map Russian
     "properties.map.available": "Доступная недвижимость",
-    "properties.map.selected": "Выбранная недвижимость",
+    "properties.map.selected": "Выбранная н��движимость",
     "properties.map.properties": "Недвижимость",
 
     // Search Form Russian

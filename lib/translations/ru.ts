@@ -327,7 +327,7 @@ export const ru = {
   "welcome.experience": "С более чем 15-летним опытом",
   "welcome.experience.detail": "В Дубае и Великобритании",
   "welcome.strategic": "Стратегически",
-  "welcome.strategic.detail": "рекомендую лучшую недвижимость для вас",
+  "welcome.strategic.detail": "рекомендую лучшую недвижимость для ва��",
   "welcome.get.in.touch": "Свяжитесь со мной",
   "welcome.full.name": "Полное имя",
   "welcome.full.name.placeholder": "Ваше полное имя",
