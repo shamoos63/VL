@@ -505,19 +505,19 @@ export default function HeroSection() {
           {/* Stats with Animation */}
           <div className="grid grid-cols-2 md:grid-cols-3 gap-8 mt-16">
             <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold text-vl-yellow mb-2">
+              <div className="text-3xl md:text-4xl font-poppins font-bold text-vl-yellow mb-2">
                 <AnimatedCounter end={585} suffix="+" />
               </div>
               <div className="text-white/80">{t("hero.stats.properties")}</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold text-vl-yellow mb-2">
+              <div className="text-3xl md:text-4xl font-poppins font-bold text-vl-yellow mb-2">
                 <AnimatedCounter prefix="AED " end={1.7} suffix="B+"  decimals={1} />
               </div>
               <div className="text-white/80">{t("hero.stats.value")}</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold text-vl-yellow mb-2">
+              <div className="text-3xl md:text-4xl font-poppins font-bold text-vl-yellow mb-2">
                 <AnimatedCounter end={15} suffix="+" />
               </div>
               <div className="text-white/80">{t("hero.stats.experience")}</div>
