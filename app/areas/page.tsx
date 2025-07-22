@@ -103,7 +103,7 @@ export default function AreasPage() {
             />
           </div>
           <CardContent className="p-6">
-            <h3 className="text-2xl font-bold text-vl-blue dark:text-white mb-3">
+            <h3 className="text-2xl font-bold text-vl-yellow dark:text-white mb-3">
               {area.name}
             </h3>
             <p className="text-gray-600 dark:text-gray-300 mb-4">
@@ -120,7 +120,7 @@ export default function AreasPage() {
                 <span>{area.growth}</span>
               </div>
               <div className="flex items-center col-span-2">
-                <MapPin className="h-4 w-4 mr-2 text-vl-blue" />
+                <MapPin className="h-4 w-4 mr-2 text-vl-yellow" />
                 <span className="font-semibold">{area.avgPrice}</span>
               </div>
             </div>

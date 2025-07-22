@@ -220,7 +220,7 @@ export default function FaqSection() {
       <div className="px-6 pb-6">
        
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-vl-blue mb-6 font-heading">
+          <h2 className="text-4xl md:text-5xl font-bold text-vl-yellow mb-6 font-heading">
             {language === "en"
               ? "Frequently Asked Questions"
               : language === "ar"
@@ -263,7 +263,7 @@ export default function FaqSection() {
       onClick={() => toggleFaq(index)}
       className="w-full p-5 sm:p-6 text-left flex items-center justify-between bg-transparent hover:bg-white/5 transition-colors duration-300"
     >
-      <h3 className="text-lg sm:text-xl font-semibold text-vl-blue tracking-wide pr-4 shadow-none !important">{faq.question}</h3>
+      <h3 className="text-lg sm:text-xl font-semibold text-vl-yellow tracking-wide pr-4 shadow-none !important">{faq.question}</h3>
       {openIndex === index ? (
         <ChevronUp className="h-5 w-5 text-vl-yellow flex-shrink-0 transition-transform duration-200" />
       ) : (

@@ -118,7 +118,7 @@ export default function AboutPage() {
             <div className="mb-6">
               <Image src="/comma_sign.svg" alt="Quote" width={30} height={30} className="mx-auto" />
             </div>
-            <p className="text-2xl md:text-3xl text-vl-yellow font-light italic mb-6 leading-relaxed">
+            <p className="text-2xl md:text-3xl text-white font-light italic mb-6 leading-relaxed">
               To me, real estate is about building futures, not just deals. I treat every home or investment with the same care I'd give my own.
             </p>
             <div className="mb-6">

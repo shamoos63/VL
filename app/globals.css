@@ -89,7 +89,7 @@ button {
 }
 
 .text-vl-blue {
-  color: var(--vl-yellow) !important;
+  color: var(--vl-blue) !important;
 }
 
 @layer utilities {
@@ -99,9 +99,7 @@ button {
 }
 
 /* VL Brand Colors - Updated with new primary color */
-.text-vl-blue {
-  color: var(--vl-yellow);
-}
+
 
 .text-vl-blue-light {
   color: var(--vl-blue-light);
@@ -120,6 +118,10 @@ button {
 }
 
 .text-vl-yellow {
+  color: var(--vl-yellow);
+}
+
+.text-v-yellow {
   color: var(--vl-yellow);
 }
 

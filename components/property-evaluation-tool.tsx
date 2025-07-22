@@ -44,7 +44,7 @@ export default function PropertyEvaluationTool() {
 
   if (isSubmitted) {
     return (
-      <div className="mx-auto px-4 pb-20 min-h-screen" dir={isRTL ? "rtl" : "ltr"}>
+      <div className="mx-auto px-1 pb-10 min-h-screen" dir={isRTL ? "rtl" : "ltr"}>
         <div className="max-w-2xl mx-auto text-center pt-8">
           <Card className="p-8 glass border-0 shadow-2xl">
             <CardContent className="p-0">
@@ -58,7 +58,7 @@ export default function PropertyEvaluationTool() {
               </p>
 
               <div className="bg-gray-50 p-6 rounded-lg mb-6 border-0">
-                <h3 className="font-semibold text-vl-blue mb-4">
+                <h3 className="font-semibold text-vl-yellow mb-4">
                   {t("evaluation.success.contact.title") || "Contact Information"}
                 </h3>
                 <div className="space-y-3 text-sm">

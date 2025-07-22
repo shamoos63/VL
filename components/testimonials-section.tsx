@@ -206,7 +206,7 @@ export default function TestimonialsSection() {
     <section className="py-2 bg-transparent" dir={isRTL ? "rtl" : "ltr"}>
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-vl-blue mb-6 font-heading">
+          <h2 className="text-4xl md:text-5xl font-bold text-vl-yellow mb-6 font-heading">
             {language === "en"
               ? "Trusted by Global Investors"
               : language === "ar"
@@ -238,7 +238,7 @@ export default function TestimonialsSection() {
                     <span>{testimonial.flag}</span>
                   </div>
                   <div className="group-hover:translate-x-1 transition-transform duration-300">
-                    <h4 className="font-semibold text-vl-blue text-lg group-hover:text-vl-blue/80 transition-colors duration-300">
+                    <h4 className="font-semibold text-vl-yellow text-lg group-hover:text-vl-yellow/80 transition-colors duration-300">
                       {testimonial.name}
                     </h4>
                     <p className="text-sm text-gray-600 group-hover:text-gray-700 transition-colors duration-300">
@@ -262,7 +262,7 @@ export default function TestimonialsSection() {
                 </p>
 
                 <div className="bg-vl-yellow/10 p-3 rounded-lg group-hover:bg-vl-yellow/20 transition-all duration-300 border border-transparent group-hover:border-vl-yellow/30">
-                  <p className="text-sm font-medium text-vl-blue group-hover:text-vl-blue/90 transition-colors duration-300">
+                  <p className="text-sm font-medium text-vl-yellow group-hover:text-vl-yellow/90 transition-colors duration-300">
                     Property: {testimonial.property}
                   </p>
                 </div>

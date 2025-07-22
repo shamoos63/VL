@@ -42,7 +42,7 @@ export default function PropertyDetailsClient({ propertyId }: PropertyDetailsCli
       <main className="min-h-screen pt-24">
         <Header />
         <div className="container mx-auto px-4 py-16 text-center">
-          <h1 className="text-4xl font-bold text-vl-blue dark:text-white mb-6">Property Not Found</h1>
+          <h1 className="text-4xl font-bold text-vl-yellow dark:text-white mb-6">Property Not Found</h1>
           <p className="text-gray-600 dark:text-gray-300 mb-8">The property you are looking for does not exist.</p>
           <Link href="/properties">
             <Button className="bg-vl-blue hover:bg-vl-blue-dark text-white">
@@ -82,7 +82,7 @@ export default function PropertyDetailsClient({ propertyId }: PropertyDetailsCli
     <div className="mb-8">
       <Link
         href="/properties"
-        className="inline-flex items-center text-vl-blue dark:text-white hover:text-vl-yellow transition-colors"
+        className="inline-flex items-center text-vl-yellow dark:text-white hover:text-vl-yellow transition-colors"
       >
         <ArrowLeft className="h-4 w-4 mr-2" />
         {t("properties.back.to.listings") || "Back to Properties"}
@@ -146,7 +146,7 @@ export default function PropertyDetailsClient({ propertyId }: PropertyDetailsCli
             <Button
               variant="ghost"
               size="sm"
-              className="absolute bottom-4 right-4 bg-black hover:bg-black-light text-vl-blue rounded-full flex items-center"
+              className="absolute bottom-4 right-4 bg-black hover:bg-black-light text-vl-yellow rounded-full flex items-center"
               onClick={() => setShowVideo(true)}
             >
               <Play className="h-4 w-4 mr-2" />
@@ -199,7 +199,7 @@ export default function PropertyDetailsClient({ propertyId }: PropertyDetailsCli
           </TabsList>
 
           <TabsContent value="overview" className="p-6 glass rounded-b-lg"> {/* Glass applied to each TabsContent */}
-            <h3 className="text-xl font-semibold text-vl-blue dark:text-white mb-4">
+            <h3 className="text-xl font-semibold text-vl-yellow dark:text-white mb-4">
               {t("properties.overview") || "Property Overview"}
             </h3>
             <p className="text-gray-600 dark:text-gray-300 leading-relaxed mb-6">
@@ -212,7 +212,7 @@ export default function PropertyDetailsClient({ propertyId }: PropertyDetailsCli
                 <div className="text-sm text-gray-500 dark:text-gray-400">
                   {t("properties.bedrooms") || "Bedrooms"}
                 </div>
-                <div className="font-semibold text-vl-blue dark:text-white">{property.bedrooms || 0}</div>
+                <div className="font-semibold text-vl-yellow dark:text-white">{property.bedrooms || 0}</div>
               </div>
               {/* Corrected typo: 'transparent' to 'bg-transparent' */}
               <div className="bg-transparent p-4 rounded-lg text-center">
@@ -220,12 +220,12 @@ export default function PropertyDetailsClient({ propertyId }: PropertyDetailsCli
                 <div className="text-sm text-gray-500 dark:text-gray-400">
                   {t("properties.bathrooms") || "Bathrooms"}
                 </div>
-                <div className="font-semibold text-vl-blue dark:text-white">{property.bathrooms || 0}</div>
+                <div className="font-semibold text-vl-yellow dark:text-white">{property.bathrooms || 0}</div>
               </div>
               <div className="bg-transparent p-4 rounded-lg text-center">
                 <Square className="h-5 w-5 mx-auto mb-2 text-vl-yellow" />
                 <div className="text-sm text-gray-500 dark:text-gray-400">{t("properties.area") || "Area"}</div>
-                <div className="font-semibold text-vl-blue dark:text-white">
+                <div className="font-semibold text-vl-yellow dark:text-white">
                   {property.area || `${property.squareFeet || 0} sq ft`}
                 </div>
               </div>
@@ -234,13 +234,13 @@ export default function PropertyDetailsClient({ propertyId }: PropertyDetailsCli
                 <div className="text-sm text-gray-500 dark:text-gray-400">
                   {t("properties.location") || "Location"}
                 </div>
-                <div className="font-semibold text-vl-blue dark:text-white">{property.location || "N/A"}</div>
+                <div className="font-semibold text-vl-yellow dark:text-white">{property.location || "N/A"}</div>
               </div>
             </div>
           </TabsContent>
 
           <TabsContent value="features" className="p-6 glass rounded-b-lg">
-            <h3 className="text-xl font-semibold text-vl-blue dark:text-white mb-4">
+            <h3 className="text-xl font-semibold text-vl-yellow dark:text-white mb-4">
               {t("properties.features") || "Property Features"}
             </h3>
             {propertyFeatures.length > 0 ? (
@@ -258,7 +258,7 @@ export default function PropertyDetailsClient({ propertyId }: PropertyDetailsCli
           </TabsContent>
 
           <TabsContent value="amenities" className="p-6 glass rounded-b-lg">
-            <h3 className="text-xl font-semibold text-vl-blue dark:text-white mb-4">
+            <h3 className="text-xl font-semibold text-vl-yellow dark:text-white mb-4">
               {t("properties.amenities") || "Building Amenities"}
             </h3>
             {propertyAmenities.length > 0 ? (
@@ -282,7 +282,7 @@ export default function PropertyDetailsClient({ propertyId }: PropertyDetailsCli
         <Card className="mb-6 glass"> {/* Applied 'glass' here */}
           <CardContent className="p-6"> {/* Removed 'glass' from here to avoid double application */}
      <div className="flex items-start justify-between mb-4">
-  <h1 className="text-2xl font-bold text-vl-blue dark:text-white text-center">{property.title}</h1>
+  <h1 className="text-2xl font-bold text-vl-yellow dark:text-white text-center">{property.title}</h1>
   <Badge className={`
       ${property.status === "Ready" ? "bg-green-500" : "bg-blue-500"} 
       text-white 
@@ -305,7 +305,7 @@ export default function PropertyDetailsClient({ propertyId }: PropertyDetailsCli
             </div>
 
             <div className="border-t border-gray-200 dark:border-gray-700 pt-6 mb-6">
-              <h3 className="text-lg font-semibold text-vl-blue dark:text-white mb-4">
+              <h3 className="text-lg font-semibold text-vl-yellow dark:text-white mb-4">
                 {t("properties.contact.agent") || "Contact Agent"}
               </h3>
 
@@ -318,7 +318,7 @@ export default function PropertyDetailsClient({ propertyId }: PropertyDetailsCli
                   className="rounded-full object-cover mr-4"
                 />
                 <div>
-                  <h4 className="font-semibold text-vl-blue dark:text-white">Victoria Lancaster</h4>
+                  <h4 className="font-semibold text-vl-yellow dark:text-white">Victoria Lancaster</h4>
                   <p className="text-sm text-gray-600 dark:text-gray-300">Senior Real Estate Consultant</p>
                 </div>
               </div>
@@ -340,7 +340,7 @@ export default function PropertyDetailsClient({ propertyId }: PropertyDetailsCli
             </div>
 
             <div className="border-t border-gray-200 dark:border-gray-700 pt-6">
-              <h3 className="text-lg font-semibold text-vl-blue dark:text-white mb-4">
+              <h3 className="text-lg font-semibold text-vl-yellow dark:text-white mb-4">
                 {t("properties.schedule.viewing") || "Schedule Viewing"}
               </h3>
 
@@ -351,7 +351,7 @@ export default function PropertyDetailsClient({ propertyId }: PropertyDetailsCli
                 </span>
               </div>
 
-              <Button className="w-full bg-white hover:border-black text-vl-blue">
+              <Button className="w-full bg-white hover:border-black text-vl-yellow">
                 {t("properties.schedule.tour") || "Schedule Tour"}
               </Button>
             </div>
@@ -360,7 +360,7 @@ export default function PropertyDetailsClient({ propertyId }: PropertyDetailsCli
 
         <Card className="glass"> {/* Applied 'glass' here */}
           <CardContent className="p-6"> {/* Removed 'glass' from here to avoid double application */}
-            <h3 className="text-lg font-semibold text-vl-blue dark:text-white mb-4">
+            <h3 className="text-lg font-semibold text-vl-yellow dark:text-white mb-4">
               {t("properties.similar") || "Similar Properties"}
             </h3>
 
@@ -380,7 +380,7 @@ export default function PropertyDetailsClient({ propertyId }: PropertyDetailsCli
                         />
                       </div>
                       <div>
-                        <h4 className="font-medium text-vl-blue dark:text-white">{similarProperty.title}</h4>
+                        <h4 className="font-medium text-vl-yellow dark:text-white">{similarProperty.title}</h4>
                         <p className="text-sm text-gray-600 dark:text-gray-300">
                           {typeof similarProperty.price === "number"
                             ? `$${similarProperty.price.toLocaleString()}`

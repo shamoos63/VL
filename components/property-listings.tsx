@@ -20,8 +20,8 @@ export default function PropertyListings() {
       {/* Results Header */}
       <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 bg-transparent rounded-lg shadow-sm border border-gray-200 p-4">
         <div className="flex items-center gap-3">
-          <h3 className="text-lg font-semibold text-vl-blue">{t("properties.results.title") || "Search Results"}</h3>
-          <Badge variant="secondary" className="bg-vl-blue/10 text-vl-blue border-vl-blue/20">
+          <h3 className="text-lg font-semibold text-vl-yellow">{t("properties.results.title") || "Search Results"}</h3>
+          <Badge variant="secondary" className="bg-vl-blue/10 text-vl-yellow border-vl-blue/20">
             {filteredProperties?.length || 0} {t("properties.found") || "properties found"}
           </Badge>
         </div>

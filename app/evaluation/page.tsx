@@ -50,25 +50,25 @@ export default function EvaluationPage() {
   </ul>
 </div>
         <p className="text-lg text-white text-center pt-6 font-medium w-full whitespace-nowrap">
-  Submit your details below, Victoria will personally evaluate your property and advise on your best next move.
+  Submit your details below, Victoria will personally evaluate your property and advise on your best next move
 </p>
         </div>
       </section>
    <EvaluationClient />
       {/* Stats Section */}
-      <section className="py-4">
+      <section className="py-1">
         <div className="container mx-auto px-4">
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <div className="glass rounded-lg p-6 text-center shadow-md">
-              <div className="text-3xl font-bold text-vl-blue">585+</div>
+              <div className="text-3xl font-bold text-v-yellow">585+</div>
               <div className="text-sm text-gray-600">Properties Evaluated</div>
             </div>
             <div className="glass rounded-lg p-6 text-center shadow-md">
-              <div className="text-3xl font-bold text-vl-blue">AED 1.7B+</div>
+              <div className="text-3xl font-bold text-v-yellow">AED 1.7B+</div>
               <div className="text-sm text-gray-600">Total Value Assessed</div>
             </div>
             <div className="glass rounded-lg p-6 text-center shadow-md">
-              <div className="text-3xl font-bold text-vl-blue">15+</div>
+              <div className="text-3xl font-bold text-v-yellow">15+</div>
               <div className="text-sm text-gray-600">Years Experience</div>
             </div>
           </div>

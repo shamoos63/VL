@@ -190,9 +190,9 @@ export default function EnhancedPropertyCard({
                   <Button
                     variant="secondary"
                     size="sm"
-                    className="absolute bottom-4 left-4 bg-transparent text-black hover:bg-white backdrop-blur-sm border border-white/20 transition-all duration-200"
+                    className="absolute bottom-4 left-4 bg-transparent text-vl-blue hover:bg-white backdrop-blur-sm border border-white/20 transition-all duration-200"
                   >
-                    <Camera className="h-4 w-4 mr-1" />
+                    <Camera className="h-4 w-4 mr-1 text-vl-blue" />
                     {propertyImages.length}
                   </Button>
                 </DialogTrigger>
@@ -237,10 +237,10 @@ export default function EnhancedPropertyCard({
               <Button
                 variant="secondary"
                 size="sm"
-                className="absolute bottom-4 right-16 bg-transparent text-black hover:bg-white backdrop-blur-sm border border-transparent transition-all duration-200"
+                className="absolute bottom-4 right-16 bg-transparent text-vl-blue hover:bg-white backdrop-blur-sm border border-transparent transition-all duration-200"
                 onClick={handleVideoTour}
               >
-                <Play className="h-4 w-4 mr-1" />
+                <Play className="h-4 w-4 mr-1 text-vl-blue" />
                 {t("property.tour") || "Tour"}
               </Button>
             )}
@@ -261,7 +261,7 @@ export default function EnhancedPropertyCard({
               {property.status || "Available"}
             </Badge>
             {property.featured && (
-              <Badge className="bg-vl-yellow text-black font-medium shadow-lg">
+              <Badge className="bg-vl-yellow text-vl-blue font-medium shadow-lg">
                 <Star className="h-3 w-3 mr-1" />
                 {t("property.featured") || "Featured"}
               </Badge>
@@ -285,7 +285,7 @@ export default function EnhancedPropertyCard({
                   {isSharing ? (
                     <div className="h-4 w-4 animate-spin rounded-full border-2 border-gray-300 border-t-vl-blue" />
                   ) : (
-                    <Share2 className="h-4 w-4 text-black" />
+                    <Share2 className="h-4 w-4 text-vl-blue" />
                   )}
                 </Button>
               </TooltipTrigger>
@@ -323,8 +323,8 @@ export default function EnhancedPropertyCard({
 
           {/* View Count - Updated styling */}
           {property.viewCount && (
-            <div className="absolute bottom-4 right-4 bg-transparent text-black text-xs px-2 py-1 rounded backdrop-blur-sm border border-white/20">
-              <Eye className="h-3 w-3 inline mr-1" />
+            <div className="absolute bottom-4 right-4 bg-transparent text-vl-blue text-xs px-2 py-1 rounded backdrop-blur-sm border border-white/20">
+              <Eye className="h-3 w-3 inline mr-1 text-vl-blue" />
               {property.viewCount.toLocaleString()}
             </div>
           )}
@@ -333,7 +333,7 @@ export default function EnhancedPropertyCard({
         <CardContent className="p-6">
           {/* Header Section */}
           <div className="flex items-start justify-between mb-4">
-    <div className="flex-1"> <h3 className="text-xl font-bold text-vl-blue mb-1 line-clamp-2 text-left">{property.title}</h3>
+    <div className="flex-1"> <h3 className="text-xl font-bold text-vl-yellow mb-1 line-clamp-2 text-left">{property.title}</h3>
               <div className="flex items-center text-gray-600 mb-2">
                 <MapPin className="h-4 w-4 mr-1 flex-shrink-0" />
                 <span className="text-sm">{property.location}</span>
@@ -353,7 +353,7 @@ export default function EnhancedPropertyCard({
               </div>
             </div>
             <div className="text-right">
-              <div className="text-2xl font-heading text-vl-blue mb-1 font-bold">
+              <div className="text-2xl font-heading text-vl-yellow mb-1 font-bold">
                 {formatPrice(property.price)}
               </div>
               {pricePerSqFt && <div className="text-xs text-gray-500">${pricePerSqFt}/sq ft</div>}
@@ -364,21 +364,21 @@ export default function EnhancedPropertyCard({
           <div className="grid grid-cols-3 gap-4 mb-4 p-3 bg-transparent rounded-lg">
             <div className="text-center">
               <div className="flex items-center justify-center mb-1">
-                <Bed className="h-4 w-4 text-vl-blue" />
+                <Bed className="h-4 w-4 text-vl-yellow" />
               </div>
               <div className="text-sm font-medium">{property.bedrooms || 0}</div>
               <div className="text-xs text-gray-500">{t("property.bedrooms") || "Bedrooms"}</div>
             </div>
             <div className="text-center">
               <div className="flex items-center justify-center mb-1">
-                <Bath className="h-4 w-4 text-vl-blue" />
+                <Bath className="h-4 w-4 text-vl-yellow" />
               </div>
               <div className="text-sm font-medium">{property.bathrooms || 0}</div>
               <div className="text-xs text-gray-500">{t("property.bathrooms") || "Bathrooms"}</div>
             </div>
             <div className="text-center">
               <div className="flex items-center justify-center mb-1">
-                <Square className="h-4 w-4 text-vl-blue" />
+                <Square className="h-4 w-4 text-vl-yellow" />
               </div>
               <div className="text-sm font-medium">
                 {property.squareFeet ? `${property.squareFeet.toLocaleString()}` : property.area || "N/A"}
@@ -392,7 +392,7 @@ export default function EnhancedPropertyCard({
             <div className="mb-4">
               <div className="flex flex-wrap gap-1">
                 {property.highlights.slice(0, 3).map((highlight, index) => (
-                  <Badge key={index} variant="secondary" className="text-xs bg-vl-blue/10 text-vl-blue">
+                  <Badge key={index} variant="secondary" className="text-xs bg-vl-blue/10 text-vl-yellow">
                     {highlight}
                   </Badge>
                 ))}

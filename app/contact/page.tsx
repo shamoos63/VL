@@ -23,7 +23,7 @@ export default function ContactPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Contact Form */}
             <Card className="p-8 glass">
-              <h2 className="text-2xl font-bold text-vl-blue dark:text-white mb-6">Send us a message</h2>
+              <h2 className="text-2xl font-bold text-vl-yellow dark:text-white mb-6">Send us a message</h2>
 
               <form className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -70,13 +70,13 @@ export default function ContactPage() {
             {/* Contact Information */}
             <div className="space-y-8 ">
               <Card className="p-6 glass">
-                <h3 className="text-xl font-bold text-vl-blue dark:text-white mb-4">Contact Information</h3>
+                <h3 className="text-xl font-bold text-vl-yellow dark:text-white mb-4">Contact Information</h3>
 
                 <div className="space-y-4">
                   <div className="flex items-center">
                     <Phone className="h-5 w-5 text-vl-yellow mr-3" />
                     <div>
-                      <p className="font-medium text-vl-blue dark:text-white">Phone</p>
+                      <p className="font-medium text-vl-yellow dark:text-white">Phone</p>
                       <p className="text-gray-600 dark:text-gray-300">+971 XX XXX XXXX</p>
                     </div>
                   </div>
@@ -84,7 +84,7 @@ export default function ContactPage() {
                   <div className="flex items-center">
                     <Mail className="h-5 w-5 text-vl-yellow mr-3" />
                     <div>
-                      <p className="font-medium text-vl-blue dark:text-white">Email</p>
+                      <p className="font-medium text-vl-yellow dark:text-white">Email</p>
                       <p className="text-gray-600 dark:text-gray-300">victoria@vlrealestate.com</p>
                     </div>
                   </div>
@@ -92,7 +92,7 @@ export default function ContactPage() {
                   <div className="flex items-center">
                     <MapPin className="h-5 w-5 text-vl-yellow mr-3" />
                     <div>
-                      <p className="font-medium text-vl-blue dark:text-white">Office</p>
+                      <p className="font-medium text-vl-yellow dark:text-white">Office</p>
                       <p className="text-gray-600 dark:text-gray-300">Dubai, United Arab Emirates</p>
                     </div>
                   </div>
@@ -100,7 +100,7 @@ export default function ContactPage() {
                   <div className="flex items-center">
                     <Clock className="h-5 w-5 text-vl-yellow mr-3" />
                     <div>
-                      <p className="font-medium text-vl-blue dark:text-white">Business Hours</p>
+                      <p className="font-medium text-vl-yellow dark:text-white">Business Hours</p>
                       <p className="text-gray-600 dark:text-gray-300">Sunday - Thursday: 9:00 AM - 6:00 PM</p>
                     </div>
                   </div>
@@ -109,7 +109,7 @@ export default function ContactPage() {
 
               {/* Map Integration */}
               <Card className="p-6 glass">
-                <h3 className="text-xl font-bold text-vl-blue dark:text-white mb-4">Our Location</h3>
+                <h3 className="text-xl font-bold text-vl-yellow dark:text-white mb-4">Our Location</h3>
                 <div className="w-full h-64 bg-gray-200 dark:bg-gray-700 rounded-lg overflow-hidden">
                   <iframe
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d462560.6828842949!2d54.89783!3d25.0657!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f43496ad9c645%3A0xbde66e5084295162!2sDubai%20-%20United%20Arab%20Emirates!5e0!3m2!1sen!2s!4v1703123456789!5m2!1sen!2s"
