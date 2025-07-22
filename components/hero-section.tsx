@@ -503,7 +503,7 @@ export default function HeroSection() {
           </div>
 
           {/* Stats with Animation */}
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-8 mt-16">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-6 mt-16">
             <div className="text-center">
               <div className="text-3xl md:text-4xl font-poppins font-bold text-vl-yellow mb-2">
                 <AnimatedCounter end={585} suffix="+" />
