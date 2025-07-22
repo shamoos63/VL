@@ -532,6 +532,7 @@ const translations = {
     // Hero Section Russian
     "hero.title": "Найдите недвижимость своей мечты в",
     "hero.title.highlight": "Дубае",
+    "hero.subtitle":"Получите доступ к самым престижным объектам недвижимости Дубая, созданным для увеличения капитала, сохранения наследия и достижения глобального статуса.",
     "hero.search.button": "Поиск недвижимости",
 
     // Locations Russian
