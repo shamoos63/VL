@@ -399,6 +399,107 @@ textarea[lang="ar"] {
   font-family: var(--font-noto-sans-mono-semibold), monospace !important;
 }
 
+/* Enhanced Counter Animations */
+.text-shadow-glow {
+  text-shadow: 0 0 20px rgba(255, 211, 150, 0.6), 0 0 40px rgba(255, 211, 150, 0.4), 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.animate-completion-pulse {
+  animation: completion-pulse 0.6s ease-out;
+}
+
+@keyframes completion-pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+    text-shadow: 0 0 30px rgba(255, 211, 150, 0.8), 0 0 60px rgba(255, 211, 150, 0.6), 0 2px 4px rgba(0, 0, 0, 0.3);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Floating particle animations */
+@keyframes float-particle-1 {
+  0%,
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+    opacity: 0.6;
+  }
+  25% {
+    transform: translate(10px, -15px) rotate(90deg);
+    opacity: 0.8;
+  }
+  50% {
+    transform: translate(-5px, -25px) rotate(180deg);
+    opacity: 0.4;
+  }
+  75% {
+    transform: translate(-15px, -10px) rotate(270deg);
+    opacity: 0.7;
+  }
+}
+
+@keyframes float-particle-2 {
+  0%,
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+    opacity: 0.4;
+  }
+  33% {
+    transform: translate(-12px, -20px) rotate(120deg);
+    opacity: 0.6;
+  }
+  66% {
+    transform: translate(8px, -30px) rotate(240deg);
+    opacity: 0.3;
+  }
+}
+
+@keyframes float-particle-3 {
+  0%,
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+    opacity: 0.5;
+  }
+  20% {
+    transform: translate(15px, -10px) rotate(72deg);
+    opacity: 0.7;
+  }
+  40% {
+    transform: translate(5px, -25px) rotate(144deg);
+    opacity: 0.3;
+  }
+  60% {
+    transform: translate(-10px, -20px) rotate(216deg);
+    opacity: 0.6;
+  }
+  80% {
+    transform: translate(-20px, -5px) rotate(288deg);
+    opacity: 0.4;
+  }
+}
+
+.animate-float-particle-1 {
+  animation: float-particle-1 3s ease-in-out infinite;
+}
+
+.animate-float-particle-2 {
+  animation: float-particle-2 4s ease-in-out infinite;
+}
+
+.animate-float-particle-3 {
+  animation: float-particle-3 5s ease-in-out infinite;
+}
+
+/* Counter digits styling */
+.counter-digits {
+  display: inline-block;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
 /* Parallax effect */
 .parallax-slow {
   transform: translateY(calc(var(--scroll-y) * 0.5px));

@@ -502,25 +502,57 @@ export default function HeroSection() {
             </Button>
           </div>
 
-          {/* Stats with Animation */}
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-6 mt-16">
-            <div className="text-center">
-              <div className="text-2xl md:text-4xl font-poppins font-bold text-vl-yellow mb-2">
-                <AnimatedCounter end={585} suffix="+" />
+          {/* Enhanced Stats with Staggered Animation */}
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-8 mt-16">
+            <div className="text-center group">
+              <div className="relative">
+                <AnimatedCounter
+                  end={585}
+                  suffix="+"
+                  delay={200}
+                  className="text-2xl md:text-4xl font-poppins font-bold text-vl-yellow mb-2 transition-all duration-300 group-hover:scale-110"
+                  glowEffect={true}
+                  pulseOnComplete={true}
+                />
               </div>
-              <div className="text-white/80">{t("hero.stats.properties")}</div>
+              <div className="text-white/80 font-medium transition-all duration-300 group-hover:text-white">
+                {t("hero.stats.properties")}
+              </div>
             </div>
-            <div className="text-center">
-              <div className="text-2xl md:text-4xl font-poppins font-bold text-vl-yellow mb-2">
-                <AnimatedCounter prefix="AED " end={1.7} suffix="B+"  decimals={1} />
+
+            <div className="text-center group">
+              <div className="relative">
+                <AnimatedCounter
+                  prefix="AED "
+                  end={1.7}
+                  suffix="B+"
+                  decimals={1}
+                  delay={400}
+                  duration={3000}
+                  className="text-2xl md:text-4xl font-poppins font-bold text-vl-yellow mb-2 transition-all duration-300 group-hover:scale-110"
+                  glowEffect={true}
+                  pulseOnComplete={true}
+                />
               </div>
-              <div className="text-white/80">{t("hero.stats.value")}</div>
+              <div className="text-white/80 font-medium transition-all duration-300 group-hover:text-white">
+                {t("hero.stats.value")}
+              </div>
             </div>
-            <div className="text-center">
-              <div className="text-2xl md:text-4xl font-poppins font-bold text-vl-yellow mb-2">
-                <AnimatedCounter end={15} suffix="+" />
+
+            <div className="text-center group col-span-2 md:col-span-1">
+              <div className="relative">
+                <AnimatedCounter
+                  end={15}
+                  suffix="+"
+                  delay={600}
+                  className="text-2xl md:text-4xl font-poppins font-bold text-vl-yellow mb-2 transition-all duration-300 group-hover:scale-110"
+                  glowEffect={true}
+                  pulseOnComplete={true}
+                />
               </div>
-              <div className="text-white/80">{t("hero.stats.experience")}</div>
+              <div className="text-white/80 font-medium transition-all duration-300 group-hover:text-white">
+                {t("hero.stats.experience")}
+              </div>
             </div>
           </div>
         </div>

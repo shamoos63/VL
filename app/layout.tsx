@@ -1,92 +1,89 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { Inter, Poppins } from "next/font/google"
+import { Inter, Poppins, Cairo } from "next/font/google"
 import localFont from "next/font/local"
 import "./globals.css"
 import { I18nProvider } from "@/lib/i18n"
 import { AuthProvider } from "@/lib/auth-context"
-import { FilterProvider } from "@/contexts/filter-context"
 import WelcomePopupWrapper from "@/components/welcome-popup-wrapper"
 
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-inter",
-  display: "swap",
-})
-
+const inter = Inter({ subsets: ["latin"], variable: "--font-inter" })
 const poppins = Poppins({
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700"],
   variable: "--font-poppins",
-  display: "swap",
 })
-
-const cairo = localFont({
-  src: [
-    {
-      path: "../public/fonts/Cairo.ttf",
-      weight: "400",
-      style: "normal",
-    },
-  ],
+const cairo = Cairo({
+  subsets: ["arabic", "latin"],
+  weight: ["300", "400", "500", "600", "700"],
   variable: "--font-cairo",
-  display: "swap",
 })
 
+// Sansumi font variants
 const sansumiUltraLight = localFont({
   src: "../public/fonts/Sansumi-UltraLight.ttf",
   variable: "--font-sansumi-ultralight",
   weight: "200",
-  display: "swap",
 })
 
 const sansumiRegular = localFont({
   src: "../public/fonts/Sansumi-Regular.ttf",
   variable: "--font-sansumi-regular",
   weight: "400",
-  display: "swap",
 })
 
 const sansumiDemiBold = localFont({
   src: "../public/fonts/Sansumi-DemiBold.ttf",
   variable: "--font-sansumi-demibold",
   weight: "600",
-  display: "swap",
 })
 
 const sansumiBold = localFont({
   src: "../public/fonts/Sansumi-Bold.ttf",
   variable: "--font-sansumi-bold",
   weight: "700",
-  display: "swap",
 })
 
+// Noto Sans Mono font variants for Russian text
 const notoSansMonoRegular = localFont({
   src: "../public/fonts/NotoSansMono-Regular.ttf",
   variable: "--font-noto-sans-mono-regular",
   weight: "400",
-  display: "swap",
 })
 
 const notoSansMonoBold = localFont({
   src: "../public/fonts/NotoSansMono-Bold.ttf",
   variable: "--font-noto-sans-mono-bold",
   weight: "700",
-  display: "swap",
 })
 
 const notoSansMonoSemiBold = localFont({
   src: "../public/fonts/NotoSansMono-SemiBold.ttf",
   variable: "--font-noto-sans-mono-semibold",
   weight: "600",
-  display: "swap",
 })
 
 export const metadata: Metadata = {
-  title: "Victoria Lancaster - Real Estate",
-  description: "Premium real estate services with Victoria Lancaster",
-  icons: {
-    icon: "/favicon.ico",
+  title: "VL Real Estate - Luxury Properties in UAE",
+  description:
+    "Discover premium real estate opportunities in Dubai and UAE with VL Real Estate. Expert guidance for luxury properties, investments, and dream homes.",
+  keywords: "real estate, Dubai, UAE, luxury properties, property investment, homes for sale",
+  authors: [{ name: "VL Real Estate" }],
+  openGraph: {
+    title: "VL Real Estate - Luxury Properties in UAE",
+    description: "Discover premium real estate opportunities in Dubai and UAE with VL Real Estate.",
+    type: "website",
+    locale: "en_US",
+    alternateLocale: ["ar_AE", "ru_RU"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "VL Real Estate - Luxury Properties in UAE",
+    description: "Discover premium real estate opportunities in Dubai and UAE with VL Real Estate.",
+  },
+  robots: {
+    index: true,
+    follow: true,
   },
     generator: 'v0.dev'
 }
@@ -97,28 +94,15 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html
-      lang="en"
-      className={`
-        ${inter.variable} 
-        ${poppins.variable} 
-        ${cairo.variable} 
-        ${sansumiUltraLight.variable} 
-        ${sansumiRegular.variable} 
-        ${sansumiDemiBold.variable} 
-        ${sansumiBold.variable}
-        ${notoSansMonoRegular.variable}
-        ${notoSansMonoBold.variable}
-        ${notoSansMonoSemiBold.variable}
-      `}
-    >
-      <body className={inter.className}>
+    <html lang="en" suppressHydrationWarning>
+      <body
+        className={`${inter.variable} ${poppins.variable} ${cairo.variable} ${sansumiUltraLight.variable} ${sansumiRegular.variable} ${sansumiDemiBold.variable} ${sansumiBold.variable} ${notoSansMonoRegular.variable} ${notoSansMonoBold.variable} ${notoSansMonoSemiBold.variable} antialiased`}
+        suppressHydrationWarning
+      >
         <AuthProvider>
           <I18nProvider>
-            <FilterProvider>
-              <WelcomePopupWrapper />
-              {children}
-            </FilterProvider>
+            <WelcomePopupWrapper />
+            {children}
           </I18nProvider>
         </AuthProvider>
       </body>
