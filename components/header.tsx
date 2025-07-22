@@ -6,14 +6,14 @@ import Image from "next/image"
 import { usePathname } from "next/navigation"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
-import { Menu, X, Search, Globe } from "lucide-react"
+import { Menu, X, Search, Globe, ChevronDown, Check } from "lucide-react"
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
 import { useI18n, type Language } from "@/lib/i18n"
 
 const languages = [
-  { code: "en" as Language, name: "English", flag: "🇺🇸" },
-  { code: "ar" as Language, name: "العربية", flag: "🇦🇪" },
-  { code: "ru" as Language, name: "Русский", flag: "🇷🇺" },
+  { code: "en" as Language, name: "English", flag: "🇺🇸", nativeName: "English" },
+  { code: "ar" as Language, name: "العربية", flag: "🇦🇪", nativeName: "العربية" },
+  { code: "ru" as Language, name: "Русский", flag: "🇷🇺", nativeName: "Русский" },
 ]
 
 // Navigation items in the specified order
@@ -75,13 +75,19 @@ export default function Header() {
               <Link href="/" className="text-vl-blue !important hover:text-vl-blue transition-colors font-medium">
                 Home
               </Link>
-              <Link href="/properties" className="text-vl-blue !important hover:text-vl-blue transition-colors font-medium">
+              <Link
+                href="/properties"
+                className="text-vl-blue !important hover:text-vl-blue transition-colors font-medium"
+              >
                 Properties
               </Link>
               <Link href="/areas" className="text-vl-blue !important hover:text-vl-blue transition-colors font-medium">
                 Areas
               </Link>
-              <Link href="/evaluation" className="text-vl-blue !important hover:text-vl-blue transition-colors font-medium">
+              <Link
+                href="/evaluation"
+                className="text-vl-blue !important hover:text-vl-blue transition-colors font-medium"
+              >
                 Property Evaluation
               </Link>
               <Link href="/about" className="text-vl-blue !important hover:text-vl-blue transition-colors font-medium">
@@ -90,7 +96,10 @@ export default function Header() {
               <Link href="/blog" className="text-vl-blue !important hover:text-vl-blue transition-colors font-medium">
                 Blog
               </Link>
-              <Link href="/contact" className="text-vl-blue !important hover:text-vl-blue transition-colors font-medium">
+              <Link
+                href="/contact"
+                className="text-vl-blue !important hover:text-vl-blue transition-colors font-medium"
+              >
                 Contact
               </Link>
             </div>
@@ -126,9 +135,6 @@ export default function Header() {
                 priority
               />
             </Link>
-
-            {/* Mobile: Simplified branding */}
-         
 
             {/* Desktop Navigation */}
             <nav className={`hidden lg:flex items-center ${isRTL ? "space-x-reverse space-x-6" : "space-x-8"}`}>
@@ -173,22 +179,43 @@ export default function Header() {
                 )}
               </div>
 
-              {/* Language Selector */}
+              {/* Enhanced Language Selector */}
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
-                  <Button variant="ghost" size="sm" className="text-vl-blue">
-                    <Globe className="h-4 w-4 mr-1" />
-                    {currentLanguage?.flag} {currentLanguage?.code.toUpperCase()}
+                  <Button
+                    variant="ghost"
+                    size="sm"
+                    className="language-trigger text-vl-blue hover:text-vl-yellow transition-all duration-300 px-3 py-2 rounded-xl border border-transparent hover:border-vl-yellow/30 hover:bg-vl-yellow/10 backdrop-blur-sm"
+                  >
+                    <Globe className="h-4 w-4 mr-2" />
+                    <span className="text-lg mr-1">{currentLanguage?.flag}</span>
+                    <span className="font-medium text-sm">{currentLanguage?.code.toUpperCase()}</span>
+                    <ChevronDown className="h-3 w-3 ml-1 transition-transform duration-200" />
                   </Button>
                 </DropdownMenuTrigger>
-                <DropdownMenuContent className="z-[150]">
+                <DropdownMenuContent
+                  className="language-dropdown-content z-[150] min-w-[200px] p-2"
+                  align="end"
+                  sideOffset={8}
+                >
                   {languages.map((lang) => (
                     <DropdownMenuItem
                       key={lang.code}
                       onClick={() => setLanguage(lang.code)}
-                      className={language === lang.code ? "bg-vl-yellow/20" : ""}
+                      className={`language-dropdown-item cursor-pointer px-4 py-3 rounded-lg transition-all duration-200 ${
+                        language === lang.code ? "language-dropdown-item-active" : "language-dropdown-item-inactive"
+                      }`}
                     >
-                      {lang.flag} {lang.name}
+                      <div className="flex items-center justify-between w-full">
+                        <div className="flex items-center space-x-3">
+                          <span className="text-xl">{lang.flag}</span>
+                          <div className="flex flex-col">
+                            <span className="font-medium text-sm">{lang.nativeName}</span>
+                            <span className="text-xs opacity-70">{lang.name}</span>
+                          </div>
+                        </div>
+                        {language === lang.code && <Check className="h-4 w-4 text-vl-yellow" />}
+                      </div>
                     </DropdownMenuItem>
                   ))}
                 </DropdownMenuContent>
@@ -207,46 +234,70 @@ export default function Header() {
           </div>
 
           {/* Mobile Menu */}
-         {isMenuOpen && (
-  <div className="lg:hidden absolute top-full left-0 right-0 mobile-menu-container shadow-lg border-t rounded-b-2xl z-[110]"> {/* Added mobile-menu-container */}
-    <nav className="flex flex-col p-4 space-y-4">
-      {navItems.map((item) => (
-        <Link
-          key={item.key}
-          href={item.path}
-          className={`font-medium py-2 transition-colors ${
-            isActiveNavItem(item.path) ? "nav-mobile-active" : "text-vl-blue hover:text-vl-yellow"
-          }`}
-          onClick={() => setIsMenuOpen(false)}
-        >
-          {t(`nav.${item.key}`)}
-        </Link>
-      ))}
+          {isMenuOpen && (
+            <div className="lg:hidden absolute top-full left-0 right-0 mobile-menu-container shadow-lg border-t rounded-b-2xl z-[110]">
+              <nav className="flex flex-col p-4 space-y-4">
+                {navItems.map((item) => (
+                  <Link
+                    key={item.key}
+                    href={item.path}
+                    className={`font-medium py-2 transition-colors ${
+                      isActiveNavItem(item.path) ? "nav-mobile-active" : "text-vl-blue hover:text-vl-yellow"
+                    }`}
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    {t(`nav.${item.key}`)}
+                  </Link>
+                ))}
 
-      <div className="flex items-center justify-center pt-4 border-t">
-        <DropdownMenu>
-          <DropdownMenuTrigger asChild>
-            <Button variant="ghost" size="sm" className="text-vl-blue">
-              <Globe className="h-4 w-4 mr-1" />
-              {currentLanguage?.flag} {currentLanguage?.code.toUpperCase()}
-            </Button>
-          </DropdownMenuTrigger>
-          <DropdownMenuContent className="mobile-dropdown-content z-999"> {/* Added mobile-dropdown-content */}
-            {languages.map((lang) => (
-              <DropdownMenuItem
-                key={lang.code}
-                onClick={() => setLanguage(lang.code)}
-                className={language === lang.code ? "bg-vl-yellow/20" : ""}
-              >
-                {lang.flag} {lang.name}
-              </DropdownMenuItem>
-            ))}
-          </DropdownMenuContent>
-        </DropdownMenu>
-      </div>
-    </nav>
-  </div>
-)}
+                {/* Mobile Language Selector */}
+                <div className="flex items-center justify-center pt-4 border-t border-vl-yellow/20">
+                  <DropdownMenu>
+                    <DropdownMenuTrigger asChild>
+                      <Button
+                        variant="ghost"
+                        size="sm"
+                        className="mobile-language-trigger text-vl-blue hover:text-vl-yellow transition-all duration-300 px-4 py-3 rounded-xl border border-vl-yellow/30 hover:border-vl-yellow hover:bg-vl-yellow/10 backdrop-blur-sm"
+                      >
+                        <Globe className="h-4 w-4 mr-2" />
+                        <span className="text-lg mr-2">{currentLanguage?.flag}</span>
+                        <span className="font-medium">{currentLanguage?.nativeName}</span>
+                        <ChevronDown className="h-3 w-3 ml-2 transition-transform duration-200" />
+                      </Button>
+                    </DropdownMenuTrigger>
+                    <DropdownMenuContent
+                      className="mobile-language-dropdown-content z-[200] min-w-[180px] p-2"
+                      align="center"
+                      sideOffset={8}
+                    >
+                      {languages.map((lang) => (
+                        <DropdownMenuItem
+                          key={lang.code}
+                          onClick={() => {
+                            setLanguage(lang.code)
+                            setIsMenuOpen(false)
+                          }}
+                          className={`mobile-language-dropdown-item cursor-pointer px-3 py-2 rounded-lg transition-all duration-200 ${
+                            language === lang.code
+                              ? "mobile-language-dropdown-item-active"
+                              : "mobile-language-dropdown-item-inactive"
+                          }`}
+                        >
+                          <div className="flex items-center justify-between w-full">
+                            <div className="flex items-center space-x-2">
+                              <span className="text-lg">{lang.flag}</span>
+                              <span className="font-medium text-sm">{lang.nativeName}</span>
+                            </div>
+                            {language === lang.code && <Check className="h-3 w-3 text-vl-yellow" />}
+                          </div>
+                        </DropdownMenuItem>
+                      ))}
+                    </DropdownMenuContent>
+                  </DropdownMenu>
+                </div>
+              </nav>
+            </div>
+          )}
         </div>
       </header>
     </>

@@ -68,7 +68,7 @@ export const ru = {
   "filters.status.offplan": "На стадии строительства",
   "filters.status.for-rent": "В аренду",
   "filters.status.sold": "Продано",
-  "filters.location": "Местоположение",
+  "filters.location": "Местоположе��ие",
   "filters.amenities": "Удобства",
   "filters.amenities.pool": "Бассейн",
   "filters.amenities.garden": "Сад",

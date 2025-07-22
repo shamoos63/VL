@@ -374,6 +374,7 @@ const translations = {
     // Hero Section Arabic
     "hero.title": "اعثر على عقار أحلامك في",
     "hero.title.highlight": "دبي",
+    "hero.subtitle":"اغتنم فرص العقارات الأكثر رواجًا في دبي، والمصممة لنمو الثروة والتراث والهيبة العالمية.",
     "hero.search.button": "البحث عن العقارات",
 
     // Locations Arabic

@@ -217,7 +217,7 @@ export default function TestimonialsSection() {
             {language === "en"
               ? "Hear from clients who chose strategy, discretion, and results."
               : language === "ar"
-                ? "استمع إلى العملاء الذين اختاروا الاستراتيجية والتقدير والنتائج."
+                ? "استمع إلى العملاء الذين اختاروا الاستراتيجية والتقدير والنتائ��."
                 : "Послушайте мнения клиентов, которые выбрали стратегию, осмотрительность и результаты."}
           </p>
         </div>
