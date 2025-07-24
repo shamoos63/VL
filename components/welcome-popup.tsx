@@ -139,7 +139,7 @@ Victoria or a member of her private advisory team will contact you soon.
 
                   {/* Strategic */}
                   <div className="text-center">
-                    <div className="text-white font-semibold font-medium mb-1">Strategically</div>
+                    <div className="text-white font-semibold font-medium mb-1">I Strategically</div>
                     <p className="text-white/80 text-sm">recommend the best property for you</p>
                   </div>
                 </div>
@@ -182,7 +182,7 @@ Victoria or a member of her private advisory team will contact you soon.
 
                   {/* Strategic */}
                   <div className="text-center">
-                    <div className="text-white font-semibold text-lg mb-1">Strategically</div>
+                    <div className="text-white font-semibold text-lg mb-1">I Strategically</div>
                     <p className="text-white/80 text-sm">recommend the best property for you</p>
                   </div>
                 </div>
@@ -209,7 +209,7 @@ Victoria or a member of her private advisory team will contact you soon.
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                   required
-                  className="mt-1 bg-white border-vl-yellow focus:border-vl-yellow text-vl-blue"
+                  className="mt-1 bg-white border-vl-yellow focus:border-vl-yellow text-white"
                 />
               </div>
 
@@ -222,7 +222,7 @@ Victoria or a member of her private advisory team will contact you soon.
                   placeholder="+971 XX XXX XXXX"
                   value={formData.phone}
                   onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                  className="mt-1 bg-white border-vl-yellow focus:border-vl-yellow text-vl-blue"
+                  className="mt-1 bg-white border-vl-yellow focus:border-vl-yellow text-white"
                 />
               </div>
             </div>
@@ -238,7 +238,7 @@ Victoria or a member of her private advisory team will contact you soon.
                 value={formData.email}
                 onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                 required
-                className="mt-1 bg-white border-vl-yellow focus:border-vl-yellow text-vl-blue"
+                className="mt-1 bg-white border-vl-yellow focus:border-vl-yellow text-white"
               />
             </div>
 
@@ -251,7 +251,7 @@ Victoria or a member of her private advisory team will contact you soon.
                 placeholder="Tell me about your investment goals, preferred areas, budget range, or any specific requirements..."
                 value={formData.details}
                 onChange={(e) => setFormData({ ...formData, details: e.target.value })}
-                className="mt-1 bg-white border-vl-yellow focus:border-vl-yellow min-h-[80px] md:min-h-[100px] resize-none text-vl-blue"
+                className="mt-1 bg-white border-vl-yellow focus:border-vl-yellow min-h-[80px] md:min-h-[100px] resize-none text-white"
                 rows={3}
               />
             </div>

@@ -50,8 +50,8 @@ const translations = {
     "nav.language": "Language",
 
     // Hero Section
-    "hero.title": " Dubai Isn’t an Option, It’s the",
-    "hero.title.highlight": "Strategy.",
+    "hero.title": " Dubai Isn’t an Option It’s the",
+    "hero.title.highlight": "Strategy",
     "hero.subtitle": "Access Dubai’s most coveted real estate opportunities, crafted for wealth growth, legacy, and global prestige.",
     "hero.search.button": "Search Properties",
     "hero.stats.properties": "Properties Sold",

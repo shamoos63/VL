@@ -23,7 +23,7 @@ export default function ContactPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Contact Form */}
             <Card className="p-8 glass">
-              <h2 className="text-2xl font-bold text-vl-yellow dark:text-white mb-6">Send us a message</h2>
+              <h2 className="text-2xl font-bold text-vl-yellow dark:text-white mb-6">Send me a message</h2>
 
               <form className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">

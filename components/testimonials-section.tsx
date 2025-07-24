@@ -285,9 +285,9 @@ export default function TestimonialsSection() {
             </h3>
             <p className="text-white/90 mb-6">
               {language === "en"
-                ? "Ready to start your Dubai property investment journey? Let Victoria help you achieve your goals."
+                ? "Ready to start your Dubai property investment journey? Let me help you achieve your goals."
                 : language === "ar"
-                  ? "مستعد لبدء رحلة الاستثمار العقاري في دبي؟ دع فيكتوريا تساعدك في تحقيق أهدافك."
+                  ? "مستعد لبدء رحلة الاستثمار العقاري في دبي؟ دعني أساعدك في تحقيق أهدافك."
                   : "Готовы начать свое инвестиционное путешествие в недвижимость Дубая? Позвольте Виктории помочь вам достичь ваших целей."}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

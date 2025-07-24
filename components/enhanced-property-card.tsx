@@ -164,7 +164,7 @@ export default function EnhancedPropertyCard({
 
   return (
     <TooltipProvider>
-      <Card
+     <Card
         className={cn(
           "group overflow-hidden hover:shadow-2xl transition-all duration-500 hover:-translate-y-1 border-0 shadow-lg glass",
           className,

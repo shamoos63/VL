@@ -15,7 +15,7 @@ const faqData = {
     {
       question: "I'm new to property investment, where should I start?",
       answer:
-        "Start with clarity. Understand your investment goals , are you looking for long-term rental income, short-term gains, or a future home? Once your priorities are clear, Victoria will help you build a strategy around them, guiding you through the best areas, property types, and developers that match your vision. It's not about rushing , it's about smart, purpose-driven choices.",
+        "Start with clarity. Understand your investment goals , are you looking for long-term rental income, short-term gains, or a future home? Once your priorities are clear, I will help you build a strategy around them, guiding you through the best areas, property types, and developers that match your vision. It's not about rushing , it's about smart, purpose-driven choices.",
     },
     {
       question: "What kind of returns can I expect from property investment in Dubai?",
@@ -45,32 +45,32 @@ const faqData = {
     {
       question: "What's better: ready property or off-plan?",
       answer:
-        "It depends on your goals and what's available on the market. Ready properties can start generating income right away, while off-plan projects often offer lower entry points, attractive payment plans, and capital growth potential. Each option has its own advantages , Victoria helps you decide based on your unique situation.",
+        "It depends on your goals and what's available on the market. Ready properties can start generating income right away, while off-plan projects often offer lower entry points, attractive payment plans, and capital growth potential. Each option has its own advantages , and I will help you decide based on your unique situation.",
     },
     {
       question: "Which areas in Dubai offer the best investment opportunities?",
       answer:
-        "Top-performing areas include: Dubai Marina, Downtown Dubai, Palm Jumeirah, Jumeirah Village Circle (JVC), Business Bay, and Dubai Maritime City. These areas offer a combination of strong rental demand, premium lifestyle appeal, and solid long-term returns.",
+        "It depends on your goals and what’s available in the market. Every case is unique, but top-performing areas like Dubai Marina, Downtown, Palm Jumeirah, JVC, Business Bay, and Dubai Maritime City offer strong rental demand, premium lifestyle appeal, and solid long-term returns.",
     },
     {
-      question: "What makes working with Victoria different from others?",
+      question: "What makes working with you different from others?",
       answer:
-        "Victoria doesn't just sell , she strategizes. With over 15 years of experience, deep market knowledge, and strong connections with top-tier developers, she secures high-value deals for her clients. She builds long-term relationships , not one-off sales , and treats every portfolio as if it were her own. Her impressive track record includes 585+ successful deals worth over AED 1.7 billion, all registered with the Dubai Land Department.",
+        "I don't just sell , I strategize. With over 15 years of experience, deep market knowledge, and strong connections with top-tier developers, I secure high-value deals for my clients. I build long-term relationships , not one-off sales , and treat every portfolio as if it were my own. My impressive track record includes 585+ successful deals worth over AED 1.7 billion, all registered with the Dubai Land Department.",
     },
     {
-      question: "How does Victoria choose which properties to recommend?",
+      question: "How do you choose which properties to recommend?",
       answer:
-        "If she wouldn't invest in it herself, she won't recommend it. Victoria personally vets each opportunity based on developer credibility, ROI projections, long-term value, and gut instinct. She believes a smart investment must make sense on paper , and feel right in your hands.",
+        "If I wouldn't invest in it myself, I won't recommend it. I personally vet each opportunity based on developer credibility, ROI projections, long-term value, and gut instinct. I believe a smart investment must make sense on paper , and feel right in your hands.",
     },
     {
-      question: "What's it like to work with Victoria one-on-one?",
+      question: "What’s it like to work with you one-on-one?",
       answer:
-        "Expect transparency, calm confidence, and complete honesty. Victoria listens deeply, thinks strategically, and tells you what you need to hear , not just what you want. She becomes your thinking partner, not a salesperson. Whether it's a quick deal or a year-long search, she stays fully invested in your goals.",
+        "Expect transparency, calm confidence, and complete honesty. I listen deeply, think strategically, and tell you what you need to hear , not just what you want. I become your thinking partner, not a salesperson. Whether it's a quick deal or a year-long search, I stay fully invested in your goals.",
     },
     {
-      question: "Why does Victoria only work with selected clients and developers?",
+      question: "Why do you only work with selected clients and developers?",
       answer:
-        "Because quality over quantity leads to better outcomes. By focusing only on trusted developers and serious buyers, Victoria preserves her time, energy, and focus for deals that matter , where she can make a real impact. This allows her to deliver exceptional results, not just transactions.",
+        "Because quality over quantity leads to better outcomes. By focusing only on trusted developers and serious buyers, I preserve my time, energy, and focus for deals that matter, where I can make a real impact. This allows me to deliver exceptional results, not just transactions.",
     },
   ],
   ar: [
@@ -82,7 +82,7 @@ const faqData = {
     {
       question: "أنا جديد في الاستثمار العقاري - من أين أبدأ؟",
       answer:
-        "ابدأ بالوضوح. افهم أهدافك الاستثمارية - هل تبحث عن دخل إيجار طويل المدى، أم مكاسب قصيرة المدى، أم منزل مستقبلي؟ بمجرد أن تصبح أولوياتك واضحة، ستساعدك فيكتوريا في بناء استراتيجية حولها، وتوجيهك عبر أفضل المناطق وأنواع العقارات والمطورين التي تتناسب مع رؤيتك.",
+        "ابدأ بالوضوح. افهم أهدافك الاستثمارية - هل تبحث عن دخل إيجار طويل المدى، أم مكاسب قصيرة المدى، أم منزل مستقبلي؟ بمجرد أن تصبح أولوياتك واضحة، سأساعدك في بناء استراتيجية حولها، وتوجيهك عبر أفضل المناطق وأنواع العقارات والمطورين التي تتناسب مع رؤيتك.",
     },
     {
       question: "ما نوع العائدات التي يمكنني توقعها من الاستثمار العقاري في دبي؟",
@@ -94,7 +94,7 @@ const faqData = {
     },
     {
       question: "هل يمكن للمشترين الدوليين الحصول على رهن عقاري في دبي؟",
-      answer: "نعم. تقدم البنوك المختارة خيارات التمويل لغير الم��يمين، اعتمادًا على ملفك المالي ونوع العقار.",
+      answer: "نعم. تقدم البنوك المختارة خيارات التمويل لغير المقيمين، اعتمادًا على ملفك المالي ونوع العقار.",
     },
     {
       question: "هل هناك ضرائب متضمنة في شراء العقار؟",

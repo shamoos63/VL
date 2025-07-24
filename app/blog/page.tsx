@@ -45,7 +45,7 @@ export default function BlogPage() {
     <main className="min-h-screen pt-24 bg-white">
       <Header />
       <ServerPageHero
-        title="Insights from the Market"
+        title="Insights From The Market"
         subtitle="Stay informed. Stay ahead."
         backgroundImage="/hero.webp"
         className="font-sansumi"
@@ -68,19 +68,19 @@ export default function BlogPage() {
 
     <li class="flex flex-1 items-center justify-center rounded-xl glass p-6 text-center shadow-md transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
       <h3 class="text-lg font-medium text-gray-800">
-        Market updates & forecasts
+        Market Updates & Forecasts
       </h3>
     </li>
 
     <li class="flex flex-1 items-center justify-center rounded-xl glass p-6 text-center shadow-md transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
       <h3 class="text-lg font-medium text-gray-800">
-        Investor tips & property strategies
+        Investor Tips & Property Strategies
       </h3>
     </li>
 
     <li class="flex flex-1 items-center justify-center rounded-xl glass p-6 text-center shadow-md transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
       <h3 class="text-lg font-medium text-gray-800">
-        Area deep-dives & opportunity spotlights
+        Area Deep-Dives & Opportunity Spotlights
       </h3>
     </li>
 

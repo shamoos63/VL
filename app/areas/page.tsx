@@ -59,23 +59,23 @@ export default function AreasPage() {
           <p className="text-lg text-gray-700 mb-6 text-center">
             In this section, Victoria highlights key districts she works in, sharing her honest perspective on:
           </p>
-       <ul class="flex flex-col gap-6 md:flex-row md:gap-8">
+       <ul class="flex flex-col gap-6 md:flex-row md:gap-8 py-2">
 
     <li class="flex flex-1 items-center justify-center rounded-xl glass p-6 text-center shadow-md transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
       <h3 class="text-lg font-medium text-gray-800">
-        Strengths & potential
+        Strengths & Potential
       </h3>
     </li>
 
     <li class="flex flex-1 items-center justify-center rounded-xl glass p-6 text-center shadow-md transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
       <h3 class="text-lg font-medium text-gray-800">
-        Risks to consider
+        Risks To Consider
       </h3>
     </li>
 
     <li class="flex flex-1 items-center justify-center rounded-xl glass p-6 text-center shadow-md transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
       <h3 class="text-lg font-medium text-gray-800">
-        Who the area fits best
+        Who The Area Fits Best
       </h3>
     </li>
 
