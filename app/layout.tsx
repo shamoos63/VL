@@ -21,44 +21,44 @@ const cairo = Cairo({
 
 // Sansumi font variants
 const sansumiUltraLight = localFont({
-  src: "./fonts/Sansumi-UltraLight.ttf",
+  src: "../public/fonts/Sansumi-UltraLight.ttf",
   variable: "--font-sansumi-ultralight",
   weight: "200",
 })
 
 const sansumiRegular = localFont({
-  src: "./fonts/Sansumi-Regular.ttf",
+  src: "../public/fonts/Sansumi-Regular.ttf",
   variable: "--font-sansumi-regular",
   weight: "400",
 })
 
 const sansumiDemiBold = localFont({
-  src: "./fonts/Sansumi-DemiBold.ttf",
+  src: "../public/fonts/Sansumi-DemiBold.ttf",
   variable: "--font-sansumi-demibold",
   weight: "600",
 })
 
 const sansumiBold = localFont({
-  src: "./fonts/Sansumi-Bold.ttf",
+  src: "../public/fonts/Sansumi-Bold.ttf",
   variable: "--font-sansumi-bold",
   weight: "700",
 })
 
 // Noto Sans Mono font variants for Russian text
 const notoSansMonoRegular = localFont({
-  src: "./fonts/NotoSansMono-Regular.ttf",
+  src: "../public/fonts/NotoSansMono-Regular.ttf",
   variable: "--font-noto-sans-mono-regular",
   weight: "400",
 })
 
 const notoSansMonoBold = localFont({
-  src: "./fonts/NotoSansMono-Bold.ttf",
+  src: "../public/fonts/NotoSansMono-Bold.ttf",
   variable: "--font-noto-sans-mono-bold",
   weight: "700",
 })
 
 const notoSansMonoSemiBold = localFont({
-  src: "./fonts/NotoSansMono-SemiBold.ttf",
+  src: "../public/fonts/NotoSansMono-SemiBold.ttf",
   variable: "--font-noto-sans-mono-semibold",
   weight: "600",
 })
