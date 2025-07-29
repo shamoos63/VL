@@ -55,7 +55,7 @@ export default function WelcomePopup({ onClose }: WelcomePopupProps) {
     // Close popup after 3 seconds
     setTimeout(() => {
       onClose()
-    }, 3000)
+    }, 8000)
   }
 
   const handleSkip = () => {
@@ -74,7 +74,7 @@ export default function WelcomePopup({ onClose }: WelcomePopupProps) {
             <h3 className="text-xl font-semibold text-vl-yellow mb-2">Thank You!</h3>
             <p className="text-white mb-4">
               Your request is in trusted hands.
-Victoria or a member of her private advisory team will contact you soon.
+I will contact you soon.
             </p>
       
           </CardContent>
