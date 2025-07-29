@@ -10,7 +10,7 @@ export default function HomePropertyListings() {
 
   return (
     <FilterProvider initialProperties={favoriteProperties}>
-      <div className="text-center pt-5 bg-transparent">
+      <div className="text-center pt-3 bg-transparent">
         <div className="text-center mb-6 bg-transparent">
           <h2 className="text-3xl font-bold text-vl-yellow mb-2"><br/>Explore Prime Opportunities</h2>
           <p className="text-gray-600">Discover my handpicked selection of premium properties</p>

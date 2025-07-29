@@ -271,7 +271,7 @@ I will contact you soon.
                 disabled={!formData.name || !formData.email}
                 className="w-full md:w-auto text-white bg-transparent hover:text-vl-yellow font-semibold px-12 py-4 text-lg  transition-all duration-300 hover:scale-105 border-2 border-vl-yellow hover:border-black"
               >
-                Send to Victoria
+                Send it to me
               </Button>
             </div>
           </form>

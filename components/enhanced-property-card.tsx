@@ -250,7 +250,7 @@ export default function EnhancedPropertyCard({
           <div className="absolute top-4 left-4 flex gap-2 flex-wrap">
             <Badge
               className={cn(
-                "text-white font-medium shadow-lg",
+                "text-vl-blue font-medium shadow-lg",
                 property.status === "Ready" && "bg-green-500",
                 property.status === "Off-plan" && "bg-blue-500",
                 property.status === "For Rent" && "bg-purple-500",

@@ -274,7 +274,7 @@ export default function TestimonialsSection() {
           ))}
         </div>
 
-        <div className="text-center mt-8">
+        <div className="text-center mt-4">
           <div className="bg-vl-blue rounded-2xl p-8 max-w-4xl mx-auto hover:shadow-2xl transition-all duration-500 hover:scale-105">
             <h3 className="text-2xl font-bold text-white mb-4">
               {language === "en"
